@@ -31,92 +31,26 @@
         <div class="flex flex-col">
           <div class="contact-info-item">
             <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Address" %}</p>
-            <p class="text-charcoal">{{ address|default_if_none:"" }}</p>
+            <p class="text-charcoal">{{ "Олмазор тумани Уста ширин 124 (cтрой мир бозор)" }}</p>
           </div>
           <div class="contact-info-item">
             <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Phone" %}</p>
-            {% if phone %}
-            <a href="tel:{{ phone }}" class="text-charcoal hover:text-accent transition-colors block">{{ phone }}</a>
-            {% endif %}
-          </div>
-          <div class="contact-info-item">
-            <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Email" %}</p>
-            {% if email %}
-            <a href="mailto:{{ email }}" class="text-charcoal hover:text-accent transition-colors block">{{ email }}</a>
-            {% endif %}
+            <a href="tel:+998 93-592-61-66" class="text-charcoal hover:text-accent transition-colors block">+998 93-592-61-66</a>
+            <a href="tel:+998 97 746 78 82" class="text-charcoal hover:text-accent transition-colors block">+998 97 746 78 82</a>
           </div>
           <div class="contact-info-item">
             <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Working Hours" %}</p>
             <p class="text-charcoal">{% trans "Monday – Saturday: 09:00 – 19:00" %}</p>
-            <p class="text-stone text-sm">{% trans "Sunday: Closed" %}</p>
+            <p class="text-stone text-sm">{% trans "Sunday: 09:00 – 15:00" %}</p>
           </div>
-          <div class="contact-info-item">
-            <p class="text-xs text-stone uppercase tracking-widest mb-4">{% trans "Social" %}</p>
-            <div class="flex gap-4">
-              <a href="#" class="flex items-center gap-2 text-sm text-stone hover:text-charcoal transition-colors group">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="group-hover:stroke-accent transition-colors"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-                {% trans "Instagram" %}
-              </a>
-              <a href="#" class="flex items-center gap-2 text-sm text-stone hover:text-charcoal transition-colors group">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="group-hover:stroke-accent transition-colors"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-                {% trans "Telegram" %}
-              </a>
-              <a href="#" class="flex items-center gap-2 text-sm text-stone hover:text-charcoal transition-colors group">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="group-hover:stroke-accent transition-colors"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                {% trans "Facebook" %}
-              </a>
-            </div>
-          </div>
+        
         </div>
       </div>
 
       <!-- ─── Form ─── -->
-      <div>
-        <div class="bg-cream p-10">
-          <p class="section-label mb-4">{% trans "Send a Message" %}</p>
-          <h3 class="font-display text-3xl font-light text-charcoal mb-8">{% trans "Let's Talk" %}</h3>
-
-          <form id="contact-form" method="POST" action="{% url 'core:contact' %}" class="flex flex-col gap-7">
-            {% csrf_token %}
-            <div>
-              <label class="text-xs text-stone uppercase tracking-widest block mb-2">{% trans "Full Name" %} *</label>
-              <input type="text" name="name" placeholder="{% trans 'Your full name' %}" class="form-input" required>
-            </div>
-            <div>
-              <label class="text-xs text-stone uppercase tracking-widest block mb-2">{% trans "Phone" %} *</label>
-              <input type="tel" name="phone" placeholder="+998 __ ___  __ __" class="form-input" required>
-            </div>
-            <div>
-              <label class="text-xs text-stone uppercase tracking-widest block mb-2">{% trans "Email" %}</label>
-              <input type="email" name="email" placeholder="{% trans 'your@email.com' %}" class="form-input">
-            </div>
-            <div>
-              <label class="text-xs text-stone uppercase tracking-widest block mb-2">{% trans "Subject" %}</label>
-              <input type="text" name="subject" placeholder="{% trans 'What is this about?' %}" class="form-input">
-            </div>
-            <div>
-              <label class="text-xs text-stone uppercase tracking-widest block mb-2">{% trans "Message" %} *</label>
-              <textarea name="message" rows="5" placeholder="{% trans 'Your message…' %}" class="form-input resize-none" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary justify-center">
-              {% trans "Send Message" %}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 
-  <!-- Google Map -->
-  <div class="h-[450px] bg-warm-gray overflow-hidden">
-    {% if map_url %}
-    <iframe
-      src="{{ map_url }}"
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    {% endif %}
-  </div>
 
 </div>
 {% endblock %}

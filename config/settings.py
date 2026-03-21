@@ -58,8 +58,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "perfecthome",
-        "USER": "postgres",
-        "PASSWORD": "Hero__2006",
+        "USER": "jasmin",
+        "PASSWORD": "1111",
         "HOST": "localhost",
         "PORT": "5432",
     }

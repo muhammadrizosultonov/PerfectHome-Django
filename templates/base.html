@@ -150,23 +150,7 @@
         <a href="{% url 'core:contact' %}" class="footer-link">{% trans "Contact" %}</a>
       </div>
     </div>
-
-    <!-- Categories -->
-    <div>
-      <p class="footer-label">{% trans "Categories" %}</p>
-      <div class="flex flex-col gap-3">
-        {% for cat in footer_categories|default:'' %}
-          <a href="{{ cat.get_absolute_url }}" class="footer-link">{{ cat.name }}</a>
-        {% empty %}
-          <a href="#" class="footer-link">{% trans "Living Room" %}</a>
-          <a href="#" class="footer-link">{% trans "Bedroom" %}</a>
-          <a href="#" class="footer-link">{% trans "Kitchen" %}</a>
-          <a href="#" class="footer-link">{% trans "Bathroom" %}</a>
-          <a href="#" class="footer-link">{% trans "Outdoor" %}</a>
-        {% endfor %}
-      </div>
-    </div>
-
+      
     <!-- Contact -->
     <div>
       <p class="footer-label">{% trans "Contact" %}</p>
@@ -177,11 +161,7 @@
         </div>
         <div>
           <p class="text-xs text-stone uppercase tracking-widest mb-1">{% trans "Phone" %}</p>
-          <a href="tel:+998712345678" class="footer-link text-sm">+998 71 234 56 78</a>
-        </div>
-        <div>
-          <p class="text-xs text-stone uppercase tracking-widest mb-1">{% trans "Email" %}</p>
-          <a href="mailto:info@perfecthome.uz" class="footer-link text-sm">info@perfecthome.uz</a>
+          <a href="tel:+998 93-592-61-66" class="footer-link text-sm">+998 93-592-61-66</a>
         </div>
         <div>
           <p class="text-xs text-stone uppercase tracking-widest mb-1">{% trans "Working Hours" %}</p>
