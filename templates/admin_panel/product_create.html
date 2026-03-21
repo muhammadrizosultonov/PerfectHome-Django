@@ -1,0 +1,116 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Создание товара{% endblock %}
+{% block header %}Создание нового товара{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Название товара *</label>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Slug *</label>
+                            <input type="text" name="slug" class="form-control" required>
+                            <small class="text-muted">URL-идентификатор товара</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Категория *</label>
+                            <select name="category" class="form-select" required>
+                                <option value="">Выберите категорию</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Бренд *</label>
+                            <select name="brand" class="form-select" required>
+                                <option value="">Выберите бренд</option>
+                                {% for brand in brands %}
+                                    <option value="{{ brand.id }}">{{ brand.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Страна происхождения</label>
+                            <input type="text" name="country_of_origin" class="form-control">
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Артикул *</label>
+                            <input type="text" name="article_number" class="form-control" required>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Цена *</label>
+                            <div class="input-group">
+                                <input type="number" name="price" class="form-control" step="0.01" required>
+                                <span class="input-group-text">₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Описание</label>
+                        <textarea name="description" class="form-control" rows="5"></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Теги</label>
+                        <select name="tags" class="form-select" multiple>
+                            {% for tag in tags %}
+                                <option value="{{ tag.id }}">{{ tag.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <small class="text-muted">Удерживайте Ctrl для выбора нескольких тегов</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Изображения</label>
+                        <input type="file" name="images" class="form-control" multiple accept="image/*">
+                        <small class="text-muted">Можно выбрать несколько изображений</small>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_product_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Создать товар
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Автоматическое заполнение slug из названия
+document.querySelector('input[name="name"]').addEventListener('input', function() {
+    let slug = this.value
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-');
+    document.querySelector('input[name="slug"]').value = slug;
+});
+</script>
+{% endblock %}

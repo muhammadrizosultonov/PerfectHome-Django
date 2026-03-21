@@ -1,0 +1,138 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Редактирование товара{% endblock %}
+{% block header %}Редактирование товара "{{ product.name }}"{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Название товара *</label>
+                            <input type="text" name="name" class="form-control" value="{{ product.name }}" required>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Slug *</label>
+                            <input type="text" name="slug" class="form-control" value="{{ product.slug }}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Категория *</label>
+                            <select name="category" class="form-select" required>
+                                <option value="">Выберите категорию</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}" {% if product.category.id == category.id %}selected{% endif %}>
+                                        {{ category.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Бренд *</label>
+                            <select name="brand" class="form-select" required>
+                                <option value="">Выберите бренд</option>
+                                {% for brand in brands %}
+                                    <option value="{{ brand.id }}" {% if product.brand.id == brand.id %}selected{% endif %}>
+                                        {{ brand.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Страна происхождения</label>
+                            <input type="text" name="country_of_origin" class="form-control" value="{{ product.country_of_origin }}">
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Артикул *</label>
+                            <input type="text" name="article_number" class="form-control" value="{{ product.article_number }}" required>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Цена *</label>
+                            <div class="input-group">
+                                <input type="number" name="price" class="form-control" value="{{ product.price }}" step="0.01" required>
+                                <span class="input-group-text">₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Описание</label>
+                        <textarea name="description" class="form-control" rows="5">{{ product.description }}</textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Теги</label>
+                        <select name="tags" class="form-select" multiple>
+                            {% for tag in tags %}
+                                <option value="{{ tag.id }}" {% if tag.id in selected_tags %}selected{% endif %}>
+                                    {{ tag.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Добавить новые изображения</label>
+                        <input type="file" name="images" class="form-control" multiple accept="image/*">
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_product_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Назад
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Сохранить изменения
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Существующие изображения -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Текущие изображения</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for image in product.images.all %}
+                    <div class="col-md-6 mb-3">
+                        <div class="position-relative">
+                            <img src="{{ image.image.url }}" class="img-fluid rounded" alt="{{ image.alt_text }}">
+                            <form method="post" action="{% url 'users:admin_product_image_delete' image.pk %}" 
+                                  class="position-absolute top-0 end-0">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-danger" 
+                                        onclick="return confirm('Удалить это изображение?')">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="text-muted text-center">Нет изображений</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

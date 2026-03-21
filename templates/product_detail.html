@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% trans "Product Detail" as product_detail_label %}
+{% trans "Product" as product_label %}
+{% trans "Velvet Lounge Chair" as default_product_name %}
+{% block title %}{{ product.name|default:product_detail_label }}{% endblock %}
+{% block nav_products %}active{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+<div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-10">
+
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-3 mb-10">
+    <a href="{% url 'core:home' %}" class="breadcrumb-item">{% trans "Home" %}</a>
+    <span class="text-warm-gray text-xs">/</span>
+    <a href="{% url 'products:catalog' %}" class="breadcrumb-item">{% trans "Products" %}</a>
+    <span class="text-warm-gray text-xs">/</span>
+    <span class="text-xs uppercase tracking-widest text-charcoal">{{ product.name|default:default_product_name }}</span>
+  </div>
+
+  <!-- Main grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 mb-20">
+
+    <!-- ─── Gallery ─── -->
+    <div class="flex flex-col gap-4">
+      <!-- Main image -->
+      <div class="bg-cream overflow-hidden aspect-square relative">
+        {% if product.primary_image and product.primary_image.image %}
+        <img id="main-product-img"
+          src="{{ product.primary_image.image.url }}"
+          alt="{{ product.name|default:product_label }}"
+          class="w-full h-full object-cover transition-all duration-500">
+        {% else %}
+        <img id="main-product-img"
+          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=85&fit=crop"
+          alt="{{ product.name|default:product_label }}"
+          class="w-full h-full object-cover transition-all duration-500">
+        {% endif %}
+        <!-- Tags overlay -->
+        <div class="absolute top-4 left-4 flex flex-col gap-2">
+          {% if product.is_new %}<span class="product-tag tag-new">{% trans "New" %}</span>{% endif %}
+          {% if product.is_popular %}<span class="product-tag tag-popular">{% trans "Popular" %}</span>{% endif %}
+        </div>
+      </div>
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-4 gap-3">
+        <div class="overflow-hidden">
+          {% if product.primary_image and product.primary_image.image %}
+          <img class="thumb-img active"
+            src="{{ product.primary_image.image.url }}"
+            alt="{% trans 'View 1' %}">
+          {% else %}
+          <img class="thumb-img active"
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=80&fit=crop"
+            alt="{% trans 'View 1' %}">
+          {% endif %}
+        </div>
+        {% for img in product.images.all %}
+        <div class="overflow-hidden">
+          {% if img.image %}
+          <img class="thumb-img"
+            src="{{ img.image.url }}"
+            alt="{{ img.alt_text|default:product.name }}">
+          {% endif %}
+        </div>
+        {% empty %}
+        <div class="overflow-hidden">
+          <img class="thumb-img"
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&q=80&fit=crop"
+            alt="{% trans 'View 2' %}">
+        </div>
+        <div class="overflow-hidden">
+          <img class="thumb-img"
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=300&q=80&fit=crop"
+            alt="{% trans 'View 3' %}">
+        </div>
+        <div class="overflow-hidden">
+          <img class="thumb-img"
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=300&q=80&fit=crop"
+            alt="{% trans 'View 4' %}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ─── Product Info ─── -->
+    <div class="flex flex-col">
+      <!-- Brand & category -->
+      <div class="flex items-center gap-3 mb-4">
+      {% trans "Minotti" as default_brand %}
+      <span class="text-xs text-stone uppercase tracking-widest">{{ product.brand.name|default:default_brand }}</span>
+      <span class="text-warm-gray">·</span>
+      {% trans "Living Room" as default_category %}
+      <span class="text-xs text-stone uppercase tracking-widest">{{ product.category.name|default:default_category }}</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-display text-4xl lg:text-5xl font-light text-charcoal leading-tight mb-4">
+        {{ product.name|default:default_product_name }}
+      </h1>
+
+      <!-- SKU -->
+      {% if product.article_number %}
+      <p class="text-xs text-stone mb-6">{% trans "Article Number" %}: {{ product.article_number }}</p>
+      {% endif %}
+
+      <!-- Tags badges -->
+      <div class="flex flex-wrap gap-2 mb-8">
+        {% for tag in product.tags.all %}
+        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{{ tag.name }}</span>
+        {% empty %}
+        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Italian Design" %}</span>
+        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Handcrafted" %}</span>
+        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Premium Fabric" %}</span>
+        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "New Arrival" %}</span>
+        {% endfor %}
+      </div>
+
+      <div class="divider mb-8"></div>
+
+      <!-- Description -->
+      <div class="mb-8">
+        <p class="section-label mb-3">{% trans "Description" %}</p>
+        {% trans "A masterpiece of Italian craftsmanship, this lounge chair combines premium velvet upholstery with a solid beech wood frame. Designed for those who appreciate the subtle luxury of exceptional materials and considered form. The gentle curves and generous proportions invite effortless relaxation." as default_description %}
+        <div class="text-stone leading-relaxed text-sm">
+          {{ product.description|default:default_description }}
+        </div>
+      </div>
+
+      <!-- Specifications -->
+      <div class="mb-8">
+        <p class="section-label mb-4">{% trans "Specifications" %}</p>
+        <div class="flex flex-col divide-y divide-warm-gray">
+          {% if product.brand %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Brand" %}</span><span class="text-sm text-charcoal">{{ product.brand.name }}</span></div>{% endif %}
+          {% if product.country_of_origin %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Origin" %}</span><span class="text-sm text-charcoal">{{ product.country_of_origin }}</span></div>{% endif %}
+          {% if product.price %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Price" %}</span><span class="text-sm text-charcoal">{{ product.price }}</span></div>{% endif %}
+          {% if product.material %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Material" %}</span><span class="text-sm text-charcoal">{{ product.material }}</span></div>{% endif %}
+          {% if product.dimensions %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Dimensions" %}</span><span class="text-sm text-charcoal">{{ product.dimensions }}</span></div>{% endif %}
+          {% empty %}
+          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Brand" %}</span><span class="text-sm text-charcoal">Minotti</span></div>
+          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Origin" %}</span><span class="text-sm text-charcoal">{% trans "Italy" %}</span></div>
+          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Material" %}</span><span class="text-sm text-charcoal">{% trans "Velvet, Beech Wood" %}</span></div>
+          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Dimensions" %}</span><span class="text-sm text-charcoal">{% trans "W 80 × D 85 × H 78 cm" %}</span></div>
+          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Weight" %}</span><span class="text-sm text-charcoal">{% trans "28 kg" %}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex flex-wrap gap-4 mt-auto">
+        <button data-open-modal class="btn-accent flex-1 justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+          {% trans "Order Now" %}
+        </button>
+        <button class="btn-outline" title="{% trans 'Share' %}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+
+      <!-- Contact info -->
+      <div class="bg-cream p-5 mt-6">
+        <p class="text-xs text-stone uppercase tracking-widest mb-3">{% trans "Have questions?" %}</p>
+        <div class="flex flex-col gap-2">
+          <a href="tel:+998712345678" class="flex items-center gap-3 text-sm text-charcoal hover:text-accent transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.27 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            +998 71 234 56 78
+          </a>
+          <a href="https://t.me/perfecthomeuz" class="flex items-center gap-3 text-sm text-charcoal hover:text-accent transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            {% trans "Telegram" %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Related Products ─── -->
+  <div class="divider mb-14"></div>
+  <div>
+    <p class="section-label mb-4">{% trans "You Might Also Like" %}</p>
+    <h2 class="section-title mb-10">{% trans "Related Products" %}</h2>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for rel in related_products|default:'' %}
+      <a href="{{ rel.get_absolute_url }}" class="product-card">
+        <div class="overflow-hidden bg-cream">
+          {% if rel.primary_image and rel.primary_image.image %}
+          <img src="{{ rel.primary_image.image.url }}" alt="{{ rel.name }}" class="product-card-img">
+          {% else %}
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ rel.name }}" class="product-card-img">
+          {% endif %}
+        </div>
+        <div class="p-4">
+          <p class="text-xs text-stone uppercase tracking-widest mb-1">{{ rel.brand.name }}</p>
+          <h3 class="font-display text-lg font-light text-charcoal">{{ rel.name }}</h3>
+        </div>
+      </a>
+      {% empty %}
+      {% for i in "123456" %}
+      <a href="{% url 'products:catalog' %}" class="product-card">
+        <div class="overflow-hidden bg-cream">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Related' %}" class="product-card-img">
+        </div>
+        <div class="p-4">
+          <p class="text-xs text-stone uppercase tracking-widest mb-1">{% cycle "Cassina" "Poliform" "B&B Italia" "Vitra" %}</p>
+          <h3 class="font-display text-lg font-light text-charcoal">
+            {% if forloop.counter == 1 %}{% trans "Leather Armchair" %}
+            {% elif forloop.counter == 2 %}{% trans "Oak Side Table" %}
+            {% elif forloop.counter == 3 %}{% trans "Floor Lamp" %}
+            {% else %}{% trans "Wool Throw" %}{% endif %}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Blog" %}{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+
+  <div class="bg-cream py-16">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="flex items-center gap-3 mb-4">
+        <a href="{% url 'core:home' %}" class="breadcrumb-item">{% trans "Home" %}</a>
+        <span class="text-warm-gray text-xs">/</span>
+        <span class="text-xs uppercase tracking-widest text-charcoal">{% trans "Blog" %}</span>
+      </div>
+      <p class="section-label mb-3">{% trans "Journal" %}</p>
+      <h1 class="section-title">{% trans "Stories and Inspiration" %}</h1>
+    </div>
+  </div>
+
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in posts|default:'' %}
+      <a href="{{ post.get_absolute_url }}" class="blog-card">
+        <div class="overflow-hidden mb-4">
+          {% if post.cover_image %}
+          <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img">
+          {% else %}
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&fit=crop" alt="{{ post.title }}" class="blog-card-img">
+          {% endif %}
+        </div>
+        <p class="text-xs text-stone uppercase tracking-widest mb-2">{{ post.created_at|date:"DATE_FORMAT" }}</p>
+        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{{ post.title }}</h3>
+      </a>
+      {% empty %}
+      <div class="text-stone">{% trans "No posts yet." %}</div>
+      {% endfor %}
+    </div>
+
+    {% if posts.has_other_pages %}
+    <div class="flex justify-center gap-2 mt-10">
+      {% if posts.has_previous %}
+      <a href="?page={{ posts.previous_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">‹</a>
+      {% endif %}
+      {% for num in posts.paginator.page_range %}
+      <a href="?page={{ num }}" class="w-10 h-10 flex items-center justify-center border text-sm transition-colors {% if posts.number == num %}bg-black text-white border-black{% else %}border-warm-gray text-stone hover:border-black hover:text-black{% endif %}">{{ num }}</a>
+      {% endfor %}
+      {% if posts.has_next %}
+      <a href="?page={{ posts.next_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">›</a>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

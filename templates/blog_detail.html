@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% trans "Blog" as blog_label %}
+{% trans "Article" as article_label %}
+{% block title %}{{ post.title|default:blog_label }}{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <a href="{% url 'core:home' %}" class="breadcrumb-item">{% trans "Home" %}</a>
+      <span class="text-warm-gray text-xs">/</span>
+      <a href="{% url 'blog:list' %}" class="breadcrumb-item">{% trans "Blog" %}</a>
+      <span class="text-warm-gray text-xs">/</span>
+      <span class="text-xs uppercase tracking-widest text-charcoal">{{ post.title|default:article_label }}</span>
+    </div>
+
+    {% if post.cover_image %}
+    <div class="overflow-hidden mb-8">
+      <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="w-full max-h-[520px] object-cover">
+    </div>
+    {% endif %}
+
+    <p class="text-xs text-stone uppercase tracking-widest mb-3">{{ post.created_at|date:"DATE_FORMAT" }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-light text-charcoal leading-tight mb-6">{{ post.title }}</h1>
+
+    <div class="text-stone leading-relaxed text-base space-y-4">
+      {{ post.content|linebreaks }}
+    </div>
+  </div>
+</div>
+{% endblock %}

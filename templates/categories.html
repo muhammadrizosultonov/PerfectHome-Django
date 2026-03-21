@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Categories" %}{% endblock %}
+{% block nav_categories %}active{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+
+  <!-- Header -->
+  <div class="bg-cream py-16">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="flex items-center gap-3 mb-4">
+        <a href="{% url 'core:home' %}" class="breadcrumb-item">{% trans "Home" %}</a>
+        <span class="text-warm-gray text-xs">/</span>
+        <span class="text-xs uppercase tracking-widest text-charcoal">{% trans "Categories" %}</span>
+      </div>
+      <p class="section-label mb-3">{% trans "Browse by" %}</p>
+      <h1 class="section-title">{% trans "All Categories" %}</h1>
+    </div>
+  </div>
+
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-14">
+
+    <!-- Big feature categories grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      {% for cat in categories|default:'' %}
+      <a href="{{ cat.get_absolute_url }}" class="category-card {% if forloop.counter == 1 %}md:col-span-2 lg:col-span-1{% endif %}" style="aspect-ratio: {% if forloop.counter == 1 %}16/9{% else %}3/4{% endif %};">
+        {% if cat.image %}
+        <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
+        {% else %}
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=85&fit=crop&sig={{ forloop.counter }}" alt="{{ cat.name }}">
+        {% endif %}
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light uppercase tracking-widest mb-2">{{ cat.product_count }} {% trans "products" %}</p>
+          <h2 class="text-white font-display text-3xl font-light">{{ cat.name }}</h2>
+          {% if cat.description %}
+          <p class="text-white/60 text-sm mt-1 line-clamp-1">{{ cat.description }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% empty %}
+      <!-- Row 1: large + tall -->
+      <a href="{% url 'products:catalog' %}" class="category-card md:col-span-2" style="aspect-ratio: 16/9;">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=85&fit=crop" alt="{% trans 'Living Room' %}">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light uppercase tracking-widest mb-2">84 {% trans "products" %}</p>
+          <h2 class="text-white font-display text-4xl font-light">{% trans "Living Room" %}</h2>
+        </div>
+      </a>
+      <a href="{% url 'products:catalog' %}" class="category-card" style="aspect-ratio: 3/4;">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&q=85&fit=crop" alt="{% trans 'Bedroom' %}">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light uppercase tracking-widest mb-2">62 {% trans "products" %}</p>
+          <h2 class="text-white font-display text-3xl font-light">{% trans "Bedroom" %}</h2>
+        </div>
+      </a>
+      <!-- Row 2 -->
+      <a href="{% url 'products:catalog' %}" class="category-card" style="aspect-ratio: 3/4;">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=85&fit=crop" alt="{% trans 'Kitchen' %}">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light uppercase tracking-widest mb-2">41 {% trans "products" %}</p>
+          <h2 class="text-white font-display text-3xl font-light">{% trans "Kitchen" %}</h2>
+        </div>
+      </a>
+      <a href="{% url 'products:catalog' %}" class="category-card md:col-span-2" style="aspect-ratio: 16/9;">
+        <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1200&q=85&fit=crop" alt="{% trans 'Bathroom' %}">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light uppercase tracking-widest mb-2">53 {% trans "products" %}</p>
+          <h2 class="text-white font-display text-4xl font-light">{% trans "Bathroom" %}</h2>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <!-- Smaller categories -->
+    <div class="divider my-12"></div>
+    <p class="section-label mb-4">{% trans "More" %}</p>
+    <h2 class="font-display text-3xl font-light text-charcoal mb-8">{% trans "More Categories" %}</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      {% for item in "Outdoor,Office,Decor,Lighting,Textiles,Storage" %}
+      <a href="{% url 'products:catalog' %}" class="group text-center">
+        <div class="aspect-square overflow-hidden mb-3 bg-cream">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ item }}"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <h3 class="font-display text-lg font-light text-charcoal group-hover:text-accent transition-colors">{% trans item %}</h3>
+        <p class="text-xs text-stone mt-1">{{ forloop.counter }}5 {% trans "products" %}</p>
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,739 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: perfecthome\n"
+"POT-Creation-Date: 2026-03-21 00:00+0000\n"
+"PO-Revision-Date: 2026-03-21 00:00+0000\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Premium Home Goods"
+msgstr "Uy uchun premium mahsulotlar"
+
+msgid "Perfect Home — premium home goods and interior products in Uzbekistan."
+msgstr "Perfect Home — O‘zbekistonda uy uchun premium mahsulotlar va interyer yechimlari."
+
+msgid "Home"
+msgstr "Bosh sahifa"
+
+msgid "Products"
+msgstr "Mahsulotlar"
+
+msgid "Brands"
+msgstr "Brendlar"
+
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+msgid "About"
+msgstr "Biz haqimizda"
+
+msgid "Contact"
+msgstr "Aloqa"
+
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+msgid "Navigation"
+msgstr "Navigatsiya"
+
+msgid "Living Room"
+msgstr "Mehmonxona"
+
+msgid "Bedroom"
+msgstr "Yotoqxona"
+
+msgid "Kitchen"
+msgstr "Oshxona"
+
+msgid "Bathroom"
+msgstr "Hammom"
+
+msgid "Outdoor"
+msgstr "Tashqi makon"
+
+msgid "Office"
+msgstr "Ofis"
+
+msgid "Decor"
+msgstr "Dekor"
+
+msgid "Lighting"
+msgstr "Yoritish"
+
+msgid "Textiles"
+msgstr "To‘qimachilik"
+
+msgid "Storage"
+msgstr "Saqlash"
+
+msgid "Premium home goods and interior products. Elevating everyday living in Uzbekistan."
+msgstr "Uy va interyer uchun premium mahsulotlar. O‘zbekistonda kundalik hayotni yanada yaxshilaymiz."
+
+msgid "Address"
+msgstr "Manzil"
+
+msgid "Tashkent, Uzbekistan"
+msgstr "Toshkent, O‘zbekiston"
+
+msgid "Amir Temur Avenue, 15"
+msgstr "Amir Temur shoh ko‘chasi, 15"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Working Hours"
+msgstr "Ish vaqti"
+
+msgid "Mon–Sat: 09:00–19:00"
+msgstr "Du–Shan: 09:00–19:00"
+
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
+
+msgid "Designed with care in Tashkent"
+msgstr "Toshkentda mehr bilan tayyorlangan"
+
+msgid "Request a product"
+msgstr "Mahsulot so‘rash"
+
+msgid "Place an Order"
+msgstr "Buyurtma so‘rovi"
+
+msgid "Your Name"
+msgstr "Ismingiz"
+
+msgid "Phone Number"
+msgstr "Telefon raqam"
+
+msgid "Message (optional)"
+msgstr "Xabar (ixtiyoriy)"
+
+msgid "Send Request"
+msgstr "So‘rov yuborish"
+
+msgid "We will contact you shortly to confirm your order details."
+msgstr "Tez orada siz bilan bog‘lanamiz va tafsilotlarni tasdiqlaymiz."
+
+msgid "Premium Home Collection — 2025"
+msgstr "Premium uy kolleksiyasi — 2025"
+
+msgid "The Art of"
+msgstr "San’ati"
+
+msgid "Living Well"
+msgstr "Yaxshi yashash"
+
+msgid "Explore Collection"
+msgstr "Kolleksiyani ko‘rish"
+
+msgid "Browse Categories"
+msgstr "Kategoriyalarni ko‘rish"
+
+msgid "Scroll"
+msgstr "Pastga"
+
+msgid "Shop by"
+msgstr "Tanlang"
+
+msgid "View All"
+msgstr "Barchasini ko‘rish"
+
+msgid "items"
+msgstr "ta"
+
+msgid "Curated for you"
+msgstr "Siz uchun tanlangan"
+
+msgid "Featured Products"
+msgstr "Tanlangan mahsulotlar"
+
+msgid "All Products"
+msgstr "Barcha mahsulotlar"
+
+msgid "New"
+msgstr "Yangi"
+
+msgid "Popular"
+msgstr "Ommabop"
+
+msgid "New collection"
+msgstr "Yangi kolleksiya"
+
+msgid "Autumn — Winter"
+msgstr "Kuz — Qish"
+
+msgid "Discover Now"
+msgstr "Hozir ko‘rish"
+
+msgid "Our Partners"
+msgstr "Hamkorlarimiz"
+
+msgid "Premium Brands"
+msgstr "Premium brendlar"
+
+msgid "All Brands"
+msgstr "Barcha brendlar"
+
+msgid "Why Choose Us"
+msgstr "Nega aynan biz"
+
+msgid "Where Quality"
+msgstr "Sifat"
+
+msgid "Meets Design"
+msgstr "dizayn bilan uyg‘un"
+
+msgid "We curate the finest home goods from the world's most respected brands, bringing premium interior solutions to Uzbekistan's discerning homes."
+msgstr "Dunyoning eng nufuzli brendlaridan eng sara mahsulotlarni tanlab, O‘zbekistonga premium interyer yechimlarini olib kelamiz."
+
+msgid "Premium Products"
+msgstr "Premium mahsulotlar"
+
+msgid "Global Brands"
+msgstr "Jahon brendlari"
+
+msgid "Years Experience"
+msgstr "Yillik tajriba"
+
+msgid "Happy Clients"
+msgstr "Mamnun mijozlar"
+
+msgid "Latest"
+msgstr "So‘nggi"
+
+msgid "Stories & Inspiration"
+msgstr "Hikoyalar va ilhom"
+
+msgid "All Articles"
+msgstr "Barcha maqolalar"
+
+msgid "Interior"
+msgstr "Interyer"
+
+msgid "How to Style a Minimalist Living Room in 2025"
+msgstr "2025-yilda minimalistik mehmonxonani bezash"
+
+msgid "Trends"
+msgstr "Trendlar"
+
+msgid "The Return of Natural Materials in Modern Homes"
+msgstr "Zamonaviy uylarda tabiiy materiallarning qaytishi"
+
+msgid "Design"
+msgstr "Dizayn"
+
+msgid "Italian Furniture: A Guide to Timeless Elegance"
+msgstr "Italiya mebellari: abadiy nafislik bo‘yicha qo‘llanma"
+
+msgid "Ready to Transform?"
+msgstr "O‘zgartirishga tayyormisiz?"
+
+msgid "Your Dream"
+msgstr "Orzudagi"
+
+msgid "Home Awaits"
+msgstr "uy sizni kutmoqda"
+
+msgid "Browse our curated collection and request a consultation. Our design experts are ready to help."
+msgstr "Tanlangan kolleksiyamizni ko‘rib chiqing va maslahat so‘rang. Dizayn ekspertlarimiz yordam berishga tayyor."
+
+msgid "Explore Products"
+msgstr "Mahsulotlarni ko‘rish"
+
+msgid "Contact Us"
+msgstr "Biz bilan bog‘laning"
+
+msgid "products found"
+msgstr "ta mahsulot topildi"
+
+msgid "Showing our full collection"
+msgstr "To‘liq kolleksiya ko‘rsatilmoqda"
+
+msgid "Search products…"
+msgstr "Mahsulot qidirish…"
+
+msgid "Category"
+msgstr "Kategoriya"
+
+msgid "Brand"
+msgstr "Brend"
+
+msgid "Country"
+msgstr "Mamlakat"
+
+msgid "Tags"
+msgstr "Teglar"
+
+msgid "Apply Filters"
+msgstr "Filtrlarni qo‘llash"
+
+msgid "Reset All"
+msgstr "Hammasini tozalash"
+
+msgid "of"
+msgstr "dan"
+
+msgid "Showing all products"
+msgstr "Barcha mahsulotlar ko‘rsatilmoqda"
+
+msgid "Sort by"
+msgstr "Saralash"
+
+msgid "Name A–Z"
+msgstr "Nomi A–Z"
+
+msgid "Name Z–A"
+msgstr "Nomi Z–A"
+
+msgid "Newest First"
+msgstr "Eng yangilari avval"
+
+msgid "Sale"
+msgstr "Chegirma"
+
+msgid "Load More"
+msgstr "Yana yuklash"
+
+msgid "Browse by"
+msgstr "Tanlash"
+
+msgid "All Categories"
+msgstr "Barcha kategoriyalar"
+
+msgid "products"
+msgstr "mahsulot"
+
+msgid "More"
+msgstr "Ko‘proq"
+
+msgid "More Categories"
+msgstr "Ko‘proq kategoriyalar"
+
+msgid "Italy"
+msgstr "Italiya"
+
+msgid "Germany"
+msgstr "Germaniya"
+
+msgid "Denmark"
+msgstr "Daniya"
+
+msgid "USA"
+msgstr "AQSH"
+
+msgid "France"
+msgstr "Fransiya"
+
+msgid "Switzerland"
+msgstr "Shveysariya"
+
+msgid "Netherlands"
+msgstr "Niderlandiya"
+
+msgid "Spain"
+msgstr "Ispaniya"
+
+msgid "All"
+msgstr "Barchasi"
+
+msgid "Highlighted"
+msgstr "Ajratilgan"
+
+msgid "Featured Brands"
+msgstr "Tanlangan brendlar"
+
+msgid "Since 1948"
+msgstr "1948-yildan"
+
+msgid "Since 1966"
+msgstr "1966-yildan"
+
+msgid "products available"
+msgstr "ta mahsulot mavjud"
+
+msgid "Our Story"
+msgstr "Bizning hikoyamiz"
+
+msgid "Who We Are"
+msgstr "Biz kimmiz"
+
+msgid "Crafting Spaces"
+msgstr "Muhit yaratamiz"
+
+msgid "Worth Living In"
+msgstr "unda yashash yoqimli"
+
+msgid "Perfect Home was founded with a singular vision: to bring the world's finest home goods and interior products to Uzbekistan's most discerning homeowners and designers."
+msgstr "Perfect Home bitta maqsad bilan tashkil etilgan: dunyoning eng sara uy va interyer mahsulotlarini O‘zbekistondagi talabchan mijozlarga olib kelish."
+
+msgid "We believe that the objects we surround ourselves with shape how we feel, think, and live. That's why we partner exclusively with brands that share our uncompromising standards for quality, craftsmanship, and design."
+msgstr "Bizni o‘rab turgan buyumlar kayfiyatimiz va hayot tarzimizni belgilaydi deb hisoblaymiz. Shu sababli faqat sifat, mahorat va dizayn bo‘yicha yuksak talablarimizga mos brendlar bilan ishlaymiz."
+
+msgid "From Italian furniture icons to Scandinavian lighting innovators, every product in our catalog has been carefully selected by our team of design experts."
+msgstr "Italiya mebel ikonalaridan Skandinaviya yoritish innovatorlarigacha — katalogimizdagi har bir mahsulot dizayn ekspertlari tomonidan sinchiklab tanlangan."
+
+msgid "Our Collection"
+msgstr "Kolleksiyamiz"
+
+msgid "Get in Touch"
+msgstr "Bog‘lanish"
+
+msgid "Years in Business"
+msgstr "Bozorda yillar"
+
+msgid "Countries Sourced"
+msgstr "Ta’minot mamlakatlari"
+
+msgid "What We Believe"
+msgstr "Qadriyatlarimiz"
+
+msgid "Our Values"
+msgstr "Qadriyatlarimiz"
+
+msgid "Authenticity"
+msgstr "Haqiqiylik"
+
+msgid "Every product we carry is sourced directly from authorized distributors. We guarantee the genuine article — no compromises, no imitations."
+msgstr "Bizdagi mahsulotlar faqat rasmiy distributorlardan olinadi. Haqiqiylik kafolatlanadi — hech qanday murosasiz."
+
+msgid "Curation"
+msgstr "Tanlov"
+
+msgid "Our selection process is rigorous. Each brand and product earns its place in our catalog through exceptional design, quality, and longevity."
+msgstr "Tanlov jarayoni qat’iy: har bir brend va mahsulot dizayn, sifat va uzoq xizmat qilish orqali o‘z o‘rnini topadi."
+
+msgid "Partnership"
+msgstr "Hamkorlik"
+
+msgid "We build lasting relationships — with our brands, our clients, and our community. Your satisfaction is the foundation of everything we do."
+msgstr "Brendlar, mijozlar va hamjamiyat bilan uzoq muddatli aloqalarni quramiz. Sizning mamnunligingiz — ishimizning asosi."
+
+msgid "Behind the Brand"
+msgstr "Brend ortida"
+
+msgid "Our Team"
+msgstr "Jamoamiz"
+
+msgid "Founder & CEO"
+msgstr "Asoschi va CEO"
+
+msgid "Head of Design"
+msgstr "Dizayn bo‘limi rahbari"
+
+msgid "Brand Relations"
+msgstr "Brendlar bilan aloqa"
+
+msgid "Client Experience"
+msgstr "Mijozlar tajribasi"
+
+msgid "Visit Us"
+msgstr "Bizga tashrif buyuring"
+
+msgid "Experience Our Showroom"
+msgstr "Shourumimizni ko‘ring"
+
+msgid "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–19:00."
+msgstr "Sifatni ko‘ring, ushlab ko‘ring va his eting. Toshkentdagi shourumimiz dushanbadan shanbagacha 9:00–19:00 ochiq."
+
+msgid "Get Directions"
+msgstr "Yo‘lni ko‘rish"
+
+msgid "Reach Out"
+msgstr "Bog‘laning"
+
+msgid "We'd Love to Hear"
+msgstr "Sizdan"
+
+msgid "From You"
+msgstr "eshitishni xohlaymiz"
+
+msgid "Whether you have a question about a product, want to visit our showroom, or are planning a full interior project — our team is ready to help."
+msgstr "Mahsulot bo‘yicha savolingiz bo‘lsa, shourumga tashrif buyurmoqchi bo‘lsangiz yoki to‘liq interyer loyihasi rejalashtirsangiz — jamoamiz yordam berishga tayyor."
+
+msgid "Monday – Saturday: 09:00 – 19:00"
+msgstr "Dushanba – Shanba: 09:00 – 19:00"
+
+msgid "Sunday: Closed"
+msgstr "Yakshanba: yopiq"
+
+msgid "Social"
+msgstr "Ijtimoiy tarmoqlar"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Send a Message"
+msgstr "Xabar yuborish"
+
+msgid "Let's Talk"
+msgstr "Keling, gaplashamiz"
+
+msgid "Full Name"
+msgstr "To‘liq ism"
+
+msgid "Your full name"
+msgstr "To‘liq ismingiz"
+
+msgid "your@email.com"
+msgstr "your@email.com"
+
+msgid "Subject"
+msgstr "Mavzu"
+
+msgid "What is this about?"
+msgstr "Bu nima haqida?"
+
+msgid "Message"
+msgstr "Xabar"
+
+msgid "Your message…"
+msgstr "Xabaringiz…"
+
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Journal"
+msgstr "Jurnal"
+
+msgid "Stories and Inspiration"
+msgstr "Hikoyalar va ilhom"
+
+msgid "No posts yet."
+msgstr "Hozircha postlar yo‘q."
+
+msgid "Article"
+msgstr "Maqola"
+
+msgid "Product Detail"
+msgstr "Mahsulot tafsilotlari"
+
+msgid "Minotti"
+msgstr "Minotti"
+
+msgid "Article Number"
+msgstr "Artikul raqami"
+
+msgid "Italian Design"
+msgstr "Italiya dizayni"
+
+msgid "Handcrafted"
+msgstr "Qo‘lda ishlangan"
+
+msgid "Premium Fabric"
+msgstr "Premium mato"
+
+msgid "New Arrival"
+msgstr "Yangi kelgan"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "A masterpiece of Italian craftsmanship, this lounge chair combines premium velvet upholstery with a solid beech wood frame. Designed for those who appreciate the subtle luxury of exceptional materials and considered form. The gentle curves and generous proportions invite effortless relaxation."
+msgstr "Italiya ustachiligining durdonasi: bu kreslo premium baxmal va buk yog‘ochi karkasini uyg‘unlashtiradi. Noyob materiallar va puxta shaklni qadrlaydiganlar uchun yaratilgan. Yumshoq chiziqlar va keng proporsiyalar qulaylik beradi."
+
+msgid "Specifications"
+msgstr "Xususiyatlar"
+
+msgid "Origin"
+msgstr "Kelib chiqishi"
+
+msgid "Price"
+msgstr "Narx"
+
+msgid "Material"
+msgstr "Material"
+
+msgid "Dimensions"
+msgstr "O‘lchamlar"
+
+msgid "Velvet, Beech Wood"
+msgstr "Baxmal, buk yog‘ochi"
+
+msgid "W 80 × D 85 × H 78 cm"
+msgstr "K 80 × Ch 85 × B 78 sm"
+
+msgid "Weight"
+msgstr "Vazn"
+
+msgid "28 kg"
+msgstr "28 kg"
+
+msgid "Order Now"
+msgstr "Buyurtma berish"
+
+msgid "Share"
+msgstr "Ulashish"
+
+msgid "Have questions?"
+msgstr "Savollaringiz bormi?"
+
+msgid "You Might Also Like"
+msgstr "Sizga yoqishi mumkin"
+
+msgid "Related Products"
+msgstr "O‘xshash mahsulotlar"
+
+msgid "Perfect Home Interior"
+msgstr "Perfect Home interyeri"
+
+msgid "Eco"
+msgstr "Eko"
+
+msgid "Handmade"
+msgstr "Qo‘lda"
+
+msgid "Italian"
+msgstr "Italiyacha"
+
+msgid "About Perfect Home"
+msgstr "Perfect Home haqida"
+
+msgid "Apr 10, 2025"
+msgstr "10-aprel, 2025"
+
+msgid "Brass Side Table"
+msgstr "Latun yon stolcha"
+
+msgid "Ceramic Floor Lamp"
+msgstr "Keramik torcher"
+
+msgid "Close"
+msgstr "Yopish"
+
+msgid "Close menu"
+msgstr "Menyuni yopish"
+
+msgid "Concrete Bookshelf"
+msgstr "Beton kitob javoni"
+
+msgid "Enter your password"
+msgstr "Parolni kiriting"
+
+msgid "Enter your username"
+msgstr "Foydalanuvchi nomini kiriting"
+
+msgid "Floor Lamp"
+msgstr "Torcher"
+
+msgid "Glass Coffee Table"
+msgstr "Shisha jurnal stolcha"
+
+msgid "Glass Pendant Light"
+msgstr "Shisha osma chiroq"
+
+msgid "Interior Design"
+msgstr "Interyer dizayni"
+
+msgid "Jun 15, 2025"
+msgstr "15-iyun, 2025"
+
+msgid "Leather Armchair"
+msgstr "Charm kreslo"
+
+msgid "Linen Sofa Set"
+msgstr "Zig‘ir divan to‘plami"
+
+msgid "Linen Sofa — 3 Seat"
+msgstr "Zig‘ir divan — 3 o‘rinli"
+
+msgid "Marble Coffee Table"
+msgstr "Marmar jurnal stolcha"
+
+msgid "Marble Side Table"
+msgstr "Marmar yon stolcha"
+
+msgid "May 28, 2025"
+msgstr "28-may, 2025"
+
+msgid "No account yet?"
+msgstr "Hali akkauntingiz yo‘qmi?"
+
+msgid "Oak Dining Table"
+msgstr "Eman ovqat stoli"
+
+msgid "Oak Dining Table 220"
+msgstr "Eman ovqat stoli 220 sm"
+
+msgid "Oak Side Table"
+msgstr "Eman yon stolcha"
+
+msgid "Open menu"
+msgstr "Menyuni ochish"
+
+msgid "Our Showroom"
+msgstr "Bizning shourum"
+
+msgid "Password"
+msgstr "Parol"
+
+msgid "Product"
+msgstr "Mahsulot"
+
+msgid "Rattan Lounge Chair"
+msgstr "Rattan launj-kreslo"
+
+msgid "Register"
+msgstr "Ro‘yxatdan o‘tish"
+
+msgid "Related"
+msgstr "O‘xshash"
+
+msgid "Search brands…"
+msgstr "Brendlarni qidirish…"
+
+msgid "Showroom"
+msgstr "Shourum"
+
+msgid "Sign In"
+msgstr "Kirish"
+
+msgid "Teak Bed Frame"
+msgstr "Tik yog‘och karavot karkasi"
+
+msgid "Teak King Bed Frame"
+msgstr "Tik yog‘och king-size karavot karkasi"
+
+msgid "Team member"
+msgstr "Jamoa a’zosi"
+
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+msgid "Velvet Lounge Chair"
+msgstr "Baxmal launj-kreslo"
+
+msgid "View 1"
+msgstr "Ko‘rinish 1"
+
+msgid "View 2"
+msgstr "Ko‘rinish 2"
+
+msgid "View 3"
+msgstr "Ko‘rinish 3"
+
+msgid "View 4"
+msgstr "Ko‘rinish 4"
+
+msgid "Wool Area Rug"
+msgstr "Jun gilam"
+
+msgid "Wool Area Rug 2×3m"
+msgstr "Jun gilam 2×3 m"
+
+msgid "Wool Throw"
+msgstr "Jun pled"

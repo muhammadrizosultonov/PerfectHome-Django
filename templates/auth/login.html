@@ -1,0 +1,79 @@
+<!-- templates/auth/login.html -->
+{% load i18n %}
+
+{% block title %}{% trans "Sign In" %}{% endblock %}
+
+<form method="post" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    
+    <!-- Явная проверка CSRF токена -->
+    {% if csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    {% endif %}
+    
+    <div class="mb-3">
+        <label for="username" class="form-label">
+            <i class="bi bi-person-circle"></i> {% trans "Username" %}
+        </label>
+        <input type="text" 
+               name="username" 
+               id="username"
+               class="form-control {% if error %}is-invalid{% endif %}" 
+               placeholder="{% trans 'Enter your username' %}"
+               required>
+    </div>
+    
+    <div class="mb-4">
+        <label for="password" class="form-label">
+            <i class="bi bi-lock"></i> {% trans "Password" %}
+        </label>
+        <input type="password" 
+               name="password" 
+               id="password"
+               class="form-control {% if error %}is-invalid{% endif %}" 
+               placeholder="{% trans 'Enter your password' %}"
+               required>
+        {% if error %}
+            <div class="invalid-feedback">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+    
+    <button type="submit" class="btn btn-auth w-100 mb-3">
+        <i class="bi bi-box-arrow-in-right"></i> {% trans "Sign In" %}
+    </button>
+    
+    <div class="text-center">
+        <p class="mb-0">{% trans "No account yet?" %} 
+            <a href="{% url 'users:register' %}" class="text-decoration-none">
+                {% trans "Register" %}
+            </a>
+        </p>
+    </div>
+</form>
+
+<script>
+// Добавляем CSRF токен в заголовки для AJAX запросов (если нужно)
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+// Устанавливаем CSRF токен для всех AJAX запросов
+const csrftoken = getCookie('csrftoken');
+if (csrftoken) {
+    // Для fetch API
+    window.csrfToken = csrftoken;
+}
+</script>

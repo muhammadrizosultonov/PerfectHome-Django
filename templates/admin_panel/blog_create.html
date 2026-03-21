@@ -1,0 +1,62 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Создание поста{% endblock %}
+{% block header %}Создание нового поста{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <label class="form-label">Заголовок *</label>
+                            <input type="text" name="title" class="form-control" required>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Slug *</label>
+                            <input type="text" name="slug" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Обложка</label>
+                        <input type="file" name="cover_image" class="form-control" accept="image/*">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Содержание *</label>
+                        <textarea name="content" class="form-control" rows="10" required></textarea>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_blog_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Опубликовать
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Автоматическое заполнение slug
+document.querySelector('input[name="title"]').addEventListener('input', function() {
+    let slug = this.value
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-');
+    document.querySelector('input[name="slug"]').value = slug;
+});
+</script>
+{% endblock %}

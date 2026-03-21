@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "About Us" %}{% endblock %}
+{% block nav_about %}active{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+
+  <!-- HERO -->
+  <section class="relative h-[60vh] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1800&q=85&fit=crop" alt="{% trans 'About Perfect Home' %}" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-charcoal/60"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="max-w-screen-xl mx-auto px-6 lg:px-10 pb-16 w-full">
+        <div class="flex items-center gap-3 mb-6">
+          <a href="{% url 'core:home' %}" class="breadcrumb-item text-white/60">{% trans "Home" %}</a>
+          <span class="text-white/30 text-xs">/</span>
+          <span class="text-xs uppercase tracking-widest text-white/60">{% trans "About" %}</span>
+        </div>
+        <p class="section-label text-accent-light mb-3">{% trans "Our Story" %}</p>
+        <h1 class="font-display text-5xl md:text-7xl font-light text-white leading-tight">
+          Perfect Home
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="py-24">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <p class="section-label mb-6">{% trans "Who We Are" %}</p>
+          <h2 class="section-title mb-8">{% trans "Crafting Spaces" %}<br>{% trans "Worth Living In" %}</h2>
+          <div class="flex flex-col gap-5 text-stone leading-relaxed">
+            <p>{% trans "Perfect Home was founded with a singular vision: to bring the world's finest home goods and interior products to Uzbekistan's most discerning homeowners and designers." %}</p>
+            <p>{% trans "We believe that the objects we surround ourselves with shape how we feel, think, and live. That's why we partner exclusively with brands that share our uncompromising standards for quality, craftsmanship, and design." %}</p>
+            <p>{% trans "From Italian furniture icons to Scandinavian lighting innovators, every product in our catalog has been carefully selected by our team of design experts." %}</p>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-10">
+            <a href="{% url 'products:catalog' %}" class="btn-primary">{% trans "Our Collection" %}</a>
+            <a href="{% url 'core:contact' %}" class="btn-outline">{% trans "Get in Touch" %}</a>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=85&fit=crop" alt="{% trans 'Our Showroom' %}" class="w-full aspect-[4/5] object-cover">
+          <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-cream hidden lg:flex items-center justify-center text-center p-6">
+            <div>
+              <div class="font-display text-5xl font-light text-accent">8+</div>
+              <p class="text-xs text-stone uppercase tracking-widest mt-1">{% trans "Years in Business" %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-20 bg-charcoal">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div class="text-center">
+          <div class="about-stat-num">500+</div>
+          <p class="text-xs text-stone uppercase tracking-widest mt-2">{% trans "Premium Products" %}</p>
+        </div>
+        <div class="text-center">
+          <div class="about-stat-num">40+</div>
+          <p class="text-xs text-stone uppercase tracking-widest mt-2">{% trans "Global Brands" %}</p>
+        </div>
+        <div class="text-center">
+          <div class="about-stat-num">1,200+</div>
+          <p class="text-xs text-stone uppercase tracking-widest mt-2">{% trans "Happy Clients" %}</p>
+        </div>
+        <div class="text-center">
+          <div class="about-stat-num">15+</div>
+          <p class="text-xs text-stone uppercase tracking-widest mt-2">{% trans "Countries Sourced" %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">{% trans "What We Believe" %}</p>
+        <h2 class="section-title">{% trans "Our Values" %}</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-10">
+          <div class="w-12 h-px bg-accent mb-8"></div>
+          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Authenticity" %}</h3>
+          <p class="text-stone leading-relaxed text-sm">{% trans "Every product we carry is sourced directly from authorized distributors. We guarantee the genuine article — no compromises, no imitations." %}</p>
+        </div>
+        <div class="bg-white p-10">
+          <div class="w-12 h-px bg-accent mb-8"></div>
+          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Curation" %}</h3>
+          <p class="text-stone leading-relaxed text-sm">{% trans "Our selection process is rigorous. Each brand and product earns its place in our catalog through exceptional design, quality, and longevity." %}</p>
+        </div>
+        <div class="bg-white p-10">
+          <div class="w-12 h-px bg-accent mb-8"></div>
+          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Partnership" %}</h3>
+          <p class="text-stone leading-relaxed text-sm">{% trans "We build lasting relationships — with our brands, our clients, and our community. Your satisfaction is the foundation of everything we do." %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-24">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="mb-14">
+        <p class="section-label mb-4">{% trans "Behind the Brand" %}</p>
+        <h2 class="section-title">{% trans "Our Team" %}</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for member in team_members|default:'' %}
+        <div>
+          <div class="aspect-[3/4] overflow-hidden mb-4 bg-cream">
+            {% if member.photo %}
+            <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="w-full h-full object-cover">
+            {% else %}
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ member.name }}" class="w-full h-full object-cover">
+            {% endif %}
+          </div>
+          <h3 class="font-display text-xl font-light text-charcoal">{{ member.name }}</h3>
+          <p class="text-xs text-stone uppercase tracking-widest mt-1">{{ member.role }}</p>
+        </div>
+        {% empty %}
+        {% for person in "Dilnoza Karimova|Founder & CEO,Akbar Nazarov|Head of Design,Malika Umarova|Brand Relations" %}
+        <div>
+          <div class="aspect-[3/4] overflow-hidden mb-4 bg-cream">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Team member' %}" class="w-full h-full object-cover">
+          </div>
+          <h3 class="font-display text-xl font-light text-charcoal">{{ person|cut:"|Founder & CEO"|cut:"|Head of Design"|cut:"|Brand Relations"|cut:"|Client Experience" }}</h3>
+          <p class="text-xs text-stone uppercase tracking-widest mt-1">
+            {% if forloop.counter == 1 %}{% trans "Founder & CEO" %}
+            {% elif forloop.counter == 2 %}{% trans "Head of Design" %}
+            {% elif forloop.counter == 3 %}{% trans "Brand Relations" %}
+            {% else %}{% trans "Client Experience" %}{% endif %}
+          </p>
+        </div>
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=1800&q=85&fit=crop" alt="{% trans 'Showroom' %}" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-charcoal/65"></div>
+    <div class="relative max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+      <p class="section-label text-accent-light mb-4">{% trans "Visit Us" %}</p>
+      <h2 class="font-display text-5xl md:text-6xl font-light text-white mb-8">{% trans "Experience Our Showroom" %}</h2>
+      <p class="text-white/70 max-w-lg mx-auto mb-10 leading-relaxed">{% trans "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–19:00." %}</p>
+      <a href="{% url 'core:contact' %}" class="btn-accent">{% trans "Get Directions" %}</a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

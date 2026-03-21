@@ -1,0 +1,45 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Создание бренда{% endblock %}
+{% block header %}Создание нового бренда{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Название бренда *</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Логотип</label>
+                        <input type="file" name="logo" class="form-control" accept="image/*">
+                        <small class="text-muted">Рекомендуемый размер: 200x200px</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Описание</label>
+                        <textarea name="description" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_brand_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Создать бренд
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

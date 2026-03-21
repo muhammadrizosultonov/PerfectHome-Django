@@ -1,0 +1,740 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: perfecthome\n"
+"POT-Creation-Date: 2026-03-21 00:00+0000\n"
+"PO-Revision-Date: 2026-03-21 00:00+0000\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+msgid "Premium Home Goods"
+msgstr "Премиальные товары для дома"
+
+msgid "Perfect Home — premium home goods and interior products in Uzbekistan."
+msgstr "Perfect Home — премиальные товары для дома и интерьерные решения в Узбекистане."
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Products"
+msgstr "Товары"
+
+msgid "Brands"
+msgstr "Бренды"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "About Us"
+msgstr "О компании"
+
+msgid "Navigation"
+msgstr "Навигация"
+
+msgid "Living Room"
+msgstr "Гостиная"
+
+msgid "Bedroom"
+msgstr "Спальня"
+
+msgid "Kitchen"
+msgstr "Кухня"
+
+msgid "Bathroom"
+msgstr "Ванная"
+
+msgid "Outdoor"
+msgstr "Терраса"
+
+msgid "Office"
+msgstr "Офис"
+
+msgid "Decor"
+msgstr "Декор"
+
+msgid "Lighting"
+msgstr "Освещение"
+
+msgid "Textiles"
+msgstr "Текстиль"
+
+msgid "Storage"
+msgstr "Хранение"
+
+msgid "Premium home goods and interior products. Elevating everyday living in Uzbekistan."
+msgstr "Премиальные товары для дома и интерьера. Повышаем качество жизни в Узбекистане."
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Tashkent, Uzbekistan"
+msgstr "Ташкент, Узбекистан"
+
+msgid "Amir Temur Avenue, 15"
+msgstr "Проспект Амира Темура, 15"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Working Hours"
+msgstr "Часы работы"
+
+msgid "Mon–Sat: 09:00–19:00"
+msgstr "Пн–Сб: 09:00–19:00"
+
+msgid "All rights reserved."
+msgstr "Все права защищены."
+
+msgid "Designed with care in Tashkent"
+msgstr "Сделано с заботой в Ташкенте"
+
+msgid "Request a product"
+msgstr "Запросить товар"
+
+msgid "Place an Order"
+msgstr "Оформить запрос"
+
+msgid "Your Name"
+msgstr "Ваше имя"
+
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+msgid "Message (optional)"
+msgstr "Сообщение (необязательно)"
+
+msgid "Send Request"
+msgstr "Отправить запрос"
+
+msgid "We will contact you shortly to confirm your order details."
+msgstr "Мы свяжемся с вами в ближайшее время для подтверждения деталей."
+
+msgid "Premium Home Collection — 2025"
+msgstr "Премиальная коллекция дома — 2025"
+
+msgid "The Art of"
+msgstr "Искусство"
+
+msgid "Living Well"
+msgstr "Комфортной жизни"
+
+msgid "Explore Collection"
+msgstr "Смотреть коллекцию"
+
+msgid "Browse Categories"
+msgstr "Категории"
+
+msgid "Scroll"
+msgstr "Прокрутка"
+
+msgid "Shop by"
+msgstr "Выберите"
+
+msgid "View All"
+msgstr "Смотреть все"
+
+msgid "items"
+msgstr "позиций"
+
+msgid "Curated for you"
+msgstr "Подобрано для вас"
+
+msgid "Featured Products"
+msgstr "Избранные товары"
+
+msgid "All Products"
+msgstr "Все товары"
+
+msgid "New"
+msgstr "Новинка"
+
+msgid "Popular"
+msgstr "Популярное"
+
+msgid "New collection"
+msgstr "Новая коллекция"
+
+msgid "Autumn — Winter"
+msgstr "Осень — Зима"
+
+msgid "Discover Now"
+msgstr "Открыть сейчас"
+
+msgid "Our Partners"
+msgstr "Наши партнеры"
+
+msgid "Premium Brands"
+msgstr "Премиальные бренды"
+
+msgid "All Brands"
+msgstr "Все бренды"
+
+msgid "Why Choose Us"
+msgstr "Почему выбирают нас"
+
+msgid "Where Quality"
+msgstr "Где качество"
+
+msgid "Meets Design"
+msgstr "встречает дизайн"
+
+msgid "We curate the finest home goods from the world's most respected brands, bringing premium interior solutions to Uzbekistan's discerning homes."
+msgstr "Мы отбираем лучшие товары для дома от самых уважаемых брендов мира и привозим премиальные интерьерные решения в Узбекистан."
+
+msgid "Premium Products"
+msgstr "Премиальные товары"
+
+msgid "Global Brands"
+msgstr "Мировые бренды"
+
+msgid "Years Experience"
+msgstr "Лет опыта"
+
+msgid "Happy Clients"
+msgstr "Довольных клиентов"
+
+msgid "Latest"
+msgstr "Последние"
+
+msgid "Stories & Inspiration"
+msgstr "Истории и вдохновение"
+
+msgid "All Articles"
+msgstr "Все статьи"
+
+msgid "Interior"
+msgstr "Интерьер"
+
+msgid "How to Style a Minimalist Living Room in 2025"
+msgstr "Как оформить минималистичную гостиную в 2025 году"
+
+msgid "Trends"
+msgstr "Тренды"
+
+msgid "The Return of Natural Materials in Modern Homes"
+msgstr "Возвращение натуральных материалов в современных домах"
+
+msgid "Design"
+msgstr "Дизайн"
+
+msgid "Italian Furniture: A Guide to Timeless Elegance"
+msgstr "Итальянская мебель: гид по вечной элегантности"
+
+msgid "Ready to Transform?"
+msgstr "Готовы к переменам?"
+
+msgid "Your Dream"
+msgstr "Ваша мечта"
+
+msgid "Home Awaits"
+msgstr "ждет дома"
+
+msgid "Browse our curated collection and request a consultation. Our design experts are ready to help."
+msgstr "Выберите из нашей коллекции и запросите консультацию. Наши эксперты готовы помочь."
+
+msgid "Explore Products"
+msgstr "Смотреть товары"
+
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+msgid "products found"
+msgstr "товаров найдено"
+
+msgid "Showing our full collection"
+msgstr "Показана полная коллекция"
+
+msgid "Search products…"
+msgstr "Поиск товаров…"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Brand"
+msgstr "Бренд"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Apply Filters"
+msgstr "Применить фильтры"
+
+msgid "Reset All"
+msgstr "Сбросить все"
+
+msgid "of"
+msgstr "из"
+
+msgid "Showing all products"
+msgstr "Показаны все товары"
+
+msgid "Sort by"
+msgstr "Сортировка"
+
+msgid "Name A–Z"
+msgstr "Название A–Z"
+
+msgid "Name Z–A"
+msgstr "Название Z–A"
+
+msgid "Newest First"
+msgstr "Сначала новые"
+
+msgid "Sale"
+msgstr "Скидка"
+
+msgid "Load More"
+msgstr "Загрузить еще"
+
+msgid "Browse by"
+msgstr "Смотреть по"
+
+msgid "All Categories"
+msgstr "Все категории"
+
+msgid "products"
+msgstr "товаров"
+
+msgid "More"
+msgstr "Еще"
+
+msgid "More Categories"
+msgstr "Больше категорий"
+
+msgid "Italy"
+msgstr "Италия"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "Denmark"
+msgstr "Дания"
+
+msgid "USA"
+msgstr "США"
+
+msgid "France"
+msgstr "Франция"
+
+msgid "Switzerland"
+msgstr "Швейцария"
+
+msgid "Netherlands"
+msgstr "Нидерланды"
+
+msgid "Spain"
+msgstr "Испания"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Highlighted"
+msgstr "Выделенные"
+
+msgid "Featured Brands"
+msgstr "Избранные бренды"
+
+msgid "Since 1948"
+msgstr "С 1948"
+
+msgid "Since 1966"
+msgstr "С 1966"
+
+msgid "products available"
+msgstr "товаров доступно"
+
+msgid "Our Story"
+msgstr "Наша история"
+
+msgid "Who We Are"
+msgstr "Кто мы"
+
+msgid "Crafting Spaces"
+msgstr "Создаем пространства"
+
+msgid "Worth Living In"
+msgstr "в которых приятно жить"
+
+msgid "Perfect Home was founded with a singular vision: to bring the world's finest home goods and interior products to Uzbekistan's most discerning homeowners and designers."
+msgstr "Perfect Home был создан с одной целью — привезти лучшие товары для дома и интерьера в Узбекистан для самых требовательных клиентов."
+
+msgid "We believe that the objects we surround ourselves with shape how we feel, think, and live. That's why we partner exclusively with brands that share our uncompromising standards for quality, craftsmanship, and design."
+msgstr "Мы верим, что окружающие нас предметы формируют наше настроение и образ жизни. Поэтому мы сотрудничаем только с брендами, которые разделяют наши высокие стандарты качества, мастерства и дизайна."
+
+msgid "From Italian furniture icons to Scandinavian lighting innovators, every product in our catalog has been carefully selected by our team of design experts."
+msgstr "От итальянских мебельных икон до скандинавских новаторов освещения — каждый товар в каталоге тщательно отобран нашими экспертами."
+
+msgid "Our Collection"
+msgstr "Наша коллекция"
+
+msgid "Get in Touch"
+msgstr "Связаться"
+
+msgid "Years in Business"
+msgstr "Лет на рынке"
+
+msgid "Countries Sourced"
+msgstr "Стран поставок"
+
+msgid "What We Believe"
+msgstr "Во что мы верим"
+
+msgid "Our Values"
+msgstr "Наши ценности"
+
+msgid "Authenticity"
+msgstr "Подлинность"
+
+msgid "Every product we carry is sourced directly from authorized distributors. We guarantee the genuine article — no compromises, no imitations."
+msgstr "Мы поставляем товары только от официальных дистрибьюторов. Гарантируем подлинность без компромиссов."
+
+msgid "Curation"
+msgstr "Кураторство"
+
+msgid "Our selection process is rigorous. Each brand and product earns its place in our catalog through exceptional design, quality, and longevity."
+msgstr "Наш отбор строгий: каждый бренд и продукт заслуживает место благодаря дизайну, качеству и долговечности."
+
+msgid "Partnership"
+msgstr "Партнерство"
+
+msgid "We build lasting relationships — with our brands, our clients, and our community. Your satisfaction is the foundation of everything we do."
+msgstr "Мы строим долгосрочные отношения с брендами, клиентами и сообществом. Ваше удовлетворение — основа нашей работы."
+
+msgid "Behind the Brand"
+msgstr "За брендом"
+
+msgid "Our Team"
+msgstr "Наша команда"
+
+msgid "Founder & CEO"
+msgstr "Основатель и CEO"
+
+msgid "Head of Design"
+msgstr "Руководитель дизайна"
+
+msgid "Brand Relations"
+msgstr "Работа с брендами"
+
+msgid "Client Experience"
+msgstr "Клиентский сервис"
+
+msgid "Visit Us"
+msgstr "Посетите нас"
+
+msgid "Experience Our Showroom"
+msgstr "Оцените наш шоурум"
+
+msgid "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–19:00."
+msgstr "Посмотрите, потрогайте и почувствуйте качество лично. Шоурум в Ташкенте открыт с понедельника по субботу, 9:00–19:00."
+
+msgid "Get Directions"
+msgstr "Как добраться"
+
+msgid "Reach Out"
+msgstr "Свяжитесь с нами"
+
+msgid "We'd Love to Hear"
+msgstr "Мы будем рады"
+
+msgid "From You"
+msgstr "услышать вас"
+
+msgid "Whether you have a question about a product, want to visit our showroom, or are planning a full interior project — our team is ready to help."
+msgstr "Если у вас есть вопрос о товаре, вы хотите посетить шоурум или планируете полный интерьерный проект — наша команда готова помочь."
+
+msgid "Monday – Saturday: 09:00 – 19:00"
+msgstr "Пн–Сб: 09:00–19:00"
+
+msgid "Sunday: Closed"
+msgstr "Воскресенье: выходной"
+
+msgid "Social"
+msgstr "Социальные сети"
+
+msgid "Instagram"
+msgstr "Инстаграм"
+
+msgid "Telegram"
+msgstr "Телеграм"
+
+msgid "Facebook"
+msgstr "Фейсбук"
+
+msgid "Send a Message"
+msgstr "Отправить сообщение"
+
+msgid "Let's Talk"
+msgstr "Давайте обсудим"
+
+msgid "Full Name"
+msgstr "Полное имя"
+
+msgid "Your full name"
+msgstr "Ваше полное имя"
+
+msgid "your@email.com"
+msgstr "your@email.com"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "What is this about?"
+msgstr "О чем это?"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Your message…"
+msgstr "Ваше сообщение…"
+
+msgid "Send Message"
+msgstr "Отправить"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Journal"
+msgstr "Журнал"
+
+msgid "Stories and Inspiration"
+msgstr "Истории и вдохновение"
+
+msgid "No posts yet."
+msgstr "Пока нет записей."
+
+msgid "Article"
+msgstr "Статья"
+
+msgid "Product Detail"
+msgstr "Детали товара"
+
+msgid "Minotti"
+msgstr "Minotti"
+
+
+msgid "Italian Design"
+msgstr "Итальянский дизайн"
+
+msgid "Handcrafted"
+msgstr "Ручная работа"
+
+msgid "Premium Fabric"
+msgstr "Премиальная ткань"
+
+msgid "New Arrival"
+msgstr "Новое поступление"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "A masterpiece of Italian craftsmanship, this lounge chair combines premium velvet upholstery with a solid beech wood frame. Designed for those who appreciate the subtle luxury of exceptional materials and considered form. The gentle curves and generous proportions invite effortless relaxation."
+msgstr "Шедевр итальянского мастерства: это кресло сочетает премиальный бархат и каркас из бука. Создано для тех, кто ценит утонченную роскошь материалов и продуманную форму. Мягкие линии и щедрые пропорции дарят комфорт."
+
+msgid "Specifications"
+msgstr "Характеристики"
+
+msgid "Article Number"
+msgstr "Артикул"
+
+msgid "Origin"
+msgstr "Страна"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Material"
+msgstr "Материал"
+
+msgid "Dimensions"
+msgstr "Размеры"
+
+msgid "Velvet, Beech Wood"
+msgstr "Бархат, Бук"
+
+msgid "W 80 × D 85 × H 78 cm"
+msgstr "Ш 80 × Г 85 × В 78 см"
+
+msgid "Weight"
+msgstr "Вес"
+
+msgid "28 kg"
+msgstr "28 кг"
+
+msgid "Order Now"
+msgstr "Заказать"
+
+msgid "Share"
+msgstr "Поделиться"
+
+msgid "Have questions?"
+msgstr "Есть вопросы?"
+
+msgid "You Might Also Like"
+msgstr "Вам также может понравиться"
+
+msgid "Related Products"
+msgstr "Похожие товары"
+
+msgid "Perfect Home Interior"
+msgstr "Интерьер Perfect Home"
+
+msgid "Eco"
+msgstr "Эко"
+
+msgid "Handmade"
+msgstr "Ручная работа"
+
+msgid "Italian"
+msgstr "Итальянский"
+
+msgid "About Perfect Home"
+msgstr "О компании Perfect Home"
+
+msgid "Apr 10, 2025"
+msgstr "10 апреля 2025"
+
+msgid "Brass Side Table"
+msgstr "Латунный приставной столик"
+
+msgid "Ceramic Floor Lamp"
+msgstr "Керамический торшер"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Close menu"
+msgstr "Закрыть меню"
+
+msgid "Concrete Bookshelf"
+msgstr "Бетонный книжный стеллаж"
+
+msgid "Enter your password"
+msgstr "Введите пароль"
+
+msgid "Enter your username"
+msgstr "Введите имя пользователя"
+
+msgid "Floor Lamp"
+msgstr "Торшер"
+
+msgid "Glass Coffee Table"
+msgstr "Стеклянный журнальный столик"
+
+msgid "Glass Pendant Light"
+msgstr "Стеклянный подвесной светильник"
+
+msgid "Interior Design"
+msgstr "Дизайн интерьера"
+
+msgid "Jun 15, 2025"
+msgstr "15 июня 2025"
+
+msgid "Leather Armchair"
+msgstr "Кожаное кресло"
+
+msgid "Linen Sofa Set"
+msgstr "Льняной диванный набор"
+
+msgid "Linen Sofa — 3 Seat"
+msgstr "Льняной диван — 3-местный"
+
+msgid "Marble Coffee Table"
+msgstr "Мраморный журнальный столик"
+
+msgid "Marble Side Table"
+msgstr "Мраморный приставной столик"
+
+msgid "May 28, 2025"
+msgstr "28 мая 2025"
+
+msgid "No account yet?"
+msgstr "Еще нет аккаунта?"
+
+msgid "Oak Dining Table"
+msgstr "Обеденный стол из дуба"
+
+msgid "Oak Dining Table 220"
+msgstr "Обеденный стол из дуба 220 см"
+
+msgid "Oak Side Table"
+msgstr "Дубовый приставной столик"
+
+msgid "Open menu"
+msgstr "Открыть меню"
+
+msgid "Our Showroom"
+msgstr "Наш шоурум"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Product"
+msgstr "Товар"
+
+msgid "Rattan Lounge Chair"
+msgstr "Лаунж-кресло из ротанга"
+
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+msgid "Related"
+msgstr "Похожие"
+
+msgid "Search brands…"
+msgstr "Поиск брендов…"
+
+msgid "Showroom"
+msgstr "Шоурум"
+
+msgid "Sign In"
+msgstr "Войти"
+
+msgid "Teak Bed Frame"
+msgstr "Каркас кровати из тика"
+
+msgid "Teak King Bed Frame"
+msgstr "Каркас кровати king-size из тика"
+
+msgid "Team member"
+msgstr "Член команды"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Velvet Lounge Chair"
+msgstr "Вельветовое лаунж-кресло"
+
+msgid "View 1"
+msgstr "Вид 1"
+
+msgid "View 2"
+msgstr "Вид 2"
+
+msgid "View 3"
+msgstr "Вид 3"
+
+msgid "View 4"
+msgstr "Вид 4"
+
+msgid "Wool Area Rug"
+msgstr "Шерстяной ковёр"
+
+msgid "Wool Area Rug 2×3m"
+msgstr "Шерстяной ковёр 2×3 м"
+
+msgid "Wool Throw"
+msgstr "Шерстяной плед"

@@ -1,0 +1,50 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Редактирование бренда{% endblock %}
+{% block header %}Редактирование бренда "{{ brand.name }}"{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Название бренда *</label>
+                        <input type="text" name="name" class="form-control" value="{{ brand.name }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Текущий логотип</label>
+                        {% if brand.logo %}
+                            <div class="mb-2">
+                                <img src="{{ brand.logo.url }}" style="max-height: 100px;" class="img-thumbnail">
+                            </div>
+                        {% endif %}
+                        <label class="form-label">Изменить логотип</label>
+                        <input type="file" name="logo" class="form-control" accept="image/*">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Описание</label>
+                        <textarea name="description" class="form-control" rows="4">{{ brand.description }}</textarea>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_brand_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Назад
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Сохранить изменения
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

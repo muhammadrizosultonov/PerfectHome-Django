@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Products" %}{% endblock %}
+{% block nav_products %}active{% endblock %}
+
+{% block content %}
+<div class="pt-16 lg:pt-20">
+
+  <!-- Page Header -->
+  <div class="bg-cream py-16">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+      <div class="flex items-center gap-3 mb-4">
+        <a href="{% url 'core:home' %}" class="breadcrumb-item">{% trans "Home" %}</a>
+        <span class="text-warm-gray text-xs">/</span>
+        <span class="text-xs uppercase tracking-widest text-charcoal">{% trans "Products" %}</span>
+      </div>
+      <h1 class="section-title">{% trans "All Products" %}</h1>
+      <p class="text-stone mt-3">
+        {% if products %}{{ products.paginator.count }} {% trans "products found" %}{% else %}{% trans "Showing our full collection" %}{% endif %}
+      </p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      <!-- ─── SIDEBAR ─── -->
+      <aside class="lg:w-64 flex-shrink-0">
+        <form method="GET">
+
+          <!-- Search -->
+          <div class="mb-8 relative">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-stone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="search" name="q" value="{{ query }}" placeholder="{% trans 'Search products…' %}" class="search-input">
+          </div>
+
+          <!-- Categories -->
+          <div class="filter-section mb-6 pb-6">
+            <p class="filter-title">{% trans "Category" %}</p>
+            {% for cat in categories|default:'' %}
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="{{ cat.id }}" class="filter-checkbox"
+                {% if cat.id|stringformat:"s" in selected_categories %}checked{% endif %}>
+              <span>{{ cat.name }}</span>
+              <span class="ml-auto text-xs text-warm-gray">{{ cat.product_count }}</span>
+            </label>
+            {% empty %}
+            {% for cat_name in "Living Room,Bedroom,Kitchen,Bathroom,Outdoor,Office" %}
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="{{ forloop.counter }}" class="filter-checkbox">
+              <span>{% trans cat_name %}</span>
+              <span class="ml-auto text-xs text-warm-gray">{{ forloop.counter }}2</span>
+            </label>
+            {% endfor %}
+            {% endfor %}
+          </div>
+
+          <!-- Brands -->
+          <div class="filter-section mb-6 pb-6">
+            <p class="filter-title">{% trans "Brand" %}</p>
+            {% for brand in filter_brands|default:'' %}
+            <label class="filter-option">
+              <input type="checkbox" name="brand" value="{{ brand.id }}" class="filter-checkbox"
+                {% if brand.id|stringformat:"s" in selected_brands %}checked{% endif %}>
+              <span>{{ brand.name }}</span>
+            </label>
+            {% empty %}
+            {% for brand_name in "Minotti,B&B Italia,Poliform,Cassina,Knoll,Vitra" %}
+            <label class="filter-option">
+              <input type="checkbox" name="brand" value="{{ forloop.counter }}" class="filter-checkbox">
+              <span>{{ brand_name }}</span>
+            </label>
+            {% endfor %}
+            {% endfor %}
+          </div>
+
+          <!-- Country of Origin -->
+          <div class="filter-section mb-6 pb-6">
+            <p class="filter-title">{% trans "Country" %}</p>
+            {% for country in countries|default:'' %}
+            <label class="filter-option">
+              <input type="checkbox" name="country" value="{{ country }}" class="filter-checkbox"
+                {% if country in selected_countries %}checked{% endif %}>
+              <span>{% trans country %}</span>
+            </label>
+            {% empty %}
+            {% for country in "Italy,Germany,Denmark,USA,France,Spain" %}
+            <label class="filter-option">
+              <input type="checkbox" name="country" value="{{ country }}" class="filter-checkbox">
+              <span>{{ country }}</span>
+            </label>
+            {% endfor %}
+            {% endfor %}
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-8">
+            <p class="filter-title">{% trans "Tags" %}</p>
+            <div class="flex flex-wrap gap-2">
+              {% for tag in tags|default:'' %}
+              <a href="?tag={{ tag.slug }}" class="text-xs px-3 py-1 border border-warm-gray text-stone hover:border-accent hover:text-accent transition-colors">{{ tag.name }}</a>
+              {% empty %}
+              {% for tag in "New,Popular,Sale,Eco,Handmade,Italian" %}
+              <span class="text-xs px-3 py-1 border border-warm-gray text-stone cursor-pointer hover:border-accent hover:text-accent transition-colors">{% trans tag %}</span>
+              {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary w-full justify-center">{% trans "Apply Filters" %}</button>
+          <a href="{% url 'products:catalog' %}" class="block text-center text-xs text-stone mt-3 uppercase tracking-widest hover:text-black transition-colors">{% trans "Reset All" %}</a>
+        </form>
+      </aside>
+
+      <!-- ─── PRODUCTS GRID ─── -->
+      <div class="flex-1">
+        <!-- Sort bar -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-warm-gray">
+          <p class="text-sm text-stone">
+            {% if products %}{{ products.start_index }}–{{ products.end_index }} {% trans "of" %} {{ products.paginator.count }}{% else %}{% trans "Showing all products" %}{% endif %}
+          </p>
+          <select name="sort" class="form-input" style="width: auto; padding: 8px 16px; border: 1px solid var(--warm-gray);" onchange="this.form.submit()">
+            <option value="">{% trans "Sort by" %}</option>
+            <option value="name" {% if sort == "name" %}selected{% endif %}>{% trans "Name A–Z" %}</option>
+            <option value="-name" {% if sort == "-name" %}selected{% endif %}>{% trans "Name Z–A" %}</option>
+            <option value="newest" {% if sort == "newest" %}selected{% endif %}>{% trans "Newest First" %}</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          {% for product in products|default:'' %}
+          <a href="{{ product.get_absolute_url }}" class="product-card">
+            <div class="overflow-hidden bg-cream">
+              {% if product.primary_image and product.primary_image.image %}
+              <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
+              {% else %}
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75&fit=crop&sig={{ forloop.counter }}" alt="{{ product.name }}" class="product-card-img">
+              {% endif %}
+            </div>
+            <div class="p-4">
+              <div class="flex gap-2 mb-2">
+                {% if product.is_new %}<span class="product-tag tag-new">{% trans "New" %}</span>{% endif %}
+                {% if product.is_popular %}<span class="product-tag tag-popular">{% trans "Popular" %}</span>{% endif %}
+              </div>
+              <p class="text-xs text-stone uppercase tracking-widest mb-1">{{ product.brand.name }}</p>
+              <h3 class="font-display text-lg font-light text-charcoal leading-tight">{{ product.name }}</h3>
+            </div>
+          </a>
+          {% empty %}
+          {% for i in "123456" %}
+          <a href="{% url 'products:catalog' %}" class="product-card">
+            <div class="overflow-hidden bg-cream">
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Product' %}" class="product-card-img">
+            </div>
+            <div class="p-4">
+              <div class="flex gap-2 mb-2">
+                {% if forloop.counter == 1 %}<span class="product-tag tag-new">{% trans "New" %}</span>{% endif %}
+                {% if forloop.counter == 4 %}<span class="product-tag tag-popular">{% trans "Popular" %}</span>{% endif %}
+                {% if forloop.counter == 7 %}<span class="product-tag tag-sale">{% trans "Sale" %}</span>{% endif %}
+              </div>
+              <p class="text-xs text-stone uppercase tracking-widest mb-1">
+                {% cycle "Minotti" "B&B Italia" "Poliform" "Cassina" "Vitra" %}
+              </p>
+              <h3 class="font-display text-lg font-light text-charcoal leading-tight">
+                {% if forloop.counter == 1 %}{% trans "Velvet Lounge Chair" %}
+                {% elif forloop.counter == 2 %}{% trans "Marble Coffee Table" %}
+                {% elif forloop.counter == 3 %}{% trans "Linen Sofa — 3 Seat" %}
+                {% elif forloop.counter == 4 %}{% trans "Oak Dining Table 220" %}
+                {% elif forloop.counter == 5 %}{% trans "Ceramic Floor Lamp" %}
+                {% elif forloop.counter == 6 %}{% trans "Wool Area Rug 2×3m" %}
+                {% elif forloop.counter == 7 %}{% trans "Teak King Bed Frame" %}
+                {% elif forloop.counter == 8 %}{% trans "Glass Pendant Light" %}
+                {% elif forloop.counter == 9 %}{% trans "Leather Armchair" %}
+                {% elif forloop.counter == 10 %}{% trans "Concrete Bookshelf" %}
+                {% elif forloop.counter == 11 %}{% trans "Rattan Lounge Chair" %}
+                {% else %}{% trans "Brass Side Table" %}{% endif %}
+              </h3>
+            </div>
+          </a>
+          {% endfor %}
+          {% endfor %}
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center mt-14">
+          <button id="load-more" class="btn-outline px-16">{% trans "Load More" %}</button>
+        </div>
+
+        <!-- Pagination -->
+        {% if products.has_other_pages %}
+        <div class="flex justify-center gap-2 mt-10">
+          {% if products.has_previous %}
+          <a href="?page={{ products.previous_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">‹</a>
+          {% endif %}
+          {% for num in products.paginator.page_range %}
+          <a href="?page={{ num }}" class="w-10 h-10 flex items-center justify-center border text-sm transition-colors {% if products.number == num %}bg-black text-white border-black{% else %}border-warm-gray text-stone hover:border-black hover:text-black{% endif %}">{{ num }}</a>
+          {% endfor %}
+          {% if products.has_next %}
+          <a href="?page={{ products.next_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">›</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

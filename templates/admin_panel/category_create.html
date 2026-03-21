@@ -1,0 +1,55 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Создание категории{% endblock %}
+{% block header %}Создание новой категории{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Название категории *</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Slug *</label>
+                        <input type="text" name="slug" class="form-control" required>
+                        <small class="text-muted">URL-идентификатор категории</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Описание</label>
+                        <textarea name="description" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_category_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Создать категорию
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelector('input[name="name"]').addEventListener('input', function() {
+    let slug = this.value
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-');
+    document.querySelector('input[name="slug"]').value = slug;
+});
+</script>
+{% endblock %}

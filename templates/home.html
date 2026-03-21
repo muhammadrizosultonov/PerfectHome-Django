@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Home" %}{% endblock %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85&fit=crop" alt="{% trans 'Perfect Home Interior' %}" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content max-w-screen-xl mx-auto px-6 lg:px-10 w-full">
+    <p class="hero-subtitle mb-6 fade-up fade-up-delay-1">{% trans "Premium Home Collection — 2025" %}</p>
+    <h1 class="hero-title mb-8 max-w-2xl fade-up fade-up-delay-2">
+      {% trans "The Art of" %}<br><em>{% trans "Living Well" %}</em>
+    </h1>
+    <div class="flex flex-wrap gap-4 fade-up fade-up-delay-3">
+      <a href="{% url 'products:catalog' %}" class="btn-primary">{% trans "Explore Collection" %}</a>
+      <a href="{% url 'categories:list' %}" class="btn-outline" style="color:white; border-color: rgba(255,255,255,0.5);">{% trans "Browse Categories" %}</a>
+    </div>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+    <span class="text-white/60 text-xs tracking-widest uppercase">{% trans "Scroll" %}</span>
+    <div class="w-px h-12 bg-white/30 relative overflow-hidden">
+      <div class="w-full h-1/2 bg-white/70 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CATEGORIES STRIP ═══════════ -->
+<section class="py-20 bg-cream">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
+      <div>
+        <p class="section-label mb-3">{% trans "Shop by" %}</p>
+        <h2 class="section-title">{% trans "Categories" %}</h2>
+      </div>
+      <a href="{% url 'categories:list' %}" class="btn-outline mt-6 sm:mt-0">{% trans "View All" %}</a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {% for cat in featured_categories|default:'' %}
+      <a href="{{ cat.get_absolute_url }}" class="category-card reveal">
+        {% if cat.image %}
+        <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
+        {% else %}
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&fit=crop&crop=entropy&sig={{ forloop.counter }}" alt="{{ cat.name }}">
+        {% endif %}
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light tracking-widest uppercase mb-1">{{ cat.product_count }} {% trans "items" %}</p>
+          <h3 class="text-white font-display text-xl font-light">{{ cat.name }}</h3>
+        </div>
+      </a>
+      {% empty %}
+      {% for item in "123456" %}
+      <a href="{% url 'products:catalog' %}" class="category-card reveal">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&fit=crop&crop=entropy&sig={{ forloop.counter }}" alt="{% trans 'Category' %}">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <p class="text-xs text-accent-light tracking-widest uppercase mb-1">24 {% trans "items" %}</p>
+          <h3 class="text-white font-display text-xl font-light">
+            {% if forloop.counter == 1 %}{% trans "Living Room" %}
+            {% elif forloop.counter == 2 %}{% trans "Bedroom" %}
+            {% elif forloop.counter == 3 %}{% trans "Kitchen" %}
+            {% elif forloop.counter == 4 %}{% trans "Bathroom" %}
+            {% elif forloop.counter == 5 %}{% trans "Outdoor" %}
+            {% elif forloop.counter == 6 %}{% trans "Office" %}
+            {% elif forloop.counter == 7 %}{% trans "Decor" %}
+            {% else %}{% trans "Lighting" %}{% endif %}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FEATURED PRODUCTS ═══════════ -->
+<section class="py-20">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
+      <div>
+        <p class="section-label mb-3">{% trans "Curated for you" %}</p>
+        <h2 class="section-title">{% trans "Featured Products" %}</h2>
+      </div>
+      <a href="{% url 'products:catalog' %}" class="btn-outline mt-6 sm:mt-0">{% trans "All Products" %}</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for product in featured_products|default:'' %}
+      <a href="{{ product.get_absolute_url }}" class="product-card reveal" style="animation-delay: {{ forloop.counter0 }}00ms">
+        <div class="overflow-hidden">
+          {% if product.primary_image and product.primary_image.image %}
+          <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
+          {% else %}
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ product.name }}" class="product-card-img">
+          {% endif %}
+        </div>
+        <div class="p-4">
+          {% if product.is_new %}<span class="product-tag tag-new mb-2">{% trans "New" %}</span>{% endif %}
+          {% if product.is_popular %}<span class="product-tag tag-popular mb-2">{% trans "Popular" %}</span>{% endif %}
+          <p class="text-xs text-stone uppercase tracking-widest mb-1">{{ product.brand.name }}</p>
+          <h3 class="font-display text-lg font-light text-charcoal leading-tight">{{ product.name }}</h3>
+        </div>
+      </a>
+      {% empty %}
+      {% for i in "123456" %}
+      <a href="{% url 'products:catalog' %}" class="product-card reveal" style="animation-delay: {{ forloop.counter0 }}00ms">
+        <div class="overflow-hidden bg-cream">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Product' %}" class="product-card-img">
+        </div>
+        <div class="p-4">
+          {% if forloop.counter == 1 %}<span class="product-tag tag-new mb-2 inline-block">{% trans "New" %}</span>{% endif %}
+          {% if forloop.counter == 3 %}<span class="product-tag tag-popular mb-2 inline-block">{% trans "Popular" %}</span>{% endif %}
+          <p class="text-xs text-stone uppercase tracking-widest mb-1 mt-2">
+            {% if forloop.counter <= 3 %}Minotti{% elif forloop.counter <= 6 %}B&B Italia{% else %}Poliform{% endif %}
+          </p>
+          <h3 class="font-display text-lg font-light text-charcoal leading-tight">
+            {% if forloop.counter == 1 %}{% trans "Velvet Lounge Chair" %}
+            {% elif forloop.counter == 2 %}{% trans "Marble Side Table" %}
+            {% elif forloop.counter == 3 %}{% trans "Linen Sofa Set" %}
+            {% elif forloop.counter == 4 %}{% trans "Oak Dining Table" %}
+            {% elif forloop.counter == 5 %}{% trans "Ceramic Floor Lamp" %}
+            {% elif forloop.counter == 6 %}{% trans "Wool Area Rug" %}
+            {% elif forloop.counter == 7 %}{% trans "Teak Bed Frame" %}
+            {% else %}{% trans "Glass Coffee Table" %}{% endif %}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FULL-WIDTH BANNER ═══════════ -->
+<section class="relative h-[70vh] overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=85&fit=crop" alt="{% trans 'Interior Design' %}" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-charcoal/50"></div>
+  <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+    <div>
+      <p class="section-label text-accent-light mb-4">{% trans "New collection" %}</p>
+      <h2 class="font-display text-5xl md:text-7xl font-light text-white mb-8 leading-tight">
+        {% trans "Autumn — Winter" %}<br><em>2025</em>
+      </h2>
+      <a href="{% url 'products:catalog' %}" class="btn-primary" style="background: transparent; border-color: white; color: white;">
+        {% trans "Discover Now" %}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BRANDS ═══════════ -->
+<section class="py-20 bg-cream">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+    <div class="text-center mb-12">
+      <p class="section-label mb-3">{% trans "Our Partners" %}</p>
+      <h2 class="section-title">{% trans "Premium Brands" %}</h2>
+    </div>
+    <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4">
+      {% for brand in brands|default:'' %}
+      <a href="{% url 'products:catalog' %}?brand={{ brand.id }}" class="brand-card">
+        {% if brand.logo %}
+        <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" class="h-10 object-contain">
+        {% else %}
+        <span class="font-display text-lg font-light text-charcoal/60 text-center leading-tight">{{ brand.name }}</span>
+        {% endif %}
+      </a>
+      {% empty %}
+      {% for brand_name in "Minotti,B&B Italia,Poliform,Cassina,Knoll,Vitra" %}
+      <div class="brand-card">
+        <span class="font-display text-lg font-light text-charcoal/60 text-center leading-tight">{{ brand_name }}</span>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-10">
+      <a href="{% url 'brands:list' %}" class="btn-outline">{% trans "All Brands" %}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY US ═══════════ -->
+<section class="py-20">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="section-label mb-4">{% trans "Why Choose Us" %}</p>
+        <h2 class="section-title mb-8">{% trans "Where Quality" %}<br>{% trans "Meets Design" %}</h2>
+        <p class="text-stone leading-relaxed mb-8 max-w-md">{% trans "We curate the finest home goods from the world's most respected brands, bringing premium interior solutions to Uzbekistan's discerning homes." %}</p>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <div class="font-display text-5xl font-light text-accent mb-2">500+</div>
+            <p class="text-sm text-stone uppercase tracking-widest">{% trans "Premium Products" %}</p>
+          </div>
+          <div>
+            <div class="font-display text-5xl font-light text-accent mb-2">40+</div>
+            <p class="text-sm text-stone uppercase tracking-widest">{% trans "Global Brands" %}</p>
+          </div>
+          <div>
+            <div class="font-display text-5xl font-light text-accent mb-2">8+</div>
+            <p class="text-sm text-stone uppercase tracking-widest">{% trans "Years Experience" %}</p>
+          </div>
+          <div>
+            <div class="font-display text-5xl font-light text-accent mb-2">1k+</div>
+            <p class="text-sm text-stone uppercase tracking-widest">{% trans "Happy Clients" %}</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=85&fit=crop" alt="{% trans 'Showroom' %}" class="w-full aspect-square object-cover">
+        <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-cream hidden lg:block"></div>
+        <div class="absolute -top-6 -right-6 w-24 h-24 border border-accent hidden lg:block"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BLOG / NEWS ═══════════ -->
+<section class="py-20 bg-cream">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
+      <div>
+        <p class="section-label mb-3">{% trans "Latest" %}</p>
+        <h2 class="section-title">{% trans "Stories & Inspiration" %}</h2>
+      </div>
+      <a href="{% url 'blog:list' %}" class="btn-outline mt-6 sm:mt-0">{% trans "All Articles" %}</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in latest_posts|default:'' %}
+      <a href="{{ post.get_absolute_url }}" class="blog-card">
+        <div class="overflow-hidden mb-4">
+          {% if post.cover_image %}
+          <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img">
+          {% else %}
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&fit=crop" alt="{{ post.title }}" class="blog-card-img">
+          {% endif %}
+        </div>
+        <p class="text-xs text-stone uppercase tracking-widest mb-2">{{ post.created_at|date:"DATE_FORMAT" }}</p>
+        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{{ post.title }}</h3>
+      </a>
+      {% empty %}
+      <a href="#" class="blog-card reveal">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
+        </div>
+        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Interior" %} · {% trans "Jun 15, 2025" %}</p>
+        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "How to Style a Minimalist Living Room in 2025" %}</h3>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
+        </div>
+        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Trends" %} · {% trans "May 28, 2025" %}</p>
+        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "The Return of Natural Materials in Modern Homes" %}</h3>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
+        </div>
+        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Design" %} · {% trans "Apr 10, 2025" %}</p>
+        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "Italian Furniture: A Guide to Timeless Elegance" %}</h3>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="py-24 bg-charcoal text-center">
+  <div class="max-w-2xl mx-auto px-6">
+    <p class="section-label text-accent mb-4">{% trans "Ready to Transform?" %}</p>
+    <h2 class="font-display text-5xl md:text-6xl font-light text-white mb-8 leading-tight">{% trans "Your Dream" %}<br><em>{% trans "Home Awaits" %}</em></h2>
+    <p class="text-stone mb-10 text-lg leading-relaxed">{% trans "Browse our curated collection and request a consultation. Our design experts are ready to help." %}</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="{% url 'products:catalog' %}" class="btn-accent">{% trans "Explore Products" %}</a>
+      <a href="{% url 'core:contact' %}" class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">{% trans "Contact Us" %}</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
