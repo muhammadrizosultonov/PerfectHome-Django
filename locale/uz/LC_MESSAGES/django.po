@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: perfecthome\n"
-"POT-Creation-Date: 2026-03-21 00:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-22 23:10+0500\n"
 "PO-Revision-Date: 2026-03-21 00:00+0000\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
@@ -9,188 +10,2416 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Premium Home Goods"
-msgstr "Uy uchun premium mahsulotlar"
+#: templates/about.html:4 templates/base.html:149
+msgid "About Us"
+msgstr "Biz haqimizda"
 
-msgid "Perfect Home — premium home goods and interior products in Uzbekistan."
-msgstr "Perfect Home — O‘zbekistonda uy uchun premium mahsulotlar va interyer yechimlari."
+#: templates/about.html:14
+msgid "About Perfect Home"
+msgstr "Perfect Home haqida"
 
+#: templates/about.html:19 templates/base.html:61 templates/base.html:95
+#: templates/base.html:145 templates/blog.html:12 templates/blog_detail.html:12
+#: templates/brands.html:14 templates/categories.html:14
+#: templates/contact.html:14 templates/home.html:4
+#: templates/product_detail.html:16 templates/products.html:14
 msgid "Home"
 msgstr "Bosh sahifa"
 
-msgid "Products"
-msgstr "Mahsulotlar"
-
-msgid "Brands"
-msgstr "Brendlar"
-
-msgid "Categories"
-msgstr "Kategoriyalar"
-
+#: templates/about.html:21 templates/base.html:65 templates/base.html:99
 msgid "About"
 msgstr "Biz haqimizda"
 
+#: templates/about.html:23
+msgid "Our Story"
+msgstr "Bizning hikoyamiz"
+
+#: templates/about.html:37
+msgid "Who We Are"
+msgstr "Biz kimmiz"
+
+#: templates/about.html:39
+msgid "Crafting Spaces"
+msgstr "Muhit yaratamiz"
+
+#: templates/about.html:39
+msgid "Worth Living In"
+msgstr "unda yashash yoqimli"
+
+#: templates/about.html:44
+msgid "We create spaces where life feels comfortable and inspiring."
+msgstr ""
+
+#: templates/about.html:46
+msgid ""
+"Perfect Home was established with one clear mission — to provide high-"
+"quality and modern building materials for homes and interiors that meet the "
+"highest standards and customer expectations."
+msgstr ""
+
+#: templates/about.html:48
+msgid ""
+"We believe that the environment around us directly shapes our comfort, mood, "
+"and overall quality of life. That’s why our collection includes only "
+"carefully selected products — from stylish sanitary ware to modern tiles and "
+"finishing solutions."
+msgstr ""
+
+#: templates/about.html:50
+msgid ""
+"We collaborate with trusted manufacturers and follow the latest design "
+"trends, helping you create interiors that are beautiful, practical, and long-"
+"lasting."
+msgstr ""
+
+#: templates/about.html:52
+msgid ""
+"From minimalist styles to contemporary designer collections, every product "
+"in our store is chosen with attention to quality, aesthetics, and "
+"functionality."
+msgstr ""
+
+#: templates/about.html:56
+msgid "Our Collection"
+msgstr "Kolleksiyamiz"
+
+#: templates/about.html:57 templates/contact.html:19
+msgid "Get in Touch"
+msgstr "Bog‘lanish"
+
+#: templates/about.html:62
+msgid "Our Showroom"
+msgstr "Bizning shourum"
+
+#: templates/about.html:67
+msgid "Years in Business"
+msgstr "Bozorda yillar"
+
+#: templates/about.html:85 templates/home.html:199
+msgid "Premium Products"
+msgstr "Premium mahsulotlar"
+
+#: templates/about.html:89 templates/home.html:203
+msgid "Global Brands"
+msgstr "Jahon brendlari"
+
+#: templates/about.html:93 templates/home.html:211
+msgid "Happy Clients"
+msgstr "Mamnun mijozlar"
+
+#: templates/about.html:97
+msgid "Countries Sourced"
+msgstr "Ta’minot mamlakatlari"
+
+#: templates/about.html:108
+msgid "What We Believe"
+msgstr "Qadriyatlarimiz"
+
+#: templates/about.html:109
+msgid "Our Values"
+msgstr "Qadriyatlarimiz"
+
+#: templates/about.html:116
+msgid "Authenticity"
+msgstr "Haqiqiylik"
+
+#: templates/about.html:118
+#, fuzzy
+#| msgid ""
+#| "Every product we carry is sourced directly from authorized distributors. "
+#| "We guarantee the genuine article — no compromises, no imitations."
+msgid ""
+"Every product we offer comes from trusted and verified suppliers. We "
+"guarantee genuine quality with no compromises."
+msgstr ""
+"Bizdagi mahsulotlar faqat rasmiy distributorlardan olinadi. Haqiqiylik "
+"kafolatlanadi — hech qanday murosasiz."
+
+#: templates/about.html:124
+msgid "Quality Selection"
+msgstr ""
+
+#: templates/about.html:126
+msgid ""
+"Each product in our catalog is carefully selected based on design, "
+"durability, and long-term value."
+msgstr ""
+
+#: templates/about.html:132
+msgid "Customer Focus"
+msgstr ""
+
+#: templates/about.html:134
+msgid ""
+"We build lasting relationships with our customers by delivering reliable "
+"service and exceptional products."
+msgstr ""
+
+#: templates/about.html:146 templates/home.html:216
+msgid "Showroom"
+msgstr "Shourum"
+
+#: templates/about.html:151
+msgid "Visit Us"
+msgstr "Bizga tashrif buyuring"
+
+#: templates/about.html:154
+msgid "Experience Our Showroom"
+msgstr "Shourumimizni ko‘ring"
+
+#: templates/about.html:158
+#, fuzzy
+#| msgid ""
+#| "See, touch, and feel the quality in person. Our Tashkent showroom is open "
+#| "Monday to Saturday, 9:00–19:00."
+msgid ""
+"See, touch, and feel the quality in person. Our Tashkent showroom is open "
+"Monday to Saturday, 9:00–18:00, and Sunday from 9:00–15:00."
+msgstr ""
+"Sifatni ko‘ring, ushlab ko‘ring va his eting. Toshkentdagi shourumimiz "
+"dushanbadan shanbagacha 9:00–19:00 ochiq."
+
+#: templates/about.html:162
+msgid "Get Directions"
+msgstr "Yo‘lni ko‘rish"
+
+#: templates/auth/login.html:4 templates/auth/login.html:44
+msgid "Sign In"
+msgstr "Kirish"
+
+#: templates/auth/login.html:16
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: templates/auth/login.html:22
+msgid "Enter your username"
+msgstr "Foydalanuvchi nomini kiriting"
+
+#: templates/auth/login.html:28
+msgid "Password"
+msgstr "Parol"
+
+#: templates/auth/login.html:34
+msgid "Enter your password"
+msgstr "Parolni kiriting"
+
+#: templates/auth/login.html:48
+msgid "No account yet?"
+msgstr "Hali akkauntingiz yo‘qmi?"
+
+#: templates/auth/login.html:50
+msgid "Register"
+msgstr "Ro‘yxatdan o‘tish"
+
+#: templates/base.html:8
+msgid "Premium Home Goods"
+msgstr "Uy uchun premium mahsulotlar"
+
+#: templates/base.html:9
+msgid "Perfect Home — premium home goods and interior products in Uzbekistan."
+msgstr ""
+"Perfect Home — O‘zbekistonda uy uchun premium mahsulotlar va interyer "
+"yechimlari."
+
+#: templates/base.html:62 templates/base.html:96 templates/base.html:146
+#: templates/product_detail.html:18 templates/products.html:4
+#: templates/products.html:16
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: templates/base.html:63 templates/base.html:97 templates/base.html:147
+#: templates/brands.html:4 templates/brands.html:16
+msgid "Brands"
+msgstr "Brendlar"
+
+#: templates/base.html:64 templates/base.html:98 templates/base.html:148
+#: templates/categories.html:4 templates/categories.html:16
+#: templates/home.html:38
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/base.html:66 templates/base.html:100 templates/base.html:150
+#: templates/base.html:156 templates/contact.html:4 templates/contact.html:16
 msgid "Contact"
 msgstr "Aloqa"
+
+#: templates/base.html:80
+msgid "Open menu"
+msgstr "Menyuni ochish"
+
+#: templates/base.html:93
+msgid "Close menu"
+msgstr "Menyuni yopish"
+
+#: templates/base.html:127
+msgid ""
+"Premium home goods and interior products. Elevating everyday living in "
+"Uzbekistan."
+msgstr ""
+"Uy va interyer uchun premium mahsulotlar. O‘zbekistonda kundalik hayotni "
+"yanada yaxshilaymiz."
+
+#: templates/base.html:129
+msgid "Instagram"
+msgstr "Instagram"
+
+#: templates/base.html:132 templates/product_detail.html:172
+msgid "Telegram"
+msgstr "Telegram"
+
+#: templates/base.html:135
+msgid "Facebook"
+msgstr "Facebook"
+
+#: templates/base.html:143
+msgid "Navigation"
+msgstr "Navigatsiya"
+
+#: templates/base.html:159 templates/contact.html:33
+msgid "Address"
+msgstr "Manzil"
+
+#: templates/base.html:160
+msgid "Tashkent, Uzbekistan"
+msgstr "Toshkent, O‘zbekiston"
+
+#: templates/base.html:160
+msgid "Amir Temur Avenue, 15"
+msgstr "Amir Temur shoh ko‘chasi, 15"
+
+#: templates/base.html:163 templates/contact.html:37
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/base.html:167 templates/contact.html:42
+msgid "Working Hours"
+msgstr "Ish vaqti"
+
+#: templates/base.html:168
+msgid "Mon–Sat: 09:00–19:00"
+msgstr "Du–Shan: 09:00–19:00"
+
+#: templates/base.html:178
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
+
+#: templates/base.html:179
+msgid "Designed with care in Tashkent"
+msgstr "Toshkentda mehr bilan tayyorlangan"
+
+#: templates/base.html:189
+msgid "Close"
+msgstr "Yopish"
+
+#: templates/base.html:190
+msgid "Request a product"
+msgstr "Mahsulot so‘rash"
+
+#: templates/base.html:191
+msgid "Place an Order"
+msgstr "Buyurtma so‘rovi"
+
+#: templates/base.html:196
+msgid "Your Name"
+msgstr "Ismingiz"
+
+#: templates/base.html:199
+msgid "Phone Number"
+msgstr "Telefon raqam"
+
+#: templates/base.html:202
+msgid "Message (optional)"
+msgstr "Xabar (ixtiyoriy)"
+
+#: templates/base.html:204
+msgid "Send Request"
+msgstr "So‘rov yuborish"
+
+#: templates/base.html:207
+msgid "We will contact you shortly to confirm your order details."
+msgstr "Tez orada siz bilan bog‘lanamiz va tafsilotlarni tasdiqlaymiz."
+
+#: templates/blog.html:4 templates/blog.html:14 templates/blog_detail.html:4
+#: templates/blog_detail.html:14 templates/home.html:251
+#: templates/home.html:258 templates/home.html:265
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/blog.html:16
+msgid "Journal"
+msgstr "Jurnal"
+
+#: templates/blog.html:17
+msgid "Stories and Inspiration"
+msgstr "Hikoyalar va ilhom"
+
+#: templates/blog.html:36
+msgid "No posts yet."
+msgstr "Hozircha postlar yo‘q."
+
+#: templates/blog_detail.html:5
+msgid "Article"
+msgstr "Maqola"
+
+#: templates/brands.html:20 templates/home.html:162
+msgid "Our Partners"
+msgstr "Hamkorlarimiz"
+
+#: templates/brands.html:21 templates/home.html:163
+msgid "Premium Brands"
+msgstr "Premium brendlar"
+
+#: templates/brands.html:26
+msgid "Search brands…"
+msgstr "Brendlarni qidirish…"
+
+#: templates/brands.html:37
+msgid "All"
+msgstr "Barchasi"
+
+#: templates/brands.html:38 templates/brands.html:45 templates/brands.html:64
+#: templates/brands.html:104 templates/brands.html:115
+#: templates/product_detail.html:143
+msgid "Italy"
+msgstr "Italiya"
+
+#: templates/brands.html:39
+msgid "Germany"
+msgstr "Germaniya"
+
+#: templates/brands.html:40 templates/brands.html:48 templates/brands.html:67
+msgid "Denmark"
+msgstr "Daniya"
+
+#: templates/brands.html:41 templates/brands.html:46 templates/brands.html:65
+msgid "USA"
+msgstr "AQSH"
+
+#: templates/brands.html:42
+msgid "France"
+msgstr "Fransiya"
+
+#: templates/brands.html:47 templates/brands.html:66
+msgid "Switzerland"
+msgstr "Shveysariya"
+
+#: templates/brands.html:68
+msgid "Netherlands"
+msgstr "Niderlandiya"
+
+#: templates/brands.html:69
+msgid "Spain"
+msgstr "Ispaniya"
+
+#: templates/brands.html:80
+msgid "Highlighted"
+msgstr "Ajratilgan"
+
+#: templates/brands.html:81
+msgid "Featured Brands"
+msgstr "Tanlangan brendlar"
+
+#: templates/brands.html:94 templates/categories.html:36
+#: templates/categories.html:49 templates/categories.html:57
+#: templates/categories.html:66 templates/categories.html:74
+#: templates/categories.html:93
+msgid "products"
+msgstr "mahsulot"
+
+#: templates/brands.html:104
+msgid "Since 1948"
+msgstr "1948-yildan"
+
+#: templates/brands.html:106 templates/brands.html:117
+msgid "products available"
+msgstr "ta mahsulot mavjud"
+
+#: templates/brands.html:115
+msgid "Since 1966"
+msgstr "1966-yildan"
+
+#: templates/categories.html:18
+msgid "Browse by"
+msgstr "Tanlash"
+
+#: templates/categories.html:19
+msgid "All Categories"
+msgstr "Barcha kategoriyalar"
+
+#: templates/categories.html:46 templates/categories.html:50
+#: templates/home.html:65 templates/product_detail.html:95
+msgid "Living Room"
+msgstr "Mehmonxona"
+
+#: templates/categories.html:54 templates/categories.html:58
+#: templates/home.html:66
+msgid "Bedroom"
+msgstr "Yotoqxona"
+
+#: templates/categories.html:63 templates/categories.html:67
+#: templates/home.html:67
+msgid "Kitchen"
+msgstr "Oshxona"
+
+#: templates/categories.html:71 templates/categories.html:75
+#: templates/home.html:68
+msgid "Bathroom"
+msgstr "Hammom"
+
+#: templates/categories.html:83
+msgid "More"
+msgstr "Ko‘proq"
+
+#: templates/categories.html:84
+msgid "More Categories"
+msgstr "Ko‘proq kategoriyalar"
+
+#: templates/contact.html:18
+msgid "Reach Out"
+msgstr "Bog‘laning"
+
+#: templates/contact.html:28
+msgid "We'd Love to Hear"
+msgstr "Sizdan"
+
+#: templates/contact.html:28
+msgid "From You"
+msgstr "eshitishni xohlaymiz"
+
+#: templates/contact.html:29
+msgid ""
+"Whether you have a question about a product, want to visit our showroom, or "
+"are planning a full interior project — our team is ready to help."
+msgstr ""
+"Mahsulot bo‘yicha savolingiz bo‘lsa, shourumga tashrif buyurmoqchi "
+"bo‘lsangiz yoki to‘liq interyer loyihasi rejalashtirsangiz — jamoamiz yordam "
+"berishga tayyor."
+
+#: templates/contact.html:43
+msgid "Monday – Saturday: 09:00 – 19:00"
+msgstr "Dushanba – Shanba: 09:00 – 19:00"
+
+#: templates/contact.html:44
+#, fuzzy
+#| msgid "Monday – Saturday: 09:00 – 19:00"
+msgid "Sunday: 09:00 – 15:00"
+msgstr "Dushanba – Shanba: 09:00 – 19:00"
+
+#: templates/home.html:11
+msgid "Perfect Home Interior"
+msgstr "Perfect Home interyeri"
+
+#: templates/home.html:14
+msgid "Premium Home Collection — 2025"
+msgstr "Premium uy kolleksiyasi — 2025"
+
+#: templates/home.html:16
+msgid "The Art of"
+msgstr "San’ati"
+
+#: templates/home.html:16
+msgid "Living Well"
+msgstr "Yaxshi yashash"
+
+#: templates/home.html:19
+msgid "Explore Collection"
+msgstr "Kolleksiyani ko‘rish"
+
+#: templates/home.html:20
+msgid "Browse Categories"
+msgstr "Kategoriyalarni ko‘rish"
+
+#: templates/home.html:25
+msgid "Scroll"
+msgstr "Pastga"
+
+#: templates/home.html:37
+msgid "Shop by"
+msgstr "Tanlang"
+
+#: templates/home.html:40
+msgid "View All"
+msgstr "Barchasini ko‘rish"
+
+#: templates/home.html:53 templates/home.html:63
+msgid "items"
+msgstr "ta"
+
+#: templates/home.html:60 templates/products.html:41
+msgid "Category"
+msgstr "Kategoriya"
+
+#: templates/home.html:69
+msgid "Outdoor"
+msgstr "Tashqi makon"
+
+#: templates/home.html:70
+msgid "Office"
+msgstr "Ofis"
+
+#: templates/home.html:71
+msgid "Decor"
+msgstr "Dekor"
+
+#: templates/home.html:72
+msgid "Lighting"
+msgstr "Yoritish"
+
+#: templates/home.html:87
+msgid "Curated for you"
+msgstr "Siz uchun tanlangan"
+
+#: templates/home.html:88
+msgid "Featured Products"
+msgstr "Tanlangan mahsulotlar"
+
+#: templates/home.html:90 templates/products.html:18
+msgid "All Products"
+msgstr "Barcha mahsulotlar"
+
+#: templates/home.html:104 templates/home.html:117
+#: templates/product_detail.html:43 templates/products.html:144
+#: templates/products.html:159
+msgid "New"
+msgstr "Yangi"
+
+#: templates/home.html:105 templates/home.html:118
+#: templates/product_detail.html:44 templates/products.html:145
+#: templates/products.html:160
+msgid "Popular"
+msgstr "Ommabop"
+
+#: templates/home.html:114 templates/product_detail.html:5
+#: templates/products.html:155
+msgid "Product"
+msgstr "Mahsulot"
+
+#: templates/home.html:123 templates/product_detail.html:6
+#: templates/products.html:167
+msgid "Velvet Lounge Chair"
+msgstr "Baxmal launj-kreslo"
+
+#: templates/home.html:124
+msgid "Marble Side Table"
+msgstr "Marmar yon stolcha"
+
+#: templates/home.html:125
+msgid "Linen Sofa Set"
+msgstr "Zig‘ir divan to‘plami"
+
+#: templates/home.html:126
+msgid "Oak Dining Table"
+msgstr "Eman ovqat stoli"
+
+#: templates/home.html:127 templates/products.html:171
+msgid "Ceramic Floor Lamp"
+msgstr "Keramik torcher"
+
+#: templates/home.html:128
+msgid "Wool Area Rug"
+msgstr "Jun gilam"
+
+#: templates/home.html:129
+msgid "Teak Bed Frame"
+msgstr "Tik yog‘och karavot karkasi"
+
+#: templates/home.html:130
+msgid "Glass Coffee Table"
+msgstr "Shisha jurnal stolcha"
+
+#: templates/home.html:142
+msgid "Interior Design"
+msgstr "Interyer dizayni"
+
+#: templates/home.html:146
+msgid "New collection"
+msgstr "Yangi kolleksiya"
+
+#: templates/home.html:148
+msgid "Autumn — Winter"
+msgstr "Kuz — Qish"
+
+#: templates/home.html:151
+msgid "Discover Now"
+msgstr "Hozir ko‘rish"
+
+#: templates/home.html:183
+msgid "All Brands"
+msgstr "Barcha brendlar"
+
+#: templates/home.html:193
+msgid "Why Choose Us"
+msgstr "Nega aynan biz"
+
+#: templates/home.html:194
+msgid "Where Quality"
+msgstr "Sifat"
+
+#: templates/home.html:194
+msgid "Meets Design"
+msgstr "dizayn bilan uyg‘un"
+
+#: templates/home.html:195
+msgid ""
+"We curate the finest home goods from the world's most respected brands, "
+"bringing premium interior solutions to Uzbekistan's discerning homes."
+msgstr ""
+"Dunyoning eng nufuzli brendlaridan eng sara mahsulotlarni tanlab, "
+"O‘zbekistonga premium interyer yechimlarini olib kelamiz."
+
+#: templates/home.html:207
+msgid "Years Experience"
+msgstr "Yillik tajriba"
+
+#: templates/home.html:229
+msgid "Latest"
+msgstr "So‘nggi"
+
+#: templates/home.html:230
+msgid "Stories & Inspiration"
+msgstr "Hikoyalar va ilhom"
+
+#: templates/home.html:232
+msgid "All Articles"
+msgstr "Barcha maqolalar"
+
+#: templates/home.html:253
+msgid "Interior"
+msgstr "Interyer"
+
+#: templates/home.html:253
+msgid "Jun 15, 2025"
+msgstr "15-iyun, 2025"
+
+#: templates/home.html:254
+msgid "How to Style a Minimalist Living Room in 2025"
+msgstr "2025-yilda minimalistik mehmonxonani bezash"
+
+#: templates/home.html:260
+msgid "Trends"
+msgstr "Trendlar"
+
+#: templates/home.html:260
+msgid "May 28, 2025"
+msgstr "28-may, 2025"
+
+#: templates/home.html:261
+msgid "The Return of Natural Materials in Modern Homes"
+msgstr "Zamonaviy uylarda tabiiy materiallarning qaytishi"
+
+#: templates/home.html:267
+msgid "Design"
+msgstr "Dizayn"
+
+#: templates/home.html:267
+msgid "Apr 10, 2025"
+msgstr "10-aprel, 2025"
+
+#: templates/home.html:268
+msgid "Italian Furniture: A Guide to Timeless Elegance"
+msgstr "Italiya mebellari: abadiy nafislik bo‘yicha qo‘llanma"
+
+#: templates/home.html:278
+msgid "Ready to Transform?"
+msgstr "O‘zgartirishga tayyormisiz?"
+
+#: templates/home.html:279
+msgid "Your Dream"
+msgstr "Orzudagi"
+
+#: templates/home.html:279
+msgid "Home Awaits"
+msgstr "uy sizni kutmoqda"
+
+#: templates/home.html:280
+msgid ""
+"Browse our curated collection and request a consultation. Our design experts "
+"are ready to help."
+msgstr ""
+"Tanlangan kolleksiyamizni ko‘rib chiqing va maslahat so‘rang. Dizayn "
+"ekspertlarimiz yordam berishga tayyor."
+
+#: templates/home.html:282
+msgid "Explore Products"
+msgstr "Mahsulotlarni ko‘rish"
+
+#: templates/home.html:283
+msgid "Contact Us"
+msgstr "Biz bilan bog‘laning"
+
+#: templates/product_detail.html:4
+msgid "Product Detail"
+msgstr "Mahsulot tafsilotlari"
+
+#: templates/product_detail.html:53 templates/product_detail.html:57
+msgid "View 1"
+msgstr "Ko‘rinish 1"
+
+#: templates/product_detail.html:72
+msgid "View 2"
+msgstr "Ko‘rinish 2"
+
+#: templates/product_detail.html:77
+msgid "View 3"
+msgstr "Ko‘rinish 3"
+
+#: templates/product_detail.html:82
+msgid "View 4"
+msgstr "Ko‘rinish 4"
+
+#: templates/product_detail.html:92
+msgid "Minotti"
+msgstr "Minotti"
+
+#: templates/product_detail.html:106
+msgid "Article Number"
+msgstr "Artikul raqami"
+
+#: templates/product_detail.html:114
+msgid "Italian Design"
+msgstr "Italiya dizayni"
+
+#: templates/product_detail.html:115
+msgid "Handcrafted"
+msgstr "Qo‘lda ishlangan"
+
+#: templates/product_detail.html:116
+msgid "Premium Fabric"
+msgstr "Premium mato"
+
+#: templates/product_detail.html:117
+msgid "New Arrival"
+msgstr "Yangi kelgan"
+
+#: templates/product_detail.html:125
+msgid "Description"
+msgstr "Tavsif"
+
+#: templates/product_detail.html:126
+msgid ""
+"A masterpiece of Italian craftsmanship, this lounge chair combines premium "
+"velvet upholstery with a solid beech wood frame. Designed for those who "
+"appreciate the subtle luxury of exceptional materials and considered form. "
+"The gentle curves and generous proportions invite effortless relaxation."
+msgstr ""
+"Italiya ustachiligining durdonasi: bu kreslo premium baxmal va buk yog‘ochi "
+"karkasini uyg‘unlashtiradi. Noyob materiallar va puxta shaklni "
+"qadrlaydiganlar uchun yaratilgan. Yumshoq chiziqlar va keng proporsiyalar "
+"qulaylik beradi."
+
+#: templates/product_detail.html:134
+msgid "Specifications"
+msgstr "Xususiyatlar"
+
+#: templates/product_detail.html:136 templates/product_detail.html:142
+#: templates/products.html:62
+msgid "Brand"
+msgstr "Brend"
+
+#: templates/product_detail.html:137 templates/product_detail.html:143
+msgid "Origin"
+msgstr "Kelib chiqishi"
+
+#: templates/product_detail.html:138
+msgid "Price"
+msgstr "Narx"
+
+#: templates/product_detail.html:139 templates/product_detail.html:144
+msgid "Material"
+msgstr "Material"
+
+#: templates/product_detail.html:140 templates/product_detail.html:145
+msgid "Dimensions"
+msgstr "O‘lchamlar"
+
+#: templates/product_detail.html:144
+msgid "Velvet, Beech Wood"
+msgstr "Baxmal, buk yog‘ochi"
+
+#: templates/product_detail.html:145
+msgid "W 80 × D 85 × H 78 cm"
+msgstr "K 80 × Ch 85 × B 78 sm"
+
+#: templates/product_detail.html:146
+msgid "Weight"
+msgstr "Vazn"
+
+#: templates/product_detail.html:146
+msgid "28 kg"
+msgstr "28 kg"
+
+#: templates/product_detail.html:155
+msgid "Order Now"
+msgstr "Buyurtma berish"
+
+#: templates/product_detail.html:157
+msgid "Share"
+msgstr "Ulashish"
+
+#: templates/product_detail.html:164
+msgid "Have questions?"
+msgstr "Savollaringiz bormi?"
+
+#: templates/product_detail.html:182
+msgid "You Might Also Like"
+msgstr "Sizga yoqishi mumkin"
+
+#: templates/product_detail.html:183
+msgid "Related Products"
+msgstr "O‘xshash mahsulotlar"
+
+#: templates/product_detail.html:203
+msgid "Related"
+msgstr "O‘xshash"
+
+#: templates/product_detail.html:208 templates/products.html:175
+msgid "Leather Armchair"
+msgstr "Charm kreslo"
+
+#: templates/product_detail.html:209
+msgid "Oak Side Table"
+msgstr "Eman yon stolcha"
+
+#: templates/product_detail.html:210
+msgid "Floor Lamp"
+msgstr "Torcher"
+
+#: templates/product_detail.html:211
+msgid "Wool Throw"
+msgstr "Jun pled"
+
+#: templates/products.html:20
+msgid "products found"
+msgstr "ta mahsulot topildi"
+
+#: templates/products.html:20
+msgid "Showing our full collection"
+msgstr "To‘liq kolleksiya ko‘rsatilmoqda"
+
+#: templates/products.html:36
+msgid "Search products…"
+msgstr "Mahsulot qidirish…"
+
+#: templates/products.html:81
+msgid "Country"
+msgstr "Mamlakat"
+
+#: templates/products.html:100
+msgid "Tags"
+msgstr "Teglar"
+
+#: templates/products.html:112
+msgid "Apply Filters"
+msgstr "Filtrlarni qo‘llash"
+
+#: templates/products.html:113
+msgid "Reset All"
+msgstr "Hammasini tozalash"
+
+#: templates/products.html:122
+msgid "of"
+msgstr "dan"
+
+#: templates/products.html:122
+msgid "Showing all products"
+msgstr "Barcha mahsulotlar ko‘rsatilmoqda"
+
+#: templates/products.html:125
+msgid "Sort by"
+msgstr "Saralash"
+
+#: templates/products.html:126
+msgid "Name A–Z"
+msgstr "Nomi A–Z"
+
+#: templates/products.html:127
+msgid "Name Z–A"
+msgstr "Nomi Z–A"
+
+#: templates/products.html:128
+msgid "Newest First"
+msgstr "Eng yangilari avval"
+
+#: templates/products.html:161
+msgid "Sale"
+msgstr "Chegirma"
+
+#: templates/products.html:168
+msgid "Marble Coffee Table"
+msgstr "Marmar jurnal stolcha"
+
+#: templates/products.html:169
+msgid "Linen Sofa — 3 Seat"
+msgstr "Zig‘ir divan — 3 o‘rinli"
+
+#: templates/products.html:170
+msgid "Oak Dining Table 220"
+msgstr "Eman ovqat stoli 220 sm"
+
+#: templates/products.html:172
+msgid "Wool Area Rug 2×3m"
+msgstr "Jun gilam 2×3 m"
+
+#: templates/products.html:173
+msgid "Teak King Bed Frame"
+msgstr "Tik yog‘och king-size karavot karkasi"
+
+#: templates/products.html:174
+msgid "Glass Pendant Light"
+msgstr "Shisha osma chiroq"
+
+#: templates/products.html:176
+msgid "Concrete Bookshelf"
+msgstr "Beton kitob javoni"
+
+#: templates/products.html:177
+msgid "Rattan Lounge Chair"
+msgstr "Rattan launj-kreslo"
+
+#: templates/products.html:178
+msgid "Brass Side Table"
+msgstr "Latun yon stolcha"
+
+#: templates/products.html:188
+msgid "Load More"
+msgstr "Yana yuklash"
+
+#: venv/lib/python3.13/site-packages/django/contrib/messages/apps.py:16
+#, fuzzy
+#| msgid "Message"
+msgid "Messages"
+msgstr "Xabar"
+
+#: venv/lib/python3.13/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/contrib/syndication/apps.py:7
+#, fuzzy
+#| msgid "Specifications"
+msgid "Syndication"
+msgstr "Xususiyatlar"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:33
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:35
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:36
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:37
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:153
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:773
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.13/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:309
+#: venv/lib/python3.13/site-packages/django/core/validators.py:318
+#: venv/lib/python3.13/site-packages/django/core/validators.py:332
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:320
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:514
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:364
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:403
+msgid "Enter a number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1633
+#: venv/lib/python3.13/site-packages/django/forms/models.py:932
+#, fuzzy
+#| msgid "Brand"
+msgid "and"
+msgstr "Brend"
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1216
+msgid "String (unlimited)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1325
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1430
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1434
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1574
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1703
+msgid "Decimal number"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
+#, fuzzy
+#| msgid "Curation"
+msgid "Duration"
+msgstr "Tanlov"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1920
+#, fuzzy
+#| msgid "Address"
+msgid "Email address"
+msgstr "Manzil"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2067
+#, fuzzy
+#| msgid "Interior"
+msgid "Integer"
+msgstr "Interyer"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2188
+#, fuzzy
+#| msgid "Address"
+msgid "IPv4 address"
+msgstr "Manzil"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2219
+#, fuzzy
+#| msgid "Address"
+msgid "IP address"
+msgstr "Manzil"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2446
+#, fuzzy
+#| msgid "Textiles"
+msgid "Text"
+msgstr "To‘qimachilik"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:24
+#, fuzzy
+#| msgid "Subject"
+msgid "A JSON object"
+msgstr "Mavzu"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: venv/lib/python3.13/site-packages/django/forms/boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:313
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:484
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:507
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:534
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:568
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:569
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:638
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:639
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:640
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:642
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:647
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:715
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:862
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:949
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:951
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1070
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1619
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1313
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1343
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:491
+#, fuzzy
+#| msgid "Order Now"
+msgid "Order"
+msgstr "Buyurtma berish"
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:946
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1474
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:528
+msgid "Clear"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:529
+msgid "Currently"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:530
+msgid "Change"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:869
+msgid "Unknown"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:870
+msgid "Yes"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:871
+msgid "No"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:908
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:13
+#, fuzzy
+#| msgid "Sunday: Closed"
+msgid "Sunday"
+msgstr "Yakshanba: yopiq"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:33
+#, fuzzy
+#| msgid "Team member"
+msgid "September"
+msgstr "Jamoa a’zosi"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:35
+#, fuzzy
+#| msgid "Phone Number"
+msgid "November"
+msgstr "Telefon raqam"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:36
+#, fuzzy
+#| msgid "Team member"
+msgid "December"
+msgstr "Jamoa a’zosi"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:41
+#, fuzzy
+#| msgid "Denmark"
+msgid "mar"
+msgstr "Daniya"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:43
+#, fuzzy
+#| msgid "Germany"
+msgid "may"
+msgstr "Germaniya"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:48
+#, fuzzy
+#| msgid "Contact"
+msgid "oct"
+msgstr "Aloqa"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:75
+#, fuzzy
+#| msgid "Team member"
+msgctxt "alt. month"
+msgid "September"
+msgstr "Jamoa a’zosi"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:77
+#, fuzzy
+#| msgid "Phone Number"
+msgctxt "alt. month"
+msgid "November"
+msgstr "Telefon raqam"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:78
+#, fuzzy
+#| msgid "Team member"
+msgctxt "alt. month"
+msgid "December"
+msgstr "Jamoa a’zosi"
+
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:282
+#, fuzzy
+#| msgid "More"
+msgid "or"
+msgstr "Ko‘proq"
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.13/site-packages/django/utils/text.py:301
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:68
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#~ msgid "Storage"
+#~ msgstr "Saqlash"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid ""
+#~ "Perfect Home was founded with a singular vision: to bring the world's "
+#~ "finest home goods and interior products to Uzbekistan's most discerning "
+#~ "homeowners and designers."
+#~ msgstr ""
+#~ "Perfect Home bitta maqsad bilan tashkil etilgan: dunyoning eng sara uy va "
+#~ "interyer mahsulotlarini O‘zbekistondagi talabchan mijozlarga olib kelish."
+
+#~ msgid ""
+#~ "We believe that the objects we surround ourselves with shape how we feel, "
+#~ "think, and live. That's why we partner exclusively with brands that share "
+#~ "our uncompromising standards for quality, craftsmanship, and design."
+#~ msgstr ""
+#~ "Bizni o‘rab turgan buyumlar kayfiyatimiz va hayot tarzimizni belgilaydi "
+#~ "deb hisoblaymiz. Shu sababli faqat sifat, mahorat va dizayn bo‘yicha "
+#~ "yuksak talablarimizga mos brendlar bilan ishlaymiz."
+
+#~ msgid ""
+#~ "From Italian furniture icons to Scandinavian lighting innovators, every "
+#~ "product in our catalog has been carefully selected by our team of design "
+#~ "experts."
+#~ msgstr ""
+#~ "Italiya mebel ikonalaridan Skandinaviya yoritish innovatorlarigacha — "
+#~ "katalogimizdagi har bir mahsulot dizayn ekspertlari tomonidan sinchiklab "
+#~ "tanlangan."
+
+#~ msgid ""
+#~ "Our selection process is rigorous. Each brand and product earns its place "
+#~ "in our catalog through exceptional design, quality, and longevity."
+#~ msgstr ""
+#~ "Tanlov jarayoni qat’iy: har bir brend va mahsulot dizayn, sifat va uzoq "
+#~ "xizmat qilish orqali o‘z o‘rnini topadi."
+
+#~ msgid "Partnership"
+#~ msgstr "Hamkorlik"
+
+#~ msgid ""
+#~ "We build lasting relationships — with our brands, our clients, and our "
+#~ "community. Your satisfaction is the foundation of everything we do."
+#~ msgstr ""
+#~ "Brendlar, mijozlar va hamjamiyat bilan uzoq muddatli aloqalarni quramiz. "
+#~ "Sizning mamnunligingiz — ishimizning asosi."
+
+#~ msgid "Behind the Brand"
+#~ msgstr "Brend ortida"
+
+#~ msgid "Our Team"
+#~ msgstr "Jamoamiz"
+
+#~ msgid "Founder & CEO"
+#~ msgstr "Asoschi va CEO"
+
+#~ msgid "Head of Design"
+#~ msgstr "Dizayn bo‘limi rahbari"
+
+#~ msgid "Brand Relations"
+#~ msgstr "Brendlar bilan aloqa"
+
+#~ msgid "Client Experience"
+#~ msgstr "Mijozlar tajribasi"
+
+#~ msgid "Social"
+#~ msgstr "Ijtimoiy tarmoqlar"
+
+#~ msgid "Send a Message"
+#~ msgstr "Xabar yuborish"
+
+#~ msgid "Let's Talk"
+#~ msgstr "Keling, gaplashamiz"
+
+#~ msgid "Full Name"
+#~ msgstr "To‘liq ism"
+
+#~ msgid "Your full name"
+#~ msgstr "To‘liq ismingiz"
+
+#~ msgid "your@email.com"
+#~ msgstr "your@email.com"
+
+#~ msgid "What is this about?"
+#~ msgstr "Bu nima haqida?"
+
+#~ msgid "Your message…"
+#~ msgstr "Xabaringiz…"
+
+#~ msgid "Send Message"
+#~ msgstr "Xabar yuborish"
+
+#~ msgid "Eco"
+#~ msgstr "Eko"
+
+#~ msgid "Handmade"
+#~ msgstr "Qo‘lda"
+
+#~ msgid "Italian"
+#~ msgstr "Italiyacha"
 
 msgid "About Us"
 msgstr "Biz haqimizda"
 
-msgid "Navigation"
-msgstr "Navigatsiya"
+msgid "Home"
+msgstr "Bosh sahifa"
 
-msgid "Living Room"
-msgstr "Mehmonxona"
+msgid "About"
+msgstr "Kompaniya haqida"
 
-msgid "Bedroom"
-msgstr "Yotoqxona"
+msgid "Our Story"
+msgstr "Bizning tariximiz"
 
-msgid "Kitchen"
-msgstr "Oshxona"
+msgid "Who We Are"
+msgstr "Biz kimmiz"
 
-msgid "Bathroom"
-msgstr "Hammom"
+msgid "Crafting Spaces"
+msgstr "Joylarni yaratamiz"
 
-msgid "Outdoor"
-msgstr "Tashqi makon"
+msgid "Worth Living In"
+msgstr "Yashashga arzigulik"
 
-msgid "Office"
-msgstr "Ofis"
+msgid "We create spaces where life feels comfortable and inspiring."
+msgstr "Biz yashash uchun qulay va ilhom baxsh etuvchi makonlarni yaratamiz."
 
-msgid "Decor"
-msgstr "Dekor"
+msgid "Perfect Home was established with one clear mission — to provide high-quality and modern building materials for homes and interiors that meet the highest standards and customer expectations."
+msgstr "Perfect Home kompaniyasi bitta maqsad bilan tashkil etilgan — uy va interyer uchun yuqori sifatli va zamonaviy qurilish materiallarini taqdim etish."
 
-msgid "Lighting"
-msgstr "Yoritish"
+msgid "We believe that the environment around us directly shapes our comfort, mood, and overall quality of life. That’s why our collection includes only carefully selected products — from stylish sanitary ware to modern tiles and finishing solutions."
+msgstr "Biz ishonamizki, atrof-muhit insonning kayfiyati, qulayligi va hayot sifatiga bevosita ta’sir qiladi. Shu sababli biz faqat sinchiklab tanlangan mahsulotlarni taklif qilamiz."
 
-msgid "Textiles"
-msgstr "To‘qimachilik"
+msgid "We collaborate with trusted manufacturers and follow the latest design trends, helping you create interiors that are beautiful, practical, and long-lasting."
+msgstr "Biz ishonchli ishlab chiqaruvchilar bilan hamkorlik qilamiz va zamonaviy dizayn trendlarini kuzatib boramiz."
 
-msgid "Storage"
-msgstr "Saqlash"
+msgid "From minimalist styles to contemporary designer collections, every product in our store is chosen with attention to quality, aesthetics, and functionality."
+msgstr "Minimalistik uslublardan tortib zamonaviy dizayner kolleksiyalarigacha — har bir mahsulot sifat, estetika va funksionallikka e’tibor bilan tanlanadi."
 
-msgid "Premium home goods and interior products. Elevating everyday living in Uzbekistan."
-msgstr "Uy va interyer uchun premium mahsulotlar. O‘zbekistonda kundalik hayotni yanada yaxshilaymiz."
+msgid "Our Collection"
+msgstr "Mahsulotlarimiz"
 
-msgid "Address"
-msgstr "Manzil"
+msgid "Get in Touch"
+msgstr "Bog‘lanish"
 
-msgid "Tashkent, Uzbekistan"
-msgstr "Toshkent, O‘zbekiston"
-
-msgid "Amir Temur Avenue, 15"
-msgstr "Amir Temur shoh ko‘chasi, 15"
-
-msgid "Phone"
-msgstr "Telefon"
-
-msgid "Email"
-msgstr "Email"
-
-msgid "Working Hours"
-msgstr "Ish vaqti"
-
-msgid "Mon–Sat: 09:00–19:00"
-msgstr "Du–Shan: 09:00–19:00"
-
-msgid "All rights reserved."
-msgstr "Barcha huquqlar himoyalangan."
-
-msgid "Designed with care in Tashkent"
-msgstr "Toshkentda mehr bilan tayyorlangan"
-
-msgid "Request a product"
-msgstr "Mahsulot so‘rash"
-
-msgid "Place an Order"
-msgstr "Buyurtma so‘rovi"
-
-msgid "Your Name"
-msgstr "Ismingiz"
-
-msgid "Phone Number"
-msgstr "Telefon raqam"
-
-msgid "Message (optional)"
-msgstr "Xabar (ixtiyoriy)"
-
-msgid "Send Request"
-msgstr "So‘rov yuborish"
-
-msgid "We will contact you shortly to confirm your order details."
-msgstr "Tez orada siz bilan bog‘lanamiz va tafsilotlarni tasdiqlaymiz."
-
-msgid "Premium Home Collection — 2025"
-msgstr "Premium uy kolleksiyasi — 2025"
-
-msgid "The Art of"
-msgstr "San’ati"
-
-msgid "Living Well"
-msgstr "Yaxshi yashash"
-
-msgid "Explore Collection"
-msgstr "Kolleksiyani ko‘rish"
-
-msgid "Browse Categories"
-msgstr "Kategoriyalarni ko‘rish"
-
-msgid "Scroll"
-msgstr "Pastga"
-
-msgid "Shop by"
-msgstr "Tanlang"
-
-msgid "View All"
-msgstr "Barchasini ko‘rish"
-
-msgid "items"
-msgstr "ta"
-
-msgid "Curated for you"
-msgstr "Siz uchun tanlangan"
-
-msgid "Featured Products"
-msgstr "Tanlangan mahsulotlar"
-
-msgid "All Products"
-msgstr "Barcha mahsulotlar"
-
-msgid "New"
-msgstr "Yangi"
-
-msgid "Popular"
-msgstr "Ommabop"
-
-msgid "New collection"
-msgstr "Yangi kolleksiya"
-
-msgid "Autumn — Winter"
-msgstr "Kuz — Qish"
-
-msgid "Discover Now"
-msgstr "Hozir ko‘rish"
-
-msgid "Our Partners"
-msgstr "Hamkorlarimiz"
-
-msgid "Premium Brands"
-msgstr "Premium brendlar"
-
-msgid "All Brands"
-msgstr "Barcha brendlar"
-
-msgid "Why Choose Us"
-msgstr "Nega aynan biz"
-
-msgid "Where Quality"
-msgstr "Sifat"
-
-msgid "Meets Design"
-msgstr "dizayn bilan uyg‘un"
-
-msgid "We curate the finest home goods from the world's most respected brands, bringing premium interior solutions to Uzbekistan's discerning homes."
-msgstr "Dunyoning eng nufuzli brendlaridan eng sara mahsulotlarni tanlab, O‘zbekistonga premium interyer yechimlarini olib kelamiz."
+msgid "Years in Business"
+msgstr "Yillik tajriba"
 
 msgid "Premium Products"
 msgstr "Premium mahsulotlar"
@@ -198,200 +2427,14 @@ msgstr "Premium mahsulotlar"
 msgid "Global Brands"
 msgstr "Jahon brendlari"
 
-msgid "Years Experience"
-msgstr "Yillik tajriba"
-
 msgid "Happy Clients"
 msgstr "Mamnun mijozlar"
 
-msgid "Latest"
-msgstr "So‘nggi"
-
-msgid "Stories & Inspiration"
-msgstr "Hikoyalar va ilhom"
-
-msgid "All Articles"
-msgstr "Barcha maqolalar"
-
-msgid "Interior"
-msgstr "Interyer"
-
-msgid "How to Style a Minimalist Living Room in 2025"
-msgstr "2025-yilda minimalistik mehmonxonani bezash"
-
-msgid "Trends"
-msgstr "Trendlar"
-
-msgid "The Return of Natural Materials in Modern Homes"
-msgstr "Zamonaviy uylarda tabiiy materiallarning qaytishi"
-
-msgid "Design"
-msgstr "Dizayn"
-
-msgid "Italian Furniture: A Guide to Timeless Elegance"
-msgstr "Italiya mebellari: abadiy nafislik bo‘yicha qo‘llanma"
-
-msgid "Ready to Transform?"
-msgstr "O‘zgartirishga tayyormisiz?"
-
-msgid "Your Dream"
-msgstr "Orzudagi"
-
-msgid "Home Awaits"
-msgstr "uy sizni kutmoqda"
-
-msgid "Browse our curated collection and request a consultation. Our design experts are ready to help."
-msgstr "Tanlangan kolleksiyamizni ko‘rib chiqing va maslahat so‘rang. Dizayn ekspertlarimiz yordam berishga tayyor."
-
-msgid "Explore Products"
-msgstr "Mahsulotlarni ko‘rish"
-
-msgid "Contact Us"
-msgstr "Biz bilan bog‘laning"
-
-msgid "products found"
-msgstr "ta mahsulot topildi"
-
-msgid "Showing our full collection"
-msgstr "To‘liq kolleksiya ko‘rsatilmoqda"
-
-msgid "Search products…"
-msgstr "Mahsulot qidirish…"
-
-msgid "Category"
-msgstr "Kategoriya"
-
-msgid "Brand"
-msgstr "Brend"
-
-msgid "Country"
-msgstr "Mamlakat"
-
-msgid "Tags"
-msgstr "Teglar"
-
-msgid "Apply Filters"
-msgstr "Filtrlarni qo‘llash"
-
-msgid "Reset All"
-msgstr "Hammasini tozalash"
-
-msgid "of"
-msgstr "dan"
-
-msgid "Showing all products"
-msgstr "Barcha mahsulotlar ko‘rsatilmoqda"
-
-msgid "Sort by"
-msgstr "Saralash"
-
-msgid "Name A–Z"
-msgstr "Nomi A–Z"
-
-msgid "Name Z–A"
-msgstr "Nomi Z–A"
-
-msgid "Newest First"
-msgstr "Eng yangilari avval"
-
-msgid "Sale"
-msgstr "Chegirma"
-
-msgid "Load More"
-msgstr "Yana yuklash"
-
-msgid "Browse by"
-msgstr "Tanlash"
-
-msgid "All Categories"
-msgstr "Barcha kategoriyalar"
-
-msgid "products"
-msgstr "mahsulot"
-
-msgid "More"
-msgstr "Ko‘proq"
-
-msgid "More Categories"
-msgstr "Ko‘proq kategoriyalar"
-
-msgid "Italy"
-msgstr "Italiya"
-
-msgid "Germany"
-msgstr "Germaniya"
-
-msgid "Denmark"
-msgstr "Daniya"
-
-msgid "USA"
-msgstr "AQSH"
-
-msgid "France"
-msgstr "Fransiya"
-
-msgid "Switzerland"
-msgstr "Shveysariya"
-
-msgid "Netherlands"
-msgstr "Niderlandiya"
-
-msgid "Spain"
-msgstr "Ispaniya"
-
-msgid "All"
-msgstr "Barchasi"
-
-msgid "Highlighted"
-msgstr "Ajratilgan"
-
-msgid "Featured Brands"
-msgstr "Tanlangan brendlar"
-
-msgid "Since 1948"
-msgstr "1948-yildan"
-
-msgid "Since 1966"
-msgstr "1966-yildan"
-
-msgid "products available"
-msgstr "ta mahsulot mavjud"
-
-msgid "Our Story"
-msgstr "Bizning hikoyamiz"
-
-msgid "Who We Are"
-msgstr "Biz kimmiz"
-
-msgid "Crafting Spaces"
-msgstr "Muhit yaratamiz"
-
-msgid "Worth Living In"
-msgstr "unda yashash yoqimli"
-
-msgid "Perfect Home was founded with a singular vision: to bring the world's finest home goods and interior products to Uzbekistan's most discerning homeowners and designers."
-msgstr "Perfect Home bitta maqsad bilan tashkil etilgan: dunyoning eng sara uy va interyer mahsulotlarini O‘zbekistondagi talabchan mijozlarga olib kelish."
-
-msgid "We believe that the objects we surround ourselves with shape how we feel, think, and live. That's why we partner exclusively with brands that share our uncompromising standards for quality, craftsmanship, and design."
-msgstr "Bizni o‘rab turgan buyumlar kayfiyatimiz va hayot tarzimizni belgilaydi deb hisoblaymiz. Shu sababli faqat sifat, mahorat va dizayn bo‘yicha yuksak talablarimizga mos brendlar bilan ishlaymiz."
-
-msgid "From Italian furniture icons to Scandinavian lighting innovators, every product in our catalog has been carefully selected by our team of design experts."
-msgstr "Italiya mebel ikonalaridan Skandinaviya yoritish innovatorlarigacha — katalogimizdagi har bir mahsulot dizayn ekspertlari tomonidan sinchiklab tanlangan."
-
-msgid "Our Collection"
-msgstr "Kolleksiyamiz"
-
-msgid "Get in Touch"
-msgstr "Bog‘lanish"
-
-msgid "Years in Business"
-msgstr "Bozorda yillar"
-
 msgid "Countries Sourced"
-msgstr "Ta’minot mamlakatlari"
+msgstr "Hamkor davlatlar"
 
 msgid "What We Believe"
-msgstr "Qadriyatlarimiz"
+msgstr "Bizning qadriyatlarimiz"
 
 msgid "Our Values"
 msgstr "Qadriyatlarimiz"
@@ -399,38 +2442,20 @@ msgstr "Qadriyatlarimiz"
 msgid "Authenticity"
 msgstr "Haqiqiylik"
 
-msgid "Every product we carry is sourced directly from authorized distributors. We guarantee the genuine article — no compromises, no imitations."
-msgstr "Bizdagi mahsulotlar faqat rasmiy distributorlardan olinadi. Haqiqiylik kafolatlanadi — hech qanday murosasiz."
+msgid "Every product we offer comes from trusted and verified suppliers. We guarantee genuine quality with no compromises."
+msgstr "Biz taklif qiladigan barcha mahsulotlar ishonchli yetkazib beruvchilardan olinadi. Sifatga kafolat beramiz."
 
-msgid "Curation"
-msgstr "Tanlov"
+msgid "Quality Selection"
+msgstr "Sifatli tanlov"
 
-msgid "Our selection process is rigorous. Each brand and product earns its place in our catalog through exceptional design, quality, and longevity."
-msgstr "Tanlov jarayoni qat’iy: har bir brend va mahsulot dizayn, sifat va uzoq xizmat qilish orqali o‘z o‘rnini topadi."
+msgid "Each product in our catalog is carefully selected based on design, durability, and long-term value."
+msgstr "Har bir mahsulot dizayn, mustahkamlik va uzoq muddatli foydalanish asosida tanlanadi."
 
-msgid "Partnership"
-msgstr "Hamkorlik"
+msgid "Customer Focus"
+msgstr "Mijozga e’tibor"
 
-msgid "We build lasting relationships — with our brands, our clients, and our community. Your satisfaction is the foundation of everything we do."
-msgstr "Brendlar, mijozlar va hamjamiyat bilan uzoq muddatli aloqalarni quramiz. Sizning mamnunligingiz — ishimizning asosi."
-
-msgid "Behind the Brand"
-msgstr "Brend ortida"
-
-msgid "Our Team"
-msgstr "Jamoamiz"
-
-msgid "Founder & CEO"
-msgstr "Asoschi va CEO"
-
-msgid "Head of Design"
-msgstr "Dizayn bo‘limi rahbari"
-
-msgid "Brand Relations"
-msgstr "Brendlar bilan aloqa"
-
-msgid "Client Experience"
-msgstr "Mijozlar tajribasi"
+msgid "We build lasting relationships with our customers by delivering reliable service and exceptional products."
+msgstr "Biz mijozlar bilan uzoq muddatli aloqalarni rivojlantiramiz."
 
 msgid "Visit Us"
 msgstr "Bizga tashrif buyuring"
@@ -438,302 +2463,8 @@ msgstr "Bizga tashrif buyuring"
 msgid "Experience Our Showroom"
 msgstr "Shourumimizni ko‘ring"
 
-msgid "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–19:00."
-msgstr "Sifatni ko‘ring, ushlab ko‘ring va his eting. Toshkentdagi shourumimiz dushanbadan shanbagacha 9:00–19:00 ochiq."
+msgid "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–18:00, and Sunday from 9:00–15:00."
+msgstr "Mahsulotlarni jonli ko‘rib baholang. Toshkentdagi shourumimiz dushanbadan shanbagacha 9:00–18:00, yakshanba kuni 9:00–15:00 ishlaydi."
 
 msgid "Get Directions"
-msgstr "Yo‘lni ko‘rish"
-
-msgid "Reach Out"
-msgstr "Bog‘laning"
-
-msgid "We'd Love to Hear"
-msgstr "Sizdan"
-
-msgid "From You"
-msgstr "eshitishni xohlaymiz"
-
-msgid "Whether you have a question about a product, want to visit our showroom, or are planning a full interior project — our team is ready to help."
-msgstr "Mahsulot bo‘yicha savolingiz bo‘lsa, shourumga tashrif buyurmoqchi bo‘lsangiz yoki to‘liq interyer loyihasi rejalashtirsangiz — jamoamiz yordam berishga tayyor."
-
-msgid "Monday – Saturday: 09:00 – 19:00"
-msgstr "Dushanba – Shanba: 09:00 – 19:00"
-
-msgid "Sunday: Closed"
-msgstr "Yakshanba: yopiq"
-
-msgid "Social"
-msgstr "Ijtimoiy tarmoqlar"
-
-msgid "Instagram"
-msgstr "Instagram"
-
-msgid "Telegram"
-msgstr "Telegram"
-
-msgid "Facebook"
-msgstr "Facebook"
-
-msgid "Send a Message"
-msgstr "Xabar yuborish"
-
-msgid "Let's Talk"
-msgstr "Keling, gaplashamiz"
-
-msgid "Full Name"
-msgstr "To‘liq ism"
-
-msgid "Your full name"
-msgstr "To‘liq ismingiz"
-
-msgid "your@email.com"
-msgstr "your@email.com"
-
-msgid "Subject"
-msgstr "Mavzu"
-
-msgid "What is this about?"
-msgstr "Bu nima haqida?"
-
-msgid "Message"
-msgstr "Xabar"
-
-msgid "Your message…"
-msgstr "Xabaringiz…"
-
-msgid "Send Message"
-msgstr "Xabar yuborish"
-
-msgid "Blog"
-msgstr "Blog"
-
-msgid "Journal"
-msgstr "Jurnal"
-
-msgid "Stories and Inspiration"
-msgstr "Hikoyalar va ilhom"
-
-msgid "No posts yet."
-msgstr "Hozircha postlar yo‘q."
-
-msgid "Article"
-msgstr "Maqola"
-
-msgid "Product Detail"
-msgstr "Mahsulot tafsilotlari"
-
-msgid "Minotti"
-msgstr "Minotti"
-
-msgid "Article Number"
-msgstr "Artikul raqami"
-
-msgid "Italian Design"
-msgstr "Italiya dizayni"
-
-msgid "Handcrafted"
-msgstr "Qo‘lda ishlangan"
-
-msgid "Premium Fabric"
-msgstr "Premium mato"
-
-msgid "New Arrival"
-msgstr "Yangi kelgan"
-
-msgid "Description"
-msgstr "Tavsif"
-
-msgid "A masterpiece of Italian craftsmanship, this lounge chair combines premium velvet upholstery with a solid beech wood frame. Designed for those who appreciate the subtle luxury of exceptional materials and considered form. The gentle curves and generous proportions invite effortless relaxation."
-msgstr "Italiya ustachiligining durdonasi: bu kreslo premium baxmal va buk yog‘ochi karkasini uyg‘unlashtiradi. Noyob materiallar va puxta shaklni qadrlaydiganlar uchun yaratilgan. Yumshoq chiziqlar va keng proporsiyalar qulaylik beradi."
-
-msgid "Specifications"
-msgstr "Xususiyatlar"
-
-msgid "Origin"
-msgstr "Kelib chiqishi"
-
-msgid "Price"
-msgstr "Narx"
-
-msgid "Material"
-msgstr "Material"
-
-msgid "Dimensions"
-msgstr "O‘lchamlar"
-
-msgid "Velvet, Beech Wood"
-msgstr "Baxmal, buk yog‘ochi"
-
-msgid "W 80 × D 85 × H 78 cm"
-msgstr "K 80 × Ch 85 × B 78 sm"
-
-msgid "Weight"
-msgstr "Vazn"
-
-msgid "28 kg"
-msgstr "28 kg"
-
-msgid "Order Now"
-msgstr "Buyurtma berish"
-
-msgid "Share"
-msgstr "Ulashish"
-
-msgid "Have questions?"
-msgstr "Savollaringiz bormi?"
-
-msgid "You Might Also Like"
-msgstr "Sizga yoqishi mumkin"
-
-msgid "Related Products"
-msgstr "O‘xshash mahsulotlar"
-
-msgid "Perfect Home Interior"
-msgstr "Perfect Home interyeri"
-
-msgid "Eco"
-msgstr "Eko"
-
-msgid "Handmade"
-msgstr "Qo‘lda"
-
-msgid "Italian"
-msgstr "Italiyacha"
-
-msgid "About Perfect Home"
-msgstr "Perfect Home haqida"
-
-msgid "Apr 10, 2025"
-msgstr "10-aprel, 2025"
-
-msgid "Brass Side Table"
-msgstr "Latun yon stolcha"
-
-msgid "Ceramic Floor Lamp"
-msgstr "Keramik torcher"
-
-msgid "Close"
-msgstr "Yopish"
-
-msgid "Close menu"
-msgstr "Menyuni yopish"
-
-msgid "Concrete Bookshelf"
-msgstr "Beton kitob javoni"
-
-msgid "Enter your password"
-msgstr "Parolni kiriting"
-
-msgid "Enter your username"
-msgstr "Foydalanuvchi nomini kiriting"
-
-msgid "Floor Lamp"
-msgstr "Torcher"
-
-msgid "Glass Coffee Table"
-msgstr "Shisha jurnal stolcha"
-
-msgid "Glass Pendant Light"
-msgstr "Shisha osma chiroq"
-
-msgid "Interior Design"
-msgstr "Interyer dizayni"
-
-msgid "Jun 15, 2025"
-msgstr "15-iyun, 2025"
-
-msgid "Leather Armchair"
-msgstr "Charm kreslo"
-
-msgid "Linen Sofa Set"
-msgstr "Zig‘ir divan to‘plami"
-
-msgid "Linen Sofa — 3 Seat"
-msgstr "Zig‘ir divan — 3 o‘rinli"
-
-msgid "Marble Coffee Table"
-msgstr "Marmar jurnal stolcha"
-
-msgid "Marble Side Table"
-msgstr "Marmar yon stolcha"
-
-msgid "May 28, 2025"
-msgstr "28-may, 2025"
-
-msgid "No account yet?"
-msgstr "Hali akkauntingiz yo‘qmi?"
-
-msgid "Oak Dining Table"
-msgstr "Eman ovqat stoli"
-
-msgid "Oak Dining Table 220"
-msgstr "Eman ovqat stoli 220 sm"
-
-msgid "Oak Side Table"
-msgstr "Eman yon stolcha"
-
-msgid "Open menu"
-msgstr "Menyuni ochish"
-
-msgid "Our Showroom"
-msgstr "Bizning shourum"
-
-msgid "Password"
-msgstr "Parol"
-
-msgid "Product"
-msgstr "Mahsulot"
-
-msgid "Rattan Lounge Chair"
-msgstr "Rattan launj-kreslo"
-
-msgid "Register"
-msgstr "Ro‘yxatdan o‘tish"
-
-msgid "Related"
-msgstr "O‘xshash"
-
-msgid "Search brands…"
-msgstr "Brendlarni qidirish…"
-
-msgid "Showroom"
-msgstr "Shourum"
-
-msgid "Sign In"
-msgstr "Kirish"
-
-msgid "Teak Bed Frame"
-msgstr "Tik yog‘och karavot karkasi"
-
-msgid "Teak King Bed Frame"
-msgstr "Tik yog‘och king-size karavot karkasi"
-
-msgid "Team member"
-msgstr "Jamoa a’zosi"
-
-msgid "Username"
-msgstr "Foydalanuvchi nomi"
-
-msgid "Velvet Lounge Chair"
-msgstr "Baxmal launj-kreslo"
-
-msgid "View 1"
-msgstr "Ko‘rinish 1"
-
-msgid "View 2"
-msgstr "Ko‘rinish 2"
-
-msgid "View 3"
-msgstr "Ko‘rinish 3"
-
-msgid "View 4"
-msgstr "Ko‘rinish 4"
-
-msgid "Wool Area Rug"
-msgstr "Jun gilam"
-
-msgid "Wool Area Rug 2×3m"
-msgstr "Jun gilam 2×3 m"
-
-msgid "Wool Throw"
-msgstr "Jun pled"
+msgstr "Yo‘nalishni ko‘rish"

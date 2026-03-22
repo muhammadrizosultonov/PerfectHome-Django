@@ -5,9 +5,11 @@
 {% block nav_about %}active{% endblock %}
 
 {% block content %}
+
 <div class="pt-16 lg:pt-20">
 
   <!-- HERO -->
+
   <section class="relative h-[60vh] overflow-hidden">
     <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1800&q=85&fit=crop" alt="{% trans 'About Perfect Home' %}" class="w-full h-full object-cover">
     <div class="absolute inset-0 bg-charcoal/60"></div>
@@ -27,36 +29,54 @@
   </section>
 
   <!-- MISSION -->
+
   <section class="py-24">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div>
           <p class="section-label mb-6">{% trans "Who We Are" %}</p>
-          <h2 class="section-title mb-8">{% trans "Crafting Spaces" %}<br>{% trans "Worth Living In" %}</h2>
-          <div class="flex flex-col gap-5 text-stone leading-relaxed">
-            <p>{% trans "Perfect Home was founded with a singular vision: to bring the world's finest home goods and interior products to Uzbekistan's most discerning homeowners and designers." %}</p>
-            <p>{% trans "We believe that the objects we surround ourselves with shape how we feel, think, and live. That's why we partner exclusively with brands that share our uncompromising standards for quality, craftsmanship, and design." %}</p>
-            <p>{% trans "From Italian furniture icons to Scandinavian lighting innovators, every product in our catalog has been carefully selected by our team of design experts." %}</p>
-          </div>
-          <div class="flex flex-wrap gap-4 mt-10">
-            <a href="{% url 'products:catalog' %}" class="btn-primary">{% trans "Our Collection" %}</a>
-            <a href="{% url 'core:contact' %}" class="btn-outline">{% trans "Get in Touch" %}</a>
-          </div>
-        </div>
-        <div class="relative">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=85&fit=crop" alt="{% trans 'Our Showroom' %}" class="w-full aspect-[4/5] object-cover">
-          <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-cream hidden lg:flex items-center justify-center text-center p-6">
-            <div>
-              <div class="font-display text-5xl font-light text-accent">8+</div>
-              <p class="text-xs text-stone uppercase tracking-widest mt-1">{% trans "Years in Business" %}</p>
-            </div>
-          </div>
+          <h2 class="section-title mb-8">
+            {% trans "Crafting Spaces" %}<br>{% trans "Worth Living In" %}
+          </h2>
+
+```
+      <div class="flex flex-col gap-5 text-stone leading-relaxed">
+        <p>{% trans "We create spaces where life feels comfortable and inspiring." %}</p>
+
+        <p>{% trans "Perfect Home was established with one clear mission — to provide high-quality and modern building materials for homes and interiors that meet the highest standards and customer expectations." %}</p>
+
+        <p>{% trans "We believe that the environment around us directly shapes our comfort, mood, and overall quality of life. That’s why our collection includes only carefully selected products — from stylish sanitary ware to modern tiles and finishing solutions." %}</p>
+
+        <p>{% trans "We collaborate with trusted manufacturers and follow the latest design trends, helping you create interiors that are beautiful, practical, and long-lasting." %}</p>
+
+        <p>{% trans "From minimalist styles to contemporary designer collections, every product in our store is chosen with attention to quality, aesthetics, and functionality." %}</p>
+      </div>
+
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="{% url 'products:catalog' %}" class="btn-primary">{% trans "Our Collection" %}</a>
+        <a href="{% url 'core:contact' %}" class="btn-outline">{% trans "Get in Touch" %}</a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=85&fit=crop" alt="{% trans 'Our Showroom' %}" class="w-full aspect-[4/5] object-cover">
+      <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-cream hidden lg:flex items-center justify-center text-center p-6">
+        <div>
+          <div class="font-display text-5xl font-light text-accent">8+</div>
+          <p class="text-xs text-stone uppercase tracking-widest mt-1">
+            {% trans "Years in Business" %}
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- STATS -->
+
   <section class="py-20 bg-charcoal">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -81,43 +101,69 @@
   </section>
 
   <!-- VALUES -->
+
   <section class="py-24 bg-cream">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
       <div class="text-center mb-16">
         <p class="section-label mb-4">{% trans "What We Believe" %}</p>
         <h2 class="section-title">{% trans "Our Values" %}</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-10">
-          <div class="w-12 h-px bg-accent mb-8"></div>
-          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Authenticity" %}</h3>
-          <p class="text-stone leading-relaxed text-sm">{% trans "Every product we carry is sourced directly from authorized distributors. We guarantee the genuine article — no compromises, no imitations." %}</p>
-        </div>
-        <div class="bg-white p-10">
-          <div class="w-12 h-px bg-accent mb-8"></div>
-          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Curation" %}</h3>
-          <p class="text-stone leading-relaxed text-sm">{% trans "Our selection process is rigorous. Each brand and product earns its place in our catalog through exceptional design, quality, and longevity." %}</p>
-        </div>
-        <div class="bg-white p-10">
-          <div class="w-12 h-px bg-accent mb-8"></div>
-          <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Partnership" %}</h3>
-          <p class="text-stone leading-relaxed text-sm">{% trans "We build lasting relationships — with our brands, our clients, and our community. Your satisfaction is the foundation of everything we do." %}</p>
-        </div>
-      </div>
+
+```
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-10">
+      <div class="w-12 h-px bg-accent mb-8"></div>
+      <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Authenticity" %}</h3>
+      <p class="text-stone leading-relaxed text-sm">
+        {% trans "Every product we offer comes from trusted and verified suppliers. We guarantee genuine quality with no compromises." %}
+      </p>
     </div>
+
+    <div class="bg-white p-10">
+      <div class="w-12 h-px bg-accent mb-8"></div>
+      <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Quality Selection" %}</h3>
+      <p class="text-stone leading-relaxed text-sm">
+        {% trans "Each product in our catalog is carefully selected based on design, durability, and long-term value." %}
+      </p>
+    </div>
+
+    <div class="bg-white p-10">
+      <div class="w-12 h-px bg-accent mb-8"></div>
+      <h3 class="font-display text-2xl font-light text-charcoal mb-4">{% trans "Customer Focus" %}</h3>
+      <p class="text-stone leading-relaxed text-sm">
+        {% trans "We build lasting relationships with our customers by delivering reliable service and exceptional products." %}
+      </p>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
-  
   <!-- SHOWROOM CTA -->
+
   <section class="relative py-32 overflow-hidden">
     <img src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=1800&q=85&fit=crop" alt="{% trans 'Showroom' %}" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-charcoal/65"></div>
-    <div class="relative max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
-      <p class="section-label text-accent-light mb-4">{% trans "Visit Us" %}</p>
-      <h2 class="font-display text-5xl md:text-6xl font-light text-white mb-8">{% trans "Experience Our Showroom" %}</h2>
-      <p class="text-white/70 max-w-lg mx-auto mb-10 leading-relaxed">{% trans "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–19:00." %}</p>
-      <a href="{% url 'core:contact' %}" class="btn-accent">{% trans "Get Directions" %}</a>
-    </div>
+
+```
+<div class="relative max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+  <p class="section-label text-accent-light mb-4">{% trans "Visit Us" %}</p>
+
+  <h2 class="font-display text-5xl md:text-6xl font-light text-white mb-8">
+    {% trans "Experience Our Showroom" %}
+  </h2>
+
+  <p class="text-white/70 max-w-lg mx-auto mb-10 leading-relaxed">
+    {% trans "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–18:00, and Sunday from 9:00–15:00." %}
+  </p>
+
+  <a href="{% url 'core:contact' %}" class="btn-accent">
+    {% trans "Get Directions" %}
+  </a>
+</div>
+```
+
   </section>
 
 </div>
