@@ -24,9 +24,18 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 const orderModal = document.getElementById('order-modal');
 const openModalBtns = document.querySelectorAll('[data-open-modal]');
 const closeModalBtn = document.getElementById('close-modal');
+const orderForm = document.getElementById('order-form');
+const orderFormStatus = document.getElementById('order-form-status');
 
 openModalBtns.forEach(btn => {
-  btn.addEventListener('click', () => orderModal?.classList.add('active'));
+  btn.addEventListener('click', () => {
+    const orderUrl = btn.getAttribute('data-order-url');
+    if (orderForm && orderUrl) {
+      orderForm.setAttribute('action', orderUrl);
+    }
+    if (orderFormStatus) orderFormStatus.textContent = '';
+    orderModal?.classList.add('active');
+  });
 });
 if (closeModalBtn) closeModalBtn.addEventListener('click', () => orderModal.classList.remove('active'));
 if (orderModal) {
@@ -98,13 +107,44 @@ if (contactForm) {
 }
 
 // ---- ORDER FORM ----
-const orderForm = document.getElementById('order-form');
 if (orderForm) {
-  orderForm.addEventListener('submit', (e) => {
+  orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const action = orderForm.getAttribute('action');
+    if (!action) {
+      if (orderFormStatus) orderFormStatus.textContent = 'Order URL is missing.';
+      return;
+    }
+
     const btn = orderForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Request Sent!';
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    setTimeout(() => { orderModal.classList.remove('active'); btn.textContent = 'Send Request'; btn.disabled = false; orderForm.reset(); }, 1800);
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: new FormData(orderForm),
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.ok) {
+        if (orderFormStatus) orderFormStatus.textContent = data.message || 'Request sent.';
+        setTimeout(() => {
+          orderModal?.classList.remove('active');
+          orderForm.reset();
+          if (orderFormStatus) orderFormStatus.textContent = '';
+        }, 1400);
+      } else {
+        if (orderFormStatus) orderFormStatus.textContent = data.error || 'Invalid request.';
+      }
+    } catch (err) {
+      if (orderFormStatus) orderFormStatus.textContent = 'Network error. Please try again.';
+    } finally {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
   });
 }

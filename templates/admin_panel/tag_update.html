@@ -1,0 +1,40 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Редактирование тега{% endblock %}
+{% block header %}Редактирование тега "{{ tag.name }}"{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Название тега *</label>
+                        <input type="text" name="name" class="form-control" value="{{ tag.name }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Slug</label>
+                        <input type="text" name="slug" class="form-control" value="{{ tag.slug }}">
+                        <small class="text-muted">Если оставить пустым, slug будет создан автоматически</small>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_tag_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Назад
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Сохранить изменения
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

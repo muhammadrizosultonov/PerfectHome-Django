@@ -28,6 +28,12 @@ urlpatterns = [
     path('admin-panel/brands/<int:pk>/edit/', views.AdminBrandUpdateView.as_view(), name='admin_brand_edit'),
     path('admin-panel/brands/<int:pk>/delete/', views.AdminBrandDeleteView.as_view(), name='admin_brand_delete'),
 
+    # Tag Management
+    path('admin-panel/tags/', views.AdminTagListView.as_view(), name='admin_tag_list'),
+    path('admin-panel/tags/create/', views.AdminTagCreateView.as_view(), name='admin_tag_create'),
+    path('admin-panel/tags/<int:pk>/edit/', views.AdminTagUpdateView.as_view(), name='admin_tag_edit'),
+    path('admin-panel/tags/<int:pk>/delete/', views.AdminTagDeleteView.as_view(), name='admin_tag_delete'),
+
     # Blog Management
     path('admin-panel/blog/', views.AdminBlogListView.as_view(), name='admin_blog_list'),
     path('admin-panel/blog/create/', views.AdminBlogCreateView.as_view(), name='admin_blog_create'),

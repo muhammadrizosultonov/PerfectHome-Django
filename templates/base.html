@@ -46,14 +46,18 @@
 <!-- ═══════════════════════════════════════════
      NAVBAR
 ═══════════════════════════════════════════ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/97 border-b border-warm-gray transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-warm-gray transition-all duration-300">
   <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-16 lg:h-20">
 
       <!-- Logo -->
-      <a href="{% url 'core:home' %}" class="flex flex-col leading-none group">
-        <span class="font-display text-2xl font-light tracking-wider text-charcoal group-hover:text-accent transition-colors duration-300">Perfect</span>
-        <span class="font-display text-2xl font-light tracking-widest text-accent">Home</span>
+      <a href="{% url 'core:home' %}" class="flex items-center gap-3 group">
+        <img
+          src="{% static 'img/brand-logo.png' %}"
+          alt="Perfect Home"
+          class="h-10 lg:h-12 w-auto object-contain"
+        >
+        <span class="sr-only">Perfect Home</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -123,7 +127,13 @@
 
     <!-- Brand Column -->
     <div class="lg:col-span-1">
-      <div class="footer-title mb-4">Perfect<br>Home</div>
+      <div class="mb-4">
+        <img
+          src="{% static 'img/brand-logo.png' %}"
+          alt="Perfect Home"
+          class="h-12 w-auto object-contain"
+        >
+      </div>
       <p class="text-sm text-stone leading-relaxed mb-6">{% trans "Perfect Home was founded with one mission — to provide high-quality and modern construction materials for home and interior." %}</p>
     </div>
 
@@ -179,19 +189,28 @@
     <p class="section-label mb-4">{% trans "Request a product" %}</p>
     <h3 class="font-display text-3xl font-light text-charcoal mb-6">{% trans "Place an Order" %}</h3>
 
-    <form id="order-form" class="flex flex-col gap-6">
+    <form id="order-form" class="flex flex-col gap-6" method="post" action="">
       {% csrf_token %}
       <div>
         <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="form-input" required>
       </div>
       <div>
-        <input type="tel" name="phone" placeholder="{% trans 'Phone Number' %}" class="form-input" required>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="+998 90 123 45 67"
+          class="form-input"
+          pattern="\\+?998[\\s-]?\\d{2}[\\s-]?\\d{3}[\\s-]?\\d{2}[\\s-]?\\d{2}"
+          title="{% trans 'Phone format: +998 90 123 45 67' %}"
+          required>
       </div>
       <div>
         <textarea name="message" placeholder="{% trans 'Message (optional)' %}" rows="3" class="form-input resize-none"></textarea>
       </div>
       <button type="submit" class="btn-accent mt-2">{% trans "Send Request" %}</button>
     </form>
+
+    <div id="order-form-status" class="text-sm text-stone mt-3"></div>
 
     <p class="text-xs text-stone mt-4 leading-relaxed">{% trans "We will contact you shortly to confirm your order details." %}</p>
   </div>

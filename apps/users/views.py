@@ -328,6 +328,63 @@ class AdminBrandDeleteView(StaffRequiredMixin, View):
         return redirect('users:admin_brand_list')
 
 
+# ================ TAG MANAGEMENT ================
+class AdminTagListView(StaffRequiredMixin, View):
+    def get(self, request):
+        tags = ProductTag.objects.annotate(
+            products_count=Count('products', distinct=True)
+        ).all()
+        return render(request, 'admin_panel/tags.html', {'tags': tags})
+
+
+class AdminTagCreateView(StaffRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'admin_panel/tag_create.html')
+
+    def post(self, request):
+        try:
+            name = request.POST.get('name')
+            slug = request.POST.get('slug', '')
+            tag = ProductTag.objects.create(
+                name=name,
+                slug=slug,
+            )
+            messages.success(request, f'Тег "{tag.name}" создан')
+            return redirect('users:admin_tag_list')
+        except Exception as e:
+            messages.error(request, f'Ошибка: {str(e)}')
+            return self.get(request)
+
+
+class AdminTagUpdateView(StaffRequiredMixin, View):
+    def get(self, request, pk):
+        tag = get_object_or_404(ProductTag, pk=pk)
+        return render(request, 'admin_panel/tag_update.html', {'tag': tag})
+
+    def post(self, request, pk):
+        tag = get_object_or_404(ProductTag, pk=pk)
+        try:
+            tag.name = request.POST.get('name')
+            tag.slug = request.POST.get('slug', '')
+            tag.save()
+            messages.success(request, 'Тег обновлен')
+            return redirect('users:admin_tag_list')
+        except Exception as e:
+            messages.error(request, f'Ошибка: {str(e)}')
+            return self.get(request, pk)
+
+
+class AdminTagDeleteView(StaffRequiredMixin, View):
+    def post(self, request, pk):
+        tag = get_object_or_404(ProductTag, pk=pk)
+        if tag.products.exists():
+            messages.error(request, 'Нельзя удалить тег с товарами')
+        else:
+            tag.delete()
+            messages.success(request, 'Тег удален')
+        return redirect('users:admin_tag_list')
+
+
 # ================ BLOG MANAGEMENT ================
 class AdminBlogListView(StaffRequiredMixin, View):
     def get(self, request):

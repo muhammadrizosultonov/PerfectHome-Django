@@ -1,0 +1,69 @@
+{% extends 'admin_panel/base_admin.html' %}
+
+{% block title %}Создание тега{% endblock %}
+{% block header %}Создание нового тега{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Название тега *</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Slug</label>
+                        <input type="text" name="slug" class="form-control">
+                        <small class="text-muted">Если оставить пустым, slug будет создан автоматически</small>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'users:admin_tag_list' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Создать тег
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const nameInput = document.querySelector('input[name="name"]');
+const slugInput = document.querySelector('input[name="slug"]');
+let slugTouched = false;
+
+const toSlug = (value) => {
+    let slug = value.toLowerCase().trim();
+    try {
+        slug = slug.replace(/[^\p{L}\p{N}\s-]/gu, '');
+    } catch (e) {
+        slug = slug.replace(/[^a-z0-9\s-]/g, '');
+    }
+    return slug.replace(/\s+/g, '-').replace(/-+/g, '-');
+};
+
+if (slugInput) {
+    slugInput.addEventListener('input', () => {
+        slugTouched = slugInput.value.trim().length > 0;
+    });
+}
+
+if (nameInput && slugInput) {
+    nameInput.addEventListener('input', () => {
+        if (slugTouched) return;
+        slugInput.value = toSlug(nameInput.value);
+    });
+}
+</script>
+{% endblock %}

@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% load static i18n %}
 
-{% trans "Product Detail" as product_detail_label %}
-{% trans "Product" as product_label %}
-{% trans "Velvet Lounge Chair" as default_product_name %}
-{% block title %}{{ product.name|default:product_detail_label }}{% endblock %}
+{% block title %}
+  {% trans "Product Detail" as product_detail_label %}
+  {{ product.name|default:product_detail_label }}
+{% endblock %}
 {% block nav_products %}active{% endblock %}
 
 {% block content %}
+{% trans "Product" as product_label %}
+{% trans "Velvet Lounge Chair" as default_product_name %}
 <div class="pt-16 lg:pt-20">
 <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-10">
 
@@ -132,7 +134,7 @@
 
       <!-- CTA -->
       <div class="flex flex-wrap gap-4 mt-auto">
-        <button data-open-modal class="btn-accent flex-1 justify-center">
+        <button data-open-modal data-order-url="{% url 'orders:request_create' product.slug %}" class="btn-accent flex-1 justify-center">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
           {% trans "Order Now" %}
         </button>

@@ -1,10 +1,35 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "replace-me-in-production"
-DEBUG = True
-ALLOWED_HOSTS = []
+def _load_env(path: Path) -> None:
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("'").strip('"')
+        os.environ.setdefault(key, value)
+
+
+_load_env(BASE_DIR / ".env")
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "replace-me-in-production")
+DEBUG = os.getenv("DJANGO_DEBUG", "True").lower() in ("1", "true", "yes", "on")
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+    if host.strip()
+]
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -56,12 +81,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "perfecthome",
-        "USER": "postgres",
-        "PASSWORD": "Hero__2006",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.getenv("DB_NAME", "perfecthome"),
+        "USER": os.getenv("DB_USER", "postgres"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "Hero__2006"),
+        "HOST": os.getenv("DB_HOST", "localhost"),
+        "PORT": os.getenv("DB_PORT", "5432"),
     }
 }
 
@@ -101,9 +126,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CONTACT_ADDRESS = "Tashkent, Uzbekistan"
-CONTACT_PHONE = "+998 (00) 000-00-00"
-CONTACT_EMAIL = "info@perfecthome.uz"
-CONTACT_MAP_EMBED_URL = "https://www.google.com/maps"
+CONTACT_ADDRESS = os.getenv("CONTACT_ADDRESS", "Tashkent, Uzbekistan")
+CONTACT_PHONE = os.getenv("CONTACT_PHONE", "+998 (00) 000-00-00")
+CONTACT_EMAIL = os.getenv("CONTACT_EMAIL", "info@perfecthome.uz")
+CONTACT_MAP_EMBED_URL = os.getenv("CONTACT_MAP_EMBED_URL", "https://www.google.com/maps")
 
 AUTH_USER_MODEL = "users.User"
