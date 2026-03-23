@@ -8,7 +8,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     
                     <div class="mb-3">
@@ -24,6 +24,19 @@
                     <div class="mb-3">
                         <label class="form-label">Описание</label>
                         <textarea name="description" class="form-control" rows="4">{{ category.description }}</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Текущее изображение</label>
+                        <div class="mb-2">
+                            {% if category.image %}
+                            <img src="{{ category.image.url }}" alt="{{ category.name }}" style="width: 140px; height: 90px; object-fit: cover; border-radius: 6px;">
+                            {% else %}
+                            <span class="text-muted">Нет изображения</span>
+                            {% endif %}
+                        </div>
+                        <label class="form-label">Изменить изображение</label>
+                        <input type="file" name="image" class="form-control" accept="image/*">
                     </div>
                     
                     <hr>

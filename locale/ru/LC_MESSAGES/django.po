@@ -49,36 +49,14 @@ msgstr "в которых приятно жить"
 
 #: templates/about.html:44
 msgid "We create spaces where life feels comfortable and inspiring."
-msgstr ""
+msgstr "Мы создаем пространства, где жизнь ощущается комфортной и вдохновляющей."
 
 #: templates/about.html:46
 msgid ""
 "Perfect Home was established with one clear mission — to provide high-"
 "quality and modern building materials for homes and interiors that meet the "
 "highest standards and customer expectations."
-msgstr ""
-
-#: templates/about.html:48
-msgid ""
-"We believe that the environment around us directly shapes our comfort, mood, "
-"and overall quality of life. That’s why our collection includes only "
-"carefully selected products — from stylish sanitary ware to modern tiles and "
-"finishing solutions."
-msgstr ""
-
-#: templates/about.html:50
-msgid ""
-"We collaborate with trusted manufacturers and follow the latest design "
-"trends, helping you create interiors that are beautiful, practical, and long-"
-"lasting."
-msgstr ""
-
-#: templates/about.html:52
-msgid ""
-"From minimalist styles to contemporary designer collections, every product "
-"in our store is chosen with attention to quality, aesthetics, and "
-"functionality."
-msgstr ""
+msgstr "Perfect Home был основан с одной ясной целью — предоставлять высококачественные и современные строительные материалы для дома и интерьера, соответствующие самым высоким стандартам и ожиданиям клиентов."
 
 #: templates/about.html:56
 msgid "Our Collection"
@@ -124,36 +102,12 @@ msgstr "Наши ценности"
 msgid "Authenticity"
 msgstr "Подлинность"
 
-#: templates/about.html:118
-#, fuzzy
-#| msgid ""
-#| "Every product we carry is sourced directly from authorized distributors. "
-#| "We guarantee the genuine article — no compromises, no imitations."
-msgid ""
-"Every product we offer comes from trusted and verified suppliers. We "
-"guarantee genuine quality with no compromises."
-msgstr ""
-"Мы поставляем товары только от официальных дистрибьюторов. Гарантируем "
-"подлинность без компромиссов."
-
 #: templates/about.html:124
 msgid "Quality Selection"
 msgstr ""
 
-#: templates/about.html:126
-msgid ""
-"Each product in our catalog is carefully selected based on design, "
-"durability, and long-term value."
-msgstr ""
-
 #: templates/about.html:132
 msgid "Customer Focus"
-msgstr ""
-
-#: templates/about.html:134
-msgid ""
-"We build lasting relationships with our customers by delivering reliable "
-"service and exceptional products."
 msgstr ""
 
 #: templates/about.html:146 templates/home.html:216
@@ -167,18 +121,6 @@ msgstr "Посетите нас"
 #: templates/about.html:154
 msgid "Experience Our Showroom"
 msgstr "Оцените наш шоурум"
-
-#: templates/about.html:158
-#, fuzzy
-#| msgid ""
-#| "See, touch, and feel the quality in person. Our Tashkent showroom is open "
-#| "Monday to Saturday, 9:00–19:00."
-msgid ""
-"See, touch, and feel the quality in person. Our Tashkent showroom is open "
-"Monday to Saturday, 9:00–18:00, and Sunday from 9:00–15:00."
-msgstr ""
-"Посмотрите, потрогайте и почувствуйте качество лично. Шоурум в Ташкенте "
-"открыт с понедельника по субботу, 9:00–19:00."
 
 #: templates/about.html:162
 msgid "Get Directions"
@@ -251,14 +193,6 @@ msgstr "Открыть меню"
 #: templates/base.html:93
 msgid "Close menu"
 msgstr "Закрыть меню"
-
-#: templates/base.html:127
-msgid ""
-"Premium home goods and interior products. Elevating everyday living in "
-"Uzbekistan."
-msgstr ""
-"Премиальные товары для дома и интерьера. Повышаем качество жизни в "
-"Узбекистане."
 
 #: templates/base.html:129
 msgid "Instagram"
@@ -487,14 +421,6 @@ msgstr "Мы будем рады"
 msgid "From You"
 msgstr "услышать вас"
 
-#: templates/contact.html:29
-msgid ""
-"Whether you have a question about a product, want to visit our showroom, or "
-"are planning a full interior project — our team is ready to help."
-msgstr ""
-"Если у вас есть вопрос о товаре, вы хотите посетить шоурум или планируете "
-"полный интерьерный проект — наша команда готова помочь."
-
 #: templates/contact.html:43
 msgid "Monday – Saturday: 09:00 – 19:00"
 msgstr "Пн–Сб: 09:00–19:00"
@@ -659,14 +585,6 @@ msgstr "Где качество"
 msgid "Meets Design"
 msgstr "встречает дизайн"
 
-#: templates/home.html:195
-msgid ""
-"We curate the finest home goods from the world's most respected brands, "
-"bringing premium interior solutions to Uzbekistan's discerning homes."
-msgstr ""
-"Мы отбираем лучшие товары для дома от самых уважаемых брендов мира и "
-"привозим премиальные интерьерные решения в Узбекистан."
-
 #: templates/home.html:207
 msgid "Years Experience"
 msgstr "Лет опыта"
@@ -731,14 +649,6 @@ msgstr "Ваша мечта"
 msgid "Home Awaits"
 msgstr "ждет дома"
 
-#: templates/home.html:280
-msgid ""
-"Browse our curated collection and request a consultation. Our design experts "
-"are ready to help."
-msgstr ""
-"Выберите из нашей коллекции и запросите консультацию. Наши эксперты готовы "
-"помочь."
-
 #: templates/home.html:282
 msgid "Explore Products"
 msgstr "Смотреть товары"
@@ -794,17 +704,6 @@ msgstr "Новое поступление"
 #: templates/product_detail.html:125
 msgid "Description"
 msgstr "Описание"
-
-#: templates/product_detail.html:126
-msgid ""
-"A masterpiece of Italian craftsmanship, this lounge chair combines premium "
-"velvet upholstery with a solid beech wood frame. Designed for those who "
-"appreciate the subtle luxury of exceptional materials and considered form. "
-"The gentle curves and generous proportions invite effortless relaxation."
-msgstr ""
-"Шедевр итальянского мастерства: это кресло сочетает премиальный бархат и "
-"каркас из бука. Создано для тех, кто ценит утонченную роскошь материалов и "
-"продуманную форму. Мягкие линии и щедрые пропорции дарят комфорт."
 
 #: templates/product_detail.html:134
 msgid "Specifications"
@@ -1042,18 +941,6 @@ msgstr ""
 msgid "Enter a valid email address."
 msgstr ""
 
-#. Translators: "letters" means latin letters: a-z and A-Z.
-#: venv/lib/python3.13/site-packages/django/core/validators.py:289
-msgid ""
-"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/core/validators.py:297
-msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/core/validators.py:309
 #: venv/lib/python3.13/site-packages/django/core/validators.py:318
 #: venv/lib/python3.13/site-packages/django/core/validators.py:332
@@ -1099,37 +986,6 @@ msgstr ""
 msgid "Ensure this value is a multiple of step size %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/core/validators.py:441
-#, python-format
-msgid ""
-"Ensure this value is a multiple of step size %(limit_value)s, starting from "
-"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/core/validators.py:473
-#, python-format
-msgid ""
-"Ensure this value has at least %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: venv/lib/python3.13/site-packages/django/core/validators.py:491
-#, python-format
-msgid ""
-"Ensure this value has at most %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
 #: venv/lib/python3.13/site-packages/django/core/validators.py:514
 #: venv/lib/python3.13/site-packages/django/forms/fields.py:364
 #: venv/lib/python3.13/site-packages/django/forms/fields.py:403
@@ -1151,23 +1007,6 @@ msgid_plural "Ensure that there are no more than %(max)s decimal places."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-
-#: venv/lib/python3.13/site-packages/django/core/validators.py:526
-#, python-format
-msgid ""
-"Ensure that there are no more than %(max)s digit before the decimal point."
-msgid_plural ""
-"Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: venv/lib/python3.13/site-packages/django/core/validators.py:597
-#, python-format
-msgid ""
-"File extension “%(extension)s” is not allowed. Allowed extensions are: "
-"%(allowed_extensions)s."
-msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/core/validators.py:659
 msgid "Null characters are not allowed."
@@ -1208,14 +1047,6 @@ msgstr ""
 msgid "%(model_name)s with this %(field_label)s already exists."
 msgstr ""
 
-#. Translators: The 'lookup_type' is one of 'date', 'year' or
-#. 'month'. Eg: "Title must be unique for pub_date year"
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
-#, python-format
-msgid ""
-"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
 #, python-format
 msgid "Field of type: %(field_type)s"
@@ -1248,37 +1079,8 @@ msgstr ""
 msgid "Comma-separated integers"
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1426
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
-"format."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1430
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1565
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
-"date."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1434
 msgid "Date (without time)"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1561
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ] format."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1569
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1574
@@ -1292,13 +1094,6 @@ msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1703
 msgid "Decimal number"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] "
-"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
@@ -1389,20 +1184,6 @@ msgstr ""
 #| msgid "Textiles"
 msgid "Text"
 msgstr "Текстиль"
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-"format."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-"invalid time."
-msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
 msgid "Time"
@@ -1533,12 +1314,6 @@ msgstr[2] ""
 msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/forms/fields.py:715
-msgid ""
-"Upload a valid image. The file you uploaded was either not an image or a "
-"corrupted image."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/forms/fields.py:862
 #: venv/lib/python3.13/site-packages/django/forms/fields.py:949
 #: venv/lib/python3.13/site-packages/django/forms/models.py:1621
@@ -1572,13 +1347,6 @@ msgstr ""
 #: venv/lib/python3.13/site-packages/django/forms/forms.py:239
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/forms/formsets.py:61
-#, python-format
-msgid ""
-"ManagementForm data is missing or has been tampered with. Missing fields: "
-"%(field_names)s. You may need to file a bug report if the issue persists."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/forms/formsets.py:65
@@ -1618,13 +1386,6 @@ msgstr ""
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/forms/models.py:937
-#, python-format
-msgid ""
-"Please correct the duplicate data for %(field_name)s which must be unique "
-"for the %(lookup)s in %(date_field)s."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/forms/models.py:946
 msgid "Please correct the duplicate values below."
 msgstr ""
@@ -1640,13 +1401,6 @@ msgstr ""
 #: venv/lib/python3.13/site-packages/django/forms/models.py:1623
 #, python-format
 msgid "“%(pk)s” is not a valid value."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/forms/utils.py:229
-#, python-format
-msgid ""
-"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
-"may be ambiguous or it may not exist."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/forms/widgets.py:528
@@ -1932,31 +1686,6 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:55
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:56
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:57
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:58
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:59
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/utils/dates.py:60
 msgctxt "abbrev. month"
 msgid "Aug."
@@ -1981,72 +1710,6 @@ msgstr ""
 msgctxt "abbrev. month"
 msgid "Dec."
 msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:67
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:68
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:69
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:70
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:71
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:72
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:73
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:74
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:75
-#, fuzzy
-#| msgid "Team member"
-msgctxt "alt. month"
-msgid "September"
-msgstr "Член команды"
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:76
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:77
-#, fuzzy
-#| msgid "Phone Number"
-msgctxt "alt. month"
-msgid "November"
-msgstr "Номер телефона"
-
-#: venv/lib/python3.13/site-packages/django/utils/dates.py:78
-#, fuzzy
-#| msgid "Team member"
-msgctxt "alt. month"
-msgid "December"
-msgstr "Член команды"
 
 #: venv/lib/python3.13/site-packages/django/utils/ipv6.py:20
 msgid "This is not a valid IPv6 address."
@@ -2126,43 +1789,6 @@ msgstr ""
 msgid "CSRF verification failed. Request aborted."
 msgstr ""
 
-#: venv/lib/python3.13/site-packages/django/views/csrf.py:34
-msgid ""
-"You are seeing this message because this HTTPS site requires a “Referer "
-"header” to be sent by your web browser, but none was sent. This header is "
-"required for security reasons, to ensure that your browser is not being "
-"hijacked by third parties."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/csrf.py:40
-msgid ""
-"If you have configured your browser to disable “Referer” headers, please re-"
-"enable them, at least for this site, or for HTTPS connections, or for “same-"
-"origin” requests."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/csrf.py:45
-msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a "
-"rel=\"noreferrer\" …> for links to third-party sites."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/csrf.py:54
-msgid ""
-"You are seeing this message because this site requires a CSRF cookie when "
-"submitting forms. This cookie is required for security reasons, to ensure "
-"that your browser is not being hijacked by third parties."
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/csrf.py:60
-msgid ""
-"If you have configured your browser to disable cookies, please re-enable "
-"them, at least for this site, or for “same-origin” requests."
-msgstr ""
-
 #: venv/lib/python3.13/site-packages/django/views/csrf.py:66
 msgid "More information is available with DEBUG=True."
 msgstr ""
@@ -2193,13 +1819,6 @@ msgstr ""
 #: venv/lib/python3.13/site-packages/django/views/generic/dates.py:384
 #, python-format
 msgid "No %(verbose_name_plural)s available"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:680
-#, python-format
-msgid ""
-"Future %(verbose_name_plural)s not available because "
-"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/views/generic/dates.py:720
@@ -2245,22 +1864,6 @@ msgstr ""
 #: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
 #: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
 msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
-#, python-format
-msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
-
-#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" "
-"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
-"configured any URLs."
 msgstr ""
 
 #: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
@@ -2389,33 +1992,6 @@ msgstr ""
 #~ msgid "Italian"
 #~ msgstr "Итальянский"
 
-msgid "About Us"
-msgstr "О нас"
-
-msgid "Home"
-msgstr "Главная"
-
-msgid "About"
-msgstr "О компании"
-
-msgid "Our Story"
-msgstr "Наша история"
-
-msgid "Who We Are"
-msgstr "Кто мы"
-
-msgid "Crafting Spaces"
-msgstr "Создаём пространства"
-
-msgid "Worth Living In"
-msgstr "В которых приятно жить"
-
-msgid "We create spaces where life feels comfortable and inspiring."
-msgstr "Мы создаём пространства, в которых жить комфортно и вдохновляюще."
-
-msgid "Perfect Home was established with one clear mission — to provide high-quality and modern building materials for homes and interiors that meet the highest standards and customer expectations."
-msgstr "Компания Perfect Home была создана с одной целью — предлагать качественные и современные строительные материалы для дома и интерьера, соответствующие высоким стандартам и ожиданиям клиентов."
-
 msgid "We believe that the environment around us directly shapes our comfort, mood, and overall quality of life. That’s why our collection includes only carefully selected products — from stylish sanitary ware to modern tiles and finishing solutions."
 msgstr "Мы уверены, что окружающее пространство напрямую влияет на комфорт, настроение и качество жизни. Поэтому в нашем ассортименте только тщательно отобранные товары — от стильной сантехники до современного кафеля и отделочных решений."
 
@@ -2425,59 +2001,68 @@ msgstr "Мы сотрудничаем с проверенными произво
 msgid "From minimalist styles to contemporary designer collections, every product in our store is chosen with attention to quality, aesthetics, and functionality."
 msgstr "От минимализма до современных дизайнерских коллекций — каждый товар в нашем магазине выбран с вниманием к качеству, эстетике и функциональности."
 
-msgid "Our Collection"
-msgstr "Наш каталог"
-
-msgid "Get in Touch"
-msgstr "Связаться с нами"
-
-msgid "Years in Business"
-msgstr "Лет на рынке"
-
-msgid "Premium Products"
-msgstr "Премиум товары"
-
-msgid "Global Brands"
-msgstr "Мировые бренды"
-
-msgid "Happy Clients"
-msgstr "Довольные клиенты"
-
-msgid "Countries Sourced"
-msgstr "Страны поставок"
-
-msgid "What We Believe"
-msgstr "Наши ценности"
-
-msgid "Our Values"
-msgstr "Наши ценности"
-
-msgid "Authenticity"
-msgstr "Оригинальность"
-
 msgid "Every product we offer comes from trusted and verified suppliers. We guarantee genuine quality with no compromises."
 msgstr "Каждый товар поступает от проверенных поставщиков. Мы гарантируем подлинное качество без компромиссов."
-
-msgid "Quality Selection"
-msgstr "Отбор качества"
 
 msgid "Each product in our catalog is carefully selected based on design, durability, and long-term value."
 msgstr "Каждый товар в нашем каталоге тщательно отобран по дизайну, долговечности и практичности."
 
-msgid "Customer Focus"
-msgstr "Ориентация на клиента"
-
 msgid "We build lasting relationships with our customers by delivering reliable service and exceptional products."
 msgstr "Мы выстраиваем долгосрочные отношения с клиентами, предлагая надёжный сервис и качественные товары."
-
-msgid "Visit Us"
-msgstr "Посетите нас"
-
-msgid "Experience Our Showroom"
-msgstr "Посетите наш шоурум"
 
 msgid "See, touch, and feel the quality in person. Our Tashkent showroom is open Monday to Saturday, 9:00–18:00, and Sunday from 9:00–15:00."
 msgstr "Приходите и оцените качество лично. Наш шоурум в Ташкенте открыт с понедельника по субботу с 9:00 до 18:00 и в воскресенье с 9:00 до 15:00."
 
-msgid "Get Directions"
-msgstr "Как добраться"
+msgid "No additional categories available yet."
+msgstr "Дополнительные категории пока не добавлены."
+
+msgid "No additional images."
+msgstr "Дополнительных изображений нет."
+
+msgid "No articles available yet."
+msgstr "Статей пока нет."
+
+msgid "No brands available yet."
+msgstr "Бренды пока не добавлены."
+
+msgid "No brands available."
+msgstr "Бренды недоступны."
+
+msgid "No categories available yet."
+msgstr "Категории пока не добавлены."
+
+msgid "No categories available."
+msgstr "Категории недоступны."
+
+msgid "No countries available."
+msgstr "Страны недоступны."
+
+msgid "No featured brands yet."
+msgstr "Избранные бренды пока не добавлены."
+
+msgid "No products available yet."
+msgstr "Товары пока не добавлены."
+
+msgid "No products found."
+msgstr "Товары не найдены."
+
+msgid "No related products."
+msgstr "Похожих товаров нет."
+
+msgid "No specifications available."
+msgstr "Характеристики отсутствуют."
+
+msgid "No tags available."
+msgstr "Теги недоступны."
+
+msgid "Perfect Home was founded with one mission — to provide high-quality and modern construction materials for home and interior."
+msgstr "Компания Perfect Home создана с одной целью — предоставлять высококачественные и современные строительные материалы для дома и интерьера."
+
+msgid "Almazor district, Usta Shirin 124"
+msgstr "Алмазарский район, Уста Ширин 124"
+
+msgid "09.00–18.00 Mon–Sat, 09.00–15.00 Sun"
+msgstr "09.00–18.00 пн–сб, 09.00–15.00 вс"
+
+msgid "Whether you have a question about a product, want to visit our showroom, or are planning a full interior project — our team is ready to help."
+msgstr "Если у вас есть вопрос о продукте, вы хотите посетить наш шоурум или планируете полный интерьерный проект — наша команда готова помочь."

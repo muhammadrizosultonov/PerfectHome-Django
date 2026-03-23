@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load static i18n %}
 
-{% trans "Blog" as blog_label %}
-{% trans "Article" as article_label %}
-{% block title %}{{ post.title|default:blog_label }}{% endblock %}
+{% block title %}
+  {% trans "Blog" as blog_label %}
+  {{ post.title|default:blog_label }}
+{% endblock %}
 
 {% block content %}
+{% trans "Article" as article_label %}
 <div class="pt-16 lg:pt-20">
   <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
     <div class="flex items-center gap-3 mb-6">

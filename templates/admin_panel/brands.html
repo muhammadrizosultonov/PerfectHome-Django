@@ -17,7 +17,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Логотип</th>
                         <th>Название</th>
                         <th>Описание</th>
                         <th>Товаров</th>
@@ -28,13 +27,6 @@
                     {% for brand in brands %}
                     <tr>
                         <td>{{ brand.id }}</td>
-                        <td>
-                            {% if brand.logo %}
-                                <img src="{{ brand.logo.url }}" style="max-height: 40px; max-width: 40px;" class="img-thumbnail">
-                            {% else %}
-                                <span class="text-muted"><i class="bi bi-building"></i></span>
-                            {% endif %}
-                        </td>
                         <td><strong>{{ brand.name }}</strong></td>
                         <td>{{ brand.description|truncatechars:50|default:"-" }}</td>
                         <td><span class="badge bg-info">{{ brand.products_count }}</span></td>
@@ -54,7 +46,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="6" class="text-center">Нет брендов</td>
+                        <td colspan="5" class="text-center">Нет брендов</td>
                     </tr>
                     {% endfor %}
                 </tbody>

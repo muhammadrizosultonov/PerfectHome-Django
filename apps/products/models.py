@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 
 def _unique_slug(instance, base, slug_field="slug"):
-    slug = slugify(base) or "item"
+    slug = slugify(base, allow_unicode=True) or "item"
     unique = slug
     suffix = 2
     Model = instance.__class__
@@ -16,7 +16,7 @@ def _unique_slug(instance, base, slug_field="slug"):
 
 class ProductTag(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=120, unique=True)
+    slug = models.SlugField(max_length=120, unique=True, allow_unicode=True)
 
     class Meta:
         verbose_name = "Product Tag"
@@ -39,7 +39,7 @@ class ProductQuerySet(models.QuerySet):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
     description = models.TextField()
     category = models.ForeignKey(
         "categories.Category",

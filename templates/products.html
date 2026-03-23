@@ -47,13 +47,7 @@
               <span class="ml-auto text-xs text-warm-gray">{{ cat.product_count }}</span>
             </label>
             {% empty %}
-            {% for cat_name in "Living Room,Bedroom,Kitchen,Bathroom,Outdoor,Office" %}
-            <label class="filter-option">
-              <input type="checkbox" name="category" value="{{ forloop.counter }}" class="filter-checkbox">
-              <span>{% trans cat_name %}</span>
-              <span class="ml-auto text-xs text-warm-gray">{{ forloop.counter }}2</span>
-            </label>
-            {% endfor %}
+            <p class="text-sm text-stone">{% trans "No categories available." %}</p>
             {% endfor %}
           </div>
 
@@ -67,12 +61,7 @@
               <span>{{ brand.name }}</span>
             </label>
             {% empty %}
-            {% for brand_name in "Minotti,B&B Italia,Poliform,Cassina,Knoll,Vitra" %}
-            <label class="filter-option">
-              <input type="checkbox" name="brand" value="{{ forloop.counter }}" class="filter-checkbox">
-              <span>{{ brand_name }}</span>
-            </label>
-            {% endfor %}
+            <p class="text-sm text-stone">{% trans "No brands available." %}</p>
             {% endfor %}
           </div>
 
@@ -86,12 +75,7 @@
               <span>{% trans country %}</span>
             </label>
             {% empty %}
-            {% for country in "Italy,Germany,Denmark,USA,France,Spain" %}
-            <label class="filter-option">
-              <input type="checkbox" name="country" value="{{ country }}" class="filter-checkbox">
-              <span>{{ country }}</span>
-            </label>
-            {% endfor %}
+            <p class="text-sm text-stone">{% trans "No countries available." %}</p>
             {% endfor %}
           </div>
 
@@ -102,9 +86,7 @@
               {% for tag in tags|default:'' %}
               <a href="?tag={{ tag.slug }}" class="text-xs px-3 py-1 border border-warm-gray text-stone hover:border-accent hover:text-accent transition-colors">{{ tag.name }}</a>
               {% empty %}
-              {% for tag in "New,Popular,Sale,Eco,Handmade,Italian" %}
-              <span class="text-xs px-3 py-1 border border-warm-gray text-stone cursor-pointer hover:border-accent hover:text-accent transition-colors">{% trans tag %}</span>
-              {% endfor %}
+              <span class="text-sm text-stone">{% trans "No tags available." %}</span>
               {% endfor %}
             </div>
           </div>
@@ -136,7 +118,7 @@
               {% if product.primary_image and product.primary_image.image %}
               <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
               {% else %}
-              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75&fit=crop&sig={{ forloop.counter }}" alt="{{ product.name }}" class="product-card-img">
+              <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
               {% endif %}
             </div>
             <div class="p-4">
@@ -149,44 +131,18 @@
             </div>
           </a>
           {% empty %}
-          {% for i in "123456" %}
-          <a href="{% url 'products:catalog' %}" class="product-card">
-            <div class="overflow-hidden bg-cream">
-              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Product' %}" class="product-card-img">
-            </div>
-            <div class="p-4">
-              <div class="flex gap-2 mb-2">
-                {% if forloop.counter == 1 %}<span class="product-tag tag-new">{% trans "New" %}</span>{% endif %}
-                {% if forloop.counter == 4 %}<span class="product-tag tag-popular">{% trans "Popular" %}</span>{% endif %}
-                {% if forloop.counter == 7 %}<span class="product-tag tag-sale">{% trans "Sale" %}</span>{% endif %}
-              </div>
-              <p class="text-xs text-stone uppercase tracking-widest mb-1">
-                {% cycle "Minotti" "B&B Italia" "Poliform" "Cassina" "Vitra" %}
-              </p>
-              <h3 class="font-display text-lg font-light text-charcoal leading-tight">
-                {% if forloop.counter == 1 %}{% trans "Velvet Lounge Chair" %}
-                {% elif forloop.counter == 2 %}{% trans "Marble Coffee Table" %}
-                {% elif forloop.counter == 3 %}{% trans "Linen Sofa — 3 Seat" %}
-                {% elif forloop.counter == 4 %}{% trans "Oak Dining Table 220" %}
-                {% elif forloop.counter == 5 %}{% trans "Ceramic Floor Lamp" %}
-                {% elif forloop.counter == 6 %}{% trans "Wool Area Rug 2×3m" %}
-                {% elif forloop.counter == 7 %}{% trans "Teak King Bed Frame" %}
-                {% elif forloop.counter == 8 %}{% trans "Glass Pendant Light" %}
-                {% elif forloop.counter == 9 %}{% trans "Leather Armchair" %}
-                {% elif forloop.counter == 10 %}{% trans "Concrete Bookshelf" %}
-                {% elif forloop.counter == 11 %}{% trans "Rattan Lounge Chair" %}
-                {% else %}{% trans "Brass Side Table" %}{% endif %}
-              </h3>
-            </div>
-          </a>
-          {% endfor %}
+          <div class="col-span-full">
+            <p class="text-sm text-stone">{% trans "No products found." %}</p>
+          </div>
           {% endfor %}
         </div>
 
         <!-- Load More -->
+        {% if products.paginator.count %}
         <div class="text-center mt-14">
           <button id="load-more" class="btn-outline px-16">{% trans "Load More" %}</button>
         </div>
+        {% endif %}
 
         <!-- Pagination -->
         {% if products.has_other_pages %}

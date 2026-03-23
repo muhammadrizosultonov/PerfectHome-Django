@@ -20,11 +20,6 @@
           <p class="section-label mb-3">{% trans "Our Partners" %}</p>
           <h1 class="section-title">{% trans "Premium Brands" %}</h1>
         </div>
-        <!-- Search -->
-        <div class="relative w-full sm:w-72">
-          <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-stone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="search" id="brand-search" placeholder="{% trans 'Search brands…' %}" class="search-input">
-        </div>
       </div>
     </div>
   </div>
@@ -32,94 +27,16 @@
   <!-- Brands Grid -->
   <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-14">
 
-    <!-- Country filter tabs -->
-    <div class="flex flex-wrap gap-3 mb-10">
-      <button class="text-xs px-4 py-2 bg-black text-white uppercase tracking-widest transition-all">{% trans "All" %}</button>
-      <button class="text-xs px-4 py-2 border border-warm-gray text-stone uppercase tracking-widest hover:border-black hover:text-black transition-all">{% trans "Italy" %}</button>
-      <button class="text-xs px-4 py-2 border border-warm-gray text-stone uppercase tracking-widest hover:border-black hover:text-black transition-all">{% trans "Germany" %}</button>
-      <button class="text-xs px-4 py-2 border border-warm-gray text-stone uppercase tracking-widest hover:border-black hover:text-black transition-all">{% trans "Denmark" %}</button>
-      <button class="text-xs px-4 py-2 border border-warm-gray text-stone uppercase tracking-widest hover:border-black hover:text-black transition-all">{% trans "USA" %}</button>
-      <button class="text-xs px-4 py-2 border border-warm-gray text-stone uppercase tracking-widest hover:border-black hover:text-black transition-all">{% trans "France" %}</button>
-    </div>
-
-    {% trans "Italy" as italy_label %}
-    {% trans "USA" as usa_label %}
-    {% trans "Switzerland" as switzerland_label %}
-    {% trans "Denmark" as denmark_label %}
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       {% for brand in brands|default:'' %}
       <a href="{{ brand.get_absolute_url }}" class="brand-card brand-item flex-col gap-3" data-name="{{ brand.name }}">
-        {% if brand.logo %}
-        <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" class="h-12 object-contain">
-        {% else %}
         <span class="font-display text-xl font-light text-charcoal/70 text-center">{{ brand.name }}</span>
-        {% endif %}
-        <span class="text-xs text-stone uppercase tracking-widest text-center">{{ brand.country|default:italy_label }}</span>
       </a>
       {% empty %}
-      {% for item in "Minotti|Italy,B&B Italia|Italy,Poliform|Italy,Cassina|Italy,Knoll|USA,Vitra|Switzerland,Fritz Hansen|Denmark" %}
-      <div class="brand-card brand-item flex-col gap-3 cursor-pointer" data-name="{{ item|cut:'|Italy'|cut:'|USA'|cut:'|Switzerland'|cut:'|Denmark'|cut:'|Netherlands'|cut:'|Spain' }}">
-        <span class="font-display text-lg font-light text-charcoal/70 text-center leading-tight px-2">{{ item|cut:'|Italy'|cut:'|USA'|cut:'|Switzerland'|cut:'|Denmark'|cut:'|Netherlands'|cut:'|Spain' }}</span>
-        <span class="text-xs text-stone uppercase tracking-widest text-center">
-          {% if "Italy" in item %}{% trans "Italy" %}
-          {% elif "USA" in item %}{% trans "USA" %}
-          {% elif "Switzerland" in item %}{% trans "Switzerland" %}
-          {% elif "Denmark" in item %}{% trans "Denmark" %}
-          {% elif "Netherlands" in item %}{% trans "Netherlands" %}
-          {% elif "Spain" in item %}{% trans "Spain" %}
-          {% endif %}
-        </span>
+      <div class="col-span-full">
+        <p class="text-sm text-stone">{% trans "No brands available yet." %}</p>
       </div>
       {% endfor %}
-      {% endfor %}
-    </div>
-
-    <!-- Featured brands section -->
-    <div class="mt-20">
-      <div class="divider mb-14"></div>
-      <p class="section-label mb-4">{% trans "Highlighted" %}</p>
-      <h2 class="section-title mb-10">{% trans "Featured Brands" %}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {% for brand in featured_brands|default:'' %}
-      <a href="{{ brand.get_absolute_url }}" class="relative overflow-hidden aspect-video group">
-        {% if brand.logo %}
-        <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" class="w-full h-full object-contain bg-cream p-10 transition-transform duration-500 group-hover:scale-105">
-        {% else %}
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&fit=crop" alt="{{ brand.name }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-        {% endif %}
-        <div class="absolute inset-0 bg-charcoal/50 group-hover:bg-charcoal/40 transition-colors"></div>
-        <div class="absolute inset-0 flex items-end p-8">
-          <div>
-            <h3 class="font-display text-3xl font-light text-white mb-2">{{ brand.name }}</h3>
-            <p class="text-sm text-white/70">{{ brand.product_count }} {% trans "products" %}</p>
-            </div>
-          </div>
-        </a>
-        {% empty %}
-        <a href="{% url 'products:catalog' %}" class="relative overflow-hidden aspect-video group">
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&fit=crop" alt="Minotti" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-charcoal/50 group-hover:bg-charcoal/40 transition-colors"></div>
-          <div class="absolute inset-0 flex items-end p-8">
-            <div>
-              <p class="text-xs text-accent-light tracking-widest uppercase mb-2">{% trans "Italy" %} · {% trans "Since 1948" %}</p>
-              <h3 class="font-display text-3xl font-light text-white mb-2">Minotti</h3>
-              <p class="text-sm text-white/70">48 {% trans "products available" %}</p>
-            </div>
-          </div>
-        </a>
-        <a href="{% url 'products:catalog' %}" class="relative overflow-hidden aspect-video group">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80&fit=crop" alt="B&B Italia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-charcoal/50 group-hover:bg-charcoal/40 transition-colors"></div>
-          <div class="absolute inset-0 flex items-end p-8">
-            <div>
-              <p class="text-xs text-accent-light tracking-widest uppercase mb-2">{% trans "Italy" %} · {% trans "Since 1966" %}</p>
-              <h3 class="font-display text-3xl font-light text-white mb-2">B&B Italia</h3>
-              <p class="text-sm text-white/70">62 {% trans "products available" %}</p>
-            </div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
     </div>
 
   </div>

@@ -17,6 +17,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Изображение</th>
                         <th>Название</th>
                         <th>Slug</th>
                         <th>Описание</th>
@@ -28,6 +29,13 @@
                     {% for category in categories %}
                     <tr>
                         <td>{{ category.id }}</td>
+                        <td>
+                            {% if category.image %}
+                            <img src="{{ category.image.url }}" alt="{{ category.name }}" style="width: 48px; height: 36px; object-fit: cover; border-radius: 4px;">
+                            {% else %}
+                            <span class="text-muted">—</span>
+                            {% endif %}
+                        </td>
                         <td><strong>{{ category.name }}</strong></td>
                         <td>{{ category.slug }}</td>
                         <td>{{ category.description|truncatechars:50|default:"-" }}</td>
@@ -48,7 +56,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="6" class="text-center">Нет категорий</td>
+                        <td colspan="7" class="text-center">Нет категорий</td>
                     </tr>
                     {% endfor %}
                 </tbody>

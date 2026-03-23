@@ -8,7 +8,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     
                     <div class="mb-3">
@@ -25,6 +25,12 @@
                     <div class="mb-3">
                         <label class="form-label">Описание</label>
                         <textarea name="description" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Изображение категории</label>
+                        <input type="file" name="image" class="form-control" accept="image/*">
+                        <small class="text-muted">Рекомендуемый размер: 1200×800px</small>
                     </div>
                     
                     <hr>
@@ -47,8 +53,10 @@
 document.querySelector('input[name="name"]').addEventListener('input', function() {
     let slug = this.value
         .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-');
+        .trim()
+        .replace(/[^\p{L}\p{N}\s-]/gu, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
     document.querySelector('input[name="slug"]').value = slug;
 });
 </script>

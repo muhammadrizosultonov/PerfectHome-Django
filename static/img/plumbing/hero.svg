@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="900" viewBox="0 0 1800 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#334155"/>
+      <stop offset="1" stop-color="#94a3b8"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#ffffff" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1800" height="900" fill="url(#bg)"/>
+  <rect width="1800" height="900" fill="url(#dots)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="8" opacity="0.55">
+    <path d="M520 430h300c88 0 160 72 160 160v65"/>
+    <path d="M500 430v-60h110v-70h280v70h110v60"/>
+    <path d="M980 655h140"/>
+    <path d="M1120 655c0 72-58 130-130 130H700c-72 0-130-58-130-130"/>
+  </g>
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="1120" cy="690" r="6"/>
+    <circle cx="1145" cy="710" r="4.5"/>
+    <circle cx="1168" cy="730" r="3.5"/>
+  </g>
+</svg>

@@ -8,7 +8,7 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85&fit=crop" alt="{% trans 'Perfect Home Interior' %}" class="hero-img">
+  <img src="{% static 'img/plumbing/hero.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/hero.svg" %}";' alt="{% trans 'Perfect Home Interior' %}" class="hero-img">
   <div class="hero-overlay"></div>
   <div class="hero-content max-w-screen-xl mx-auto px-6 lg:px-10 w-full">
     <p class="hero-subtitle mb-6 fade-up fade-up-delay-1">{% trans "Premium Home Collection — 2025" %}</p>
@@ -46,7 +46,7 @@
         {% if cat.image %}
         <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
         {% else %}
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&fit=crop&crop=entropy&sig={{ forloop.counter }}" alt="{{ cat.name }}">
+        <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ cat.name }}">
         {% endif %}
         <div class="category-card-overlay"></div>
         <div class="category-card-content">
@@ -55,25 +55,9 @@
         </div>
       </a>
       {% empty %}
-      {% for item in "123456" %}
-      <a href="{% url 'products:catalog' %}" class="category-card reveal">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&fit=crop&crop=entropy&sig={{ forloop.counter }}" alt="{% trans 'Category' %}">
-        <div class="category-card-overlay"></div>
-        <div class="category-card-content">
-          <p class="text-xs text-accent-light tracking-widest uppercase mb-1">24 {% trans "items" %}</p>
-          <h3 class="text-white font-display text-xl font-light">
-            {% if forloop.counter == 1 %}{% trans "Living Room" %}
-            {% elif forloop.counter == 2 %}{% trans "Bedroom" %}
-            {% elif forloop.counter == 3 %}{% trans "Kitchen" %}
-            {% elif forloop.counter == 4 %}{% trans "Bathroom" %}
-            {% elif forloop.counter == 5 %}{% trans "Outdoor" %}
-            {% elif forloop.counter == 6 %}{% trans "Office" %}
-            {% elif forloop.counter == 7 %}{% trans "Decor" %}
-            {% else %}{% trans "Lighting" %}{% endif %}
-          </h3>
-        </div>
-      </a>
-      {% endfor %}
+      <div class="col-span-full">
+        <p class="text-sm text-stone">{% trans "No categories available yet." %}</p>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -97,7 +81,7 @@
           {% if product.primary_image and product.primary_image.image %}
           <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
           {% else %}
-          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ product.name }}" class="product-card-img">
+          <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
           {% endif %}
         </div>
         <div class="p-4">
@@ -108,30 +92,9 @@
         </div>
       </a>
       {% empty %}
-      {% for i in "123456" %}
-      <a href="{% url 'products:catalog' %}" class="product-card reveal" style="animation-delay: {{ forloop.counter0 }}00ms">
-        <div class="overflow-hidden bg-cream">
-          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Product' %}" class="product-card-img">
-        </div>
-        <div class="p-4">
-          {% if forloop.counter == 1 %}<span class="product-tag tag-new mb-2 inline-block">{% trans "New" %}</span>{% endif %}
-          {% if forloop.counter == 3 %}<span class="product-tag tag-popular mb-2 inline-block">{% trans "Popular" %}</span>{% endif %}
-          <p class="text-xs text-stone uppercase tracking-widest mb-1 mt-2">
-            {% if forloop.counter <= 3 %}Minotti{% elif forloop.counter <= 6 %}B&B Italia{% else %}Poliform{% endif %}
-          </p>
-          <h3 class="font-display text-lg font-light text-charcoal leading-tight">
-            {% if forloop.counter == 1 %}{% trans "Velvet Lounge Chair" %}
-            {% elif forloop.counter == 2 %}{% trans "Marble Side Table" %}
-            {% elif forloop.counter == 3 %}{% trans "Linen Sofa Set" %}
-            {% elif forloop.counter == 4 %}{% trans "Oak Dining Table" %}
-            {% elif forloop.counter == 5 %}{% trans "Ceramic Floor Lamp" %}
-            {% elif forloop.counter == 6 %}{% trans "Wool Area Rug" %}
-            {% elif forloop.counter == 7 %}{% trans "Teak Bed Frame" %}
-            {% else %}{% trans "Glass Coffee Table" %}{% endif %}
-          </h3>
-        </div>
-      </a>
-      {% endfor %}
+      <div class="col-span-full">
+        <p class="text-sm text-stone">{% trans "No products available yet." %}</p>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -139,13 +102,13 @@
 
 <!-- ═══════════ FULL-WIDTH BANNER ═══════════ -->
 <section class="relative h-[70vh] overflow-hidden">
-  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=85&fit=crop" alt="{% trans 'Interior Design' %}" class="w-full h-full object-cover">
+  <img src="{% static 'img/plumbing/banner.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/banner.svg" %}";' alt="{% trans 'Interior Design' %}" class="w-full h-full object-cover">
   <div class="absolute inset-0 bg-charcoal/50"></div>
   <div class="absolute inset-0 flex items-center justify-center text-center px-6">
     <div>
       <p class="section-label text-accent-light mb-4">{% trans "New collection" %}</p>
       <h2 class="font-display text-5xl md:text-7xl font-light text-white mb-8 leading-tight">
-        {% trans "Autumn — Winter" %}<br><em>2025</em>
+        <br><em>2026</em>
       </h2>
       <a href="{% url 'products:catalog' %}" class="btn-primary" style="background: transparent; border-color: white; color: white;">
         {% trans "Discover Now" %}
@@ -165,18 +128,12 @@
     <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4">
       {% for brand in brands|default:'' %}
       <a href="{% url 'products:catalog' %}?brand={{ brand.id }}" class="brand-card">
-        {% if brand.logo %}
-        <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" class="h-10 object-contain">
-        {% else %}
         <span class="font-display text-lg font-light text-charcoal/60 text-center leading-tight">{{ brand.name }}</span>
-        {% endif %}
       </a>
       {% empty %}
-      {% for brand_name in "Minotti,B&B Italia,Poliform,Cassina,Knoll,Vitra" %}
-      <div class="brand-card">
-        <span class="font-display text-lg font-light text-charcoal/60 text-center leading-tight">{{ brand_name }}</span>
+      <div class="col-span-full text-center">
+        <p class="text-sm text-stone">{% trans "No brands available yet." %}</p>
       </div>
-      {% endfor %}
       {% endfor %}
     </div>
     <div class="text-center mt-10">
@@ -213,7 +170,7 @@
         </div>
       </div>
       <div class="relative">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=85&fit=crop" alt="{% trans 'Showroom' %}" class="w-full aspect-square object-cover">
+        <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{% trans 'Showroom' %}" class="w-full aspect-square object-cover">
         <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-cream hidden lg:block"></div>
         <div class="absolute -top-6 -right-6 w-24 h-24 border border-accent hidden lg:block"></div>
       </div>
@@ -239,34 +196,16 @@
           {% if post.cover_image %}
           <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img">
           {% else %}
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&fit=crop" alt="{{ post.title }}" class="blog-card-img">
+          <img src="{% static 'img/plumbing/rect.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/rect.svg" %}";' alt="{{ post.title }}" class="blog-card-img">
           {% endif %}
         </div>
         <p class="text-xs text-stone uppercase tracking-widest mb-2">{{ post.created_at|date:"DATE_FORMAT" }}</p>
         <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{{ post.title }}</h3>
       </a>
       {% empty %}
-      <a href="#" class="blog-card reveal">
-        <div class="overflow-hidden mb-4">
-          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
-        </div>
-        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Interior" %} · {% trans "Jun 15, 2025" %}</p>
-        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "How to Style a Minimalist Living Room in 2025" %}</h3>
-      </a>
-      <a href="#" class="blog-card reveal">
-        <div class="overflow-hidden mb-4">
-          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
-        </div>
-        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Trends" %} · {% trans "May 28, 2025" %}</p>
-        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "The Return of Natural Materials in Modern Homes" %}</h3>
-      </a>
-      <a href="#" class="blog-card reveal">
-        <div class="overflow-hidden mb-4">
-          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&q=80&fit=crop" alt="{% trans 'Blog' %}" class="blog-card-img">
-        </div>
-        <p class="text-xs text-stone uppercase tracking-widest mb-2">{% trans "Design" %} · {% trans "Apr 10, 2025" %}</p>
-        <h3 class="font-display text-2xl font-light text-charcoal leading-snug hover:text-accent transition-colors">{% trans "Italian Furniture: A Guide to Timeless Elegance" %}</h3>
-      </a>
+      <div class="col-span-full">
+        <p class="text-sm text-stone">{% trans "No articles available yet." %}</p>
+      </div>
       {% endfor %}
     </div>
   </div>

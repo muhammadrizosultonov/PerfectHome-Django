@@ -34,7 +34,7 @@
           class="w-full h-full object-cover transition-all duration-500">
         {% else %}
         <img id="main-product-img"
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=85&fit=crop"
+          src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
           alt="{{ product.name|default:product_label }}"
           class="w-full h-full object-cover transition-all duration-500">
         {% endif %}
@@ -53,7 +53,7 @@
             alt="{% trans 'View 1' %}">
           {% else %}
           <img class="thumb-img active"
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=80&fit=crop"
+            src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
             alt="{% trans 'View 1' %}">
           {% endif %}
         </div>
@@ -66,20 +66,8 @@
           {% endif %}
         </div>
         {% empty %}
-        <div class="overflow-hidden">
-          <img class="thumb-img"
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&q=80&fit=crop"
-            alt="{% trans 'View 2' %}">
-        </div>
-        <div class="overflow-hidden">
-          <img class="thumb-img"
-            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=300&q=80&fit=crop"
-            alt="{% trans 'View 3' %}">
-        </div>
-        <div class="overflow-hidden">
-          <img class="thumb-img"
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=300&q=80&fit=crop"
-            alt="{% trans 'View 4' %}">
+        <div class="col-span-full">
+          <p class="text-sm text-stone">{% trans "No additional images." %}</p>
         </div>
         {% endfor %}
       </div>
@@ -111,10 +99,7 @@
         {% for tag in product.tags.all %}
         <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{{ tag.name }}</span>
         {% empty %}
-        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Italian Design" %}</span>
-        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Handcrafted" %}</span>
-        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "Premium Fabric" %}</span>
-        <span class="text-xs px-3 py-1 border border-warm-gray text-stone">{% trans "New Arrival" %}</span>
+        <span class="text-sm text-stone">{% trans "No tags available." %}</span>
         {% endfor %}
       </div>
 
@@ -132,20 +117,17 @@
       <!-- Specifications -->
       <div class="mb-8">
         <p class="section-label mb-4">{% trans "Specifications" %}</p>
+        {% if product.brand or product.country_of_origin or product.price or product.material or product.dimensions %}
         <div class="flex flex-col divide-y divide-warm-gray">
           {% if product.brand %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Brand" %}</span><span class="text-sm text-charcoal">{{ product.brand.name }}</span></div>{% endif %}
           {% if product.country_of_origin %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Origin" %}</span><span class="text-sm text-charcoal">{{ product.country_of_origin }}</span></div>{% endif %}
           {% if product.price %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Price" %}</span><span class="text-sm text-charcoal">{{ product.price }}</span></div>{% endif %}
           {% if product.material %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Material" %}</span><span class="text-sm text-charcoal">{{ product.material }}</span></div>{% endif %}
           {% if product.dimensions %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Dimensions" %}</span><span class="text-sm text-charcoal">{{ product.dimensions }}</span></div>{% endif %}
-          {% empty %}
-          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Brand" %}</span><span class="text-sm text-charcoal">Minotti</span></div>
-          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Origin" %}</span><span class="text-sm text-charcoal">{% trans "Italy" %}</span></div>
-          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Material" %}</span><span class="text-sm text-charcoal">{% trans "Velvet, Beech Wood" %}</span></div>
-          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Dimensions" %}</span><span class="text-sm text-charcoal">{% trans "W 80 × D 85 × H 78 cm" %}</span></div>
-          <div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Weight" %}</span><span class="text-sm text-charcoal">{% trans "28 kg" %}</span></div>
-          {% endfor %}
         </div>
+        {% else %}
+        <p class="text-sm text-stone">{% trans "No specifications available." %}</p>
+        {% endif %}
       </div>
 
       <!-- CTA -->
@@ -188,7 +170,7 @@
           {% if rel.primary_image and rel.primary_image.image %}
           <img src="{{ rel.primary_image.image.url }}" alt="{{ rel.name }}" class="product-card-img">
           {% else %}
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{{ rel.name }}" class="product-card-img">
+          <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ rel.name }}" class="product-card-img">
           {% endif %}
         </div>
         <div class="p-4">
@@ -197,22 +179,9 @@
         </div>
       </a>
       {% empty %}
-      {% for i in "123456" %}
-      <a href="{% url 'products:catalog' %}" class="product-card">
-        <div class="overflow-hidden bg-cream">
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fit=crop&sig={{ forloop.counter }}" alt="{% trans 'Related' %}" class="product-card-img">
-        </div>
-        <div class="p-4">
-          <p class="text-xs text-stone uppercase tracking-widest mb-1">{% cycle "Cassina" "Poliform" "B&B Italia" "Vitra" %}</p>
-          <h3 class="font-display text-lg font-light text-charcoal">
-            {% if forloop.counter == 1 %}{% trans "Leather Armchair" %}
-            {% elif forloop.counter == 2 %}{% trans "Oak Side Table" %}
-            {% elif forloop.counter == 3 %}{% trans "Floor Lamp" %}
-            {% else %}{% trans "Wool Throw" %}{% endif %}
-          </h3>
-        </div>
-      </a>
-      {% endfor %}
+      <div class="col-span-full">
+        <p class="text-sm text-stone">{% trans "No related products." %}</p>
+      </div>
       {% endfor %}
     </div>
   </div>

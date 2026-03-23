@@ -1,9 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from django.contrib.admin.views.decorators import staff_member_required
 from apps.products.models import Product,ProductImage,ProductTag,ProductQuerySet
 from apps.orders.models import OrderRequest
-from .models import User
 from .forms import ProductForm
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, get_object_or_404, redirect
@@ -27,27 +25,6 @@ class StaffRequiredMixin(UserPassesTestMixin):
         return redirect('core:home')
 
 
-def register(request):
-    if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-
-        if User.objects.filter(username=username).exists():
-            return render(request, "auth/register.html", {"error": "User already exists"})
-
-        user = User.objects.create_user(
-            username=username,
-            password=password
-        )
-
-        # auto login
-        login(request, user)
-
-        return redirect("core:home")
-
-    return render(request, "auth/register.html")
-
-
 def user_login(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -56,6 +33,13 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
 
         if user:
+            if not (user.is_staff or user.is_superuser):
+                return render(
+                    request,
+                    "auth/login.html",
+                    {"error": "Доступ только для сотрудников (staff)"},
+                )
+
             login(request, user)
             messages.success(request, f"С возвращением, {username}!")
 
@@ -245,6 +229,9 @@ class AdminCategoryCreateView(StaffRequiredMixin, View):
                 slug=request.POST.get('slug'),
                 description=request.POST.get('description', '')
             )
+            if request.FILES.get('image'):
+                category.image = request.FILES['image']
+                category.save()
             messages.success(request, f'Категория "{category.name}" создана')
             return redirect('users:admin_category_list')
         except Exception as e:
@@ -263,6 +250,8 @@ class AdminCategoryUpdateView(StaffRequiredMixin, View):
             category.name = request.POST.get('name')
             category.slug = request.POST.get('slug')
             category.description = request.POST.get('description', '')
+            if request.FILES.get('image'):
+                category.image = request.FILES['image']
             category.save()
             messages.success(request, 'Категория обновлена')
             return redirect('users:admin_category_list')
@@ -302,10 +291,6 @@ class AdminBrandCreateView(StaffRequiredMixin, View):
                 description=request.POST.get('description', '')
             )
 
-            if request.FILES.get('logo'):
-                brand.logo = request.FILES['logo']
-                brand.save()
-
             messages.success(request, f'Бренд "{brand.name}" создан')
             return redirect('users:admin_brand_list')
         except Exception as e:
@@ -323,9 +308,6 @@ class AdminBrandUpdateView(StaffRequiredMixin, View):
         try:
             brand.name = request.POST.get('name')
             brand.description = request.POST.get('description', '')
-
-            if request.FILES.get('logo'):
-                brand.logo = request.FILES['logo']
 
             brand.save()
             messages.success(request, 'Бренд обновлен')

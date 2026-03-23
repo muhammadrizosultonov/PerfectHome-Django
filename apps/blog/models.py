@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 
 def _unique_slug(instance, base, slug_field="slug"):
-    slug = slugify(base) or "item"
+    slug = slugify(base, allow_unicode=True) or "item"
     unique = slug
     suffix = 2
     Model = instance.__class__
@@ -16,7 +16,7 @@ def _unique_slug(instance, base, slug_field="slug"):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
     content = models.TextField()
     cover_image = models.ImageField(upload_to="blog/covers/")
     created_at = models.DateTimeField(auto_now_add=True)

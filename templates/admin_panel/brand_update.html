@@ -8,23 +8,12 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post">
                     {% csrf_token %}
                     
                     <div class="mb-3">
                         <label class="form-label">Название бренда *</label>
                         <input type="text" name="name" class="form-control" value="{{ brand.name }}" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Текущий логотип</label>
-                        {% if brand.logo %}
-                            <div class="mb-2">
-                                <img src="{{ brand.logo.url }}" style="max-height: 100px;" class="img-thumbnail">
-                            </div>
-                        {% endif %}
-                        <label class="form-label">Изменить логотип</label>
-                        <input type="file" name="logo" class="form-control" accept="image/*">
                     </div>
                     
                     <div class="mb-3">

@@ -108,8 +108,10 @@
 document.querySelector('input[name="name"]').addEventListener('input', function() {
     let slug = this.value
         .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-');
+        .trim()
+        .replace(/[^\p{L}\p{N}\s-]/gu, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
     document.querySelector('input[name="slug"]').value = slug;
 });
 </script>

@@ -8,18 +8,12 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post">
                     {% csrf_token %}
                     
                     <div class="mb-3">
                         <label class="form-label">Название бренда *</label>
                         <input type="text" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Логотип</label>
-                        <input type="file" name="logo" class="form-control" accept="image/*">
-                        <small class="text-muted">Рекомендуемый размер: 200x200px</small>
                     </div>
                     
                     <div class="mb-3">
