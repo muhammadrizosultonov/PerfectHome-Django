@@ -35,10 +35,9 @@ PY
 `.env` ni yozing:
 ```bash
 cat > /srv/perfecthome/.env <<'EOF'
-DJANGO_SECRET_KEY=<PASTE_SECRET>
+DJANGO_SECRET_KEY=t57StPM5nX0fNv8ejJX-IxF5bfsbTWcGngHj13_zaBrdreu3eQ8UKmSs-C-HzuKMxwY
 DJANGO_DEBUG=False
-DJANGO_ALLOWED_HOSTS=<DOMAIN>,<SERVER_IP>
-DJANGO_CSRF_TRUSTED_ORIGINS=https://<DOMAIN>
+DJANGO_ALLOWED_HOSTS=116.203.192.217
 
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=perfecthome
