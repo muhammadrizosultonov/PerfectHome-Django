@@ -726,6 +726,10 @@ msgstr "Страна"
 msgid "Price"
 msgstr "Цена"
 
+#: templates/product_detail.html:138
+msgid "so'm"
+msgstr "сум"
+
 #: templates/product_detail.html:139 templates/product_detail.html:144
 msgid "Material"
 msgstr "Материал"

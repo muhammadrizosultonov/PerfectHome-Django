@@ -123,7 +123,7 @@
         <div class="flex flex-col divide-y divide-warm-gray">
           {% if product.brand %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Brand" %}</span><span class="text-sm text-charcoal">{{ product.brand.name }}</span></div>{% endif %}
           {% if product.country_of_origin %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Origin" %}</span><span class="text-sm text-charcoal">{{ product.country_of_origin }}</span></div>{% endif %}
-          {% if product.price %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Price" %}</span><span class="text-sm text-charcoal">{{ product.price }}</span></div>{% endif %}
+          {% if product.price %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Price" %}</span><span class="text-sm text-charcoal">{{ product.price }} {% trans "so'm" %}</span></div>{% endif %}
           {% if product.material %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Material" %}</span><span class="text-sm text-charcoal">{{ product.material }}</span></div>{% endif %}
           {% if product.dimensions %}<div class="flex justify-between py-3"><span class="text-xs text-stone uppercase tracking-wide">{% trans "Dimensions" %}</span><span class="text-sm text-charcoal">{{ product.dimensions }}</span></div>{% endif %}
         </div>

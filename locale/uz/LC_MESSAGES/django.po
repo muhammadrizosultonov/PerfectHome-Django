@@ -725,6 +725,10 @@ msgstr "Kelib chiqishi"
 msgid "Price"
 msgstr "Narx"
 
+#: templates/product_detail.html:138
+msgid "so'm"
+msgstr "so'm"
+
 #: templates/product_detail.html:139 templates/product_detail.html:144
 msgid "Material"
 msgstr "Material"
