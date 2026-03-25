@@ -267,6 +267,35 @@ body {
 }
 .modal-close:hover { color: var(--black); }
 
+.order-success-box {
+  max-width: 420px;
+  padding: 30px 28px;
+  text-align: center;
+  border: 1px solid var(--accent-light);
+  background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.14);
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.35s ease;
+}
+#order-success-modal { background: rgba(13,13,13,0.55); backdrop-filter: blur(6px); }
+#order-success-modal.active .modal-box { transform: translateY(0) scale(1); }
+
+.order-success-icon {
+  width: 46px; height: 46px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  color: var(--accent);
+  background: rgba(181,149,106,0.12);
+  border: 1px solid rgba(181,149,106,0.35);
+}
+.order-success-text {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ---- FORM INPUTS ---- */
 .form-input {
   width: 100%; border: none; border-bottom: 1px solid var(--warm-gray);

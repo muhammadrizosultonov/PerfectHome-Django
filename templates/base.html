@@ -216,6 +216,22 @@
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════
+     ORDER SUCCESS (Auto-hide)
+═══════════════════════════════════════════ -->
+<div id="order-success-modal" class="modal-overlay" aria-live="polite">
+  <div class="modal-box order-success-box" role="status">
+    <div class="order-success-icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"></path>
+      </svg>
+    </div>
+    <p class="order-success-text">
+      {% trans "Your request has been sent. Our admins will contact you soon." %}
+    </p>
+  </div>
+</div>
+
 <!-- Scripts -->
 <script src="{% static 'js/main.js' %}"></script>
 {% block extra_js %}{% endblock %}

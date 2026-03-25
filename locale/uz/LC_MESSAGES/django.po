@@ -273,6 +273,10 @@ msgstr "So‘rov yuborish"
 msgid "We will contact you shortly to confirm your order details."
 msgstr "Tez orada siz bilan bog‘lanamiz va tafsilotlarni tasdiqlaymiz."
 
+#: templates/base.html:216
+msgid "Your request has been sent. Our admins will contact you soon."
+msgstr "So'rovingiz jo'natildi. Tez orada adminlar siz bilan bog'lanishadi."
+
 #: templates/blog.html:4 templates/blog.html:14 templates/blog_detail.html:4
 #: templates/blog_detail.html:14 templates/home.html:251
 #: templates/home.html:258 templates/home.html:265

@@ -26,6 +26,27 @@ const openModalBtns = document.querySelectorAll('[data-open-modal]');
 const closeModalBtn = document.getElementById('close-modal');
 const orderForm = document.getElementById('order-form');
 const orderFormStatus = document.getElementById('order-form-status');
+const orderSuccessModal = document.getElementById('order-success-modal');
+let orderSuccessTimer = null;
+
+const hideOrderSuccessModal = () => {
+  if (!orderSuccessModal) return;
+  orderSuccessModal.classList.remove('active');
+  if (orderSuccessTimer) {
+    clearTimeout(orderSuccessTimer);
+    orderSuccessTimer = null;
+  }
+};
+
+const showOrderSuccessModal = () => {
+  if (!orderSuccessModal) return;
+  orderSuccessModal.classList.add('active');
+  if (orderSuccessTimer) clearTimeout(orderSuccessTimer);
+  orderSuccessTimer = setTimeout(() => {
+    orderSuccessModal.classList.remove('active');
+    orderSuccessTimer = null;
+  }, 4500);
+};
 
 openModalBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -43,10 +64,18 @@ if (orderModal) {
     if (e.target === orderModal) orderModal.classList.remove('active');
   });
 }
+if (orderSuccessModal) {
+  orderSuccessModal.addEventListener('click', (e) => {
+    if (e.target === orderSuccessModal) hideOrderSuccessModal();
+  });
+}
 
 // ---- ESC TO CLOSE MODAL ----
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') orderModal?.classList.remove('active');
+  if (e.key === 'Escape') {
+    orderModal?.classList.remove('active');
+    hideOrderSuccessModal();
+  }
 });
 
 // ---- PRODUCT GALLERY THUMBNAILS ----
@@ -131,12 +160,10 @@ if (orderForm) {
       const data = await response.json().catch(() => ({}));
 
       if (response.ok && data.ok) {
-        if (orderFormStatus) orderFormStatus.textContent = data.message || 'Request sent.';
-        setTimeout(() => {
-          orderModal?.classList.remove('active');
-          orderForm.reset();
-          if (orderFormStatus) orderFormStatus.textContent = '';
-        }, 1400);
+        orderModal?.classList.remove('active');
+        orderForm.reset();
+        if (orderFormStatus) orderFormStatus.textContent = '';
+        showOrderSuccessModal();
       } else {
         if (orderFormStatus) orderFormStatus.textContent = data.error || 'Invalid request.';
       }
