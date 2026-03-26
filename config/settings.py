@@ -32,6 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 INSTALLED_APPS = [
+    "modeltranslation",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -110,6 +111,11 @@ LANGUAGES = [
     ("ru", "Russian"),
     ("uz", "Uzbek"),
 ]
+
+MODELTRANSLATION_LANGUAGES = ("ru", "uz")
+MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
+MODELTRANSLATION_FALLBACK_LANGUAGES = ("ru",)
+MODELTRANSLATION_REQUIRED_LANGUAGES = ("ru",)
 
 TIME_ZONE = "UTC"
 USE_I18N = True

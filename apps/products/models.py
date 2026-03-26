@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.db.models import QuerySet
 
 
 def _unique_slug(instance, base, slug_field="slug"):
@@ -32,7 +33,7 @@ class ProductTag(models.Model):
         super().save(*args, **kwargs)
 
 
-class ProductQuerySet(models.QuerySet):
+class ProductQuerySet(QuerySet):
     def with_related(self):
         return self.select_related("brand", "category").prefetch_related("tags", "images")
 
@@ -59,7 +60,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = ProductQuerySet.as_manager()
-
+    
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
@@ -70,6 +71,7 @@ class Product(models.Model):
             models.Index(fields=["article_number"]),
         ]
 
+    
     def __str__(self) -> str:
         return self.name
 
@@ -90,6 +92,7 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to="products/images/")
     alt_text = models.CharField(max_length=255, blank=True)
+
 
     class Meta:
         verbose_name = "Product Image"

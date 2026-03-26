@@ -21,6 +21,7 @@ class BlogPost(models.Model):
     cover_image = models.ImageField(upload_to="blog/covers/")
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     class Meta:
         verbose_name = "Blog Post"
         verbose_name_plural = "Blog Posts"

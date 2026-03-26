@@ -6,6 +6,7 @@ class Brand(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
 
+
     class Meta:
         verbose_name = "Brand"
         verbose_name_plural = "Brands"

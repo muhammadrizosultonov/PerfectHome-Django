@@ -123,6 +123,18 @@ class AdminProductCreateView(StaffRequiredMixin, View):
                 price=request.POST.get('price'),
             )
 
+            name_uz = request.POST.get('name_uz', '').strip()
+            description_uz = request.POST.get('description_uz', '').strip()
+            country_uz = request.POST.get('country_of_origin_uz', '').strip()
+            if name_uz:
+                product.name_uz = name_uz
+            if description_uz:
+                product.description_uz = description_uz
+            if country_uz:
+                product.country_of_origin_uz = country_uz
+            if name_uz or description_uz or country_uz:
+                product.save()
+
             # Добавление тегов
             tag_ids = request.POST.getlist('tags')
             if tag_ids:
@@ -169,6 +181,9 @@ class AdminProductUpdateView(StaffRequiredMixin, View):
             product.country_of_origin = request.POST.get('country_of_origin')
             product.article_number = request.POST.get('article_number')
             product.price = request.POST.get('price')
+            product.name_uz = request.POST.get('name_uz', '').strip()
+            product.description_uz = request.POST.get('description_uz', '').strip()
+            product.country_of_origin_uz = request.POST.get('country_of_origin_uz', '').strip()
             product.save()
 
             # Обновление тегов
@@ -229,8 +244,16 @@ class AdminCategoryCreateView(StaffRequiredMixin, View):
                 slug=request.POST.get('slug'),
                 description=request.POST.get('description', '')
             )
-            if request.FILES.get('image'):
-                category.image = request.FILES['image']
+            name_uz = request.POST.get('name_uz', '').strip()
+            description_uz = request.POST.get('description_uz', '').strip()
+            image = request.FILES.get('image')
+            if name_uz:
+                category.name_uz = name_uz
+            if description_uz:
+                category.description_uz = description_uz
+            if image:
+                category.image = image
+            if name_uz or description_uz or image:
                 category.save()
             messages.success(request, f'Категория "{category.name}" создана')
             return redirect('users:admin_category_list')
@@ -250,6 +273,8 @@ class AdminCategoryUpdateView(StaffRequiredMixin, View):
             category.name = request.POST.get('name')
             category.slug = request.POST.get('slug')
             category.description = request.POST.get('description', '')
+            category.name_uz = request.POST.get('name_uz', '').strip()
+            category.description_uz = request.POST.get('description_uz', '').strip()
             if request.FILES.get('image'):
                 category.image = request.FILES['image']
             category.save()
@@ -290,6 +315,14 @@ class AdminBrandCreateView(StaffRequiredMixin, View):
                 name=request.POST.get('name'),
                 description=request.POST.get('description', '')
             )
+            name_uz = request.POST.get('name_uz', '').strip()
+            description_uz = request.POST.get('description_uz', '').strip()
+            if name_uz:
+                brand.name_uz = name_uz
+            if description_uz:
+                brand.description_uz = description_uz
+            if name_uz or description_uz:
+                brand.save()
 
             messages.success(request, f'Бренд "{brand.name}" создан')
             return redirect('users:admin_brand_list')
@@ -308,6 +341,8 @@ class AdminBrandUpdateView(StaffRequiredMixin, View):
         try:
             brand.name = request.POST.get('name')
             brand.description = request.POST.get('description', '')
+            brand.name_uz = request.POST.get('name_uz', '').strip()
+            brand.description_uz = request.POST.get('description_uz', '').strip()
 
             brand.save()
             messages.success(request, 'Бренд обновлен')
@@ -349,6 +384,10 @@ class AdminTagCreateView(StaffRequiredMixin, View):
                 name=name,
                 slug=slug,
             )
+            name_uz = request.POST.get('name_uz', '').strip()
+            if name_uz:
+                tag.name_uz = name_uz
+                tag.save()
             messages.success(request, f'Тег "{tag.name}" создан')
             return redirect('users:admin_tag_list')
         except Exception as e:
@@ -366,6 +405,7 @@ class AdminTagUpdateView(StaffRequiredMixin, View):
         try:
             tag.name = request.POST.get('name')
             tag.slug = request.POST.get('slug', '')
+            tag.name_uz = request.POST.get('name_uz', '').strip()
             tag.save()
             messages.success(request, 'Тег обновлен')
             return redirect('users:admin_tag_list')
@@ -403,6 +443,14 @@ class AdminBlogCreateView(StaffRequiredMixin, View):
                 slug=request.POST.get('slug'),
                 content=request.POST.get('content'),
             )
+            title_uz = request.POST.get('title_uz', '').strip()
+            content_uz = request.POST.get('content_uz', '').strip()
+            if title_uz:
+                post.title_uz = title_uz
+            if content_uz:
+                post.content_uz = content_uz
+            if title_uz or content_uz:
+                post.save()
 
             if request.FILES.get('cover_image'):
                 post.cover_image = request.FILES['cover_image']
@@ -426,6 +474,8 @@ class AdminBlogUpdateView(StaffRequiredMixin, View):
             post.title = request.POST.get('title')
             post.slug = request.POST.get('slug')
             post.content = request.POST.get('content')
+            post.title_uz = request.POST.get('title_uz', '').strip()
+            post.content_uz = request.POST.get('content_uz', '').strip()
 
             if request.FILES.get('cover_image'):
                 post.cover_image = request.FILES['cover_image']
