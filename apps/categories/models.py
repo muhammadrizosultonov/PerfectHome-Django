@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
-def _unique_slug(instance, base, slug_field="slug"):
-    slug = slugify(base, allow_unicode=True) or "item"
+def _unique_slug(instance, base, slug_field="slug", allow_unicode=False):
+    slug = slugify(base, allow_unicode=allow_unicode) or "item"
     unique = slug
     suffix = 2
     Model = instance.__class__
@@ -16,7 +16,7 @@ def _unique_slug(instance, base, slug_field="slug"):
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
+    slug = models.SlugField(max_length=255, unique=True, allow_unicode=False)
     image = models.ImageField(upload_to="categories/images/", blank=True, null=True)
     description = models.TextField(blank=True)
 
@@ -34,7 +34,7 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = _unique_slug(self, self.name)
+            self.slug = _unique_slug(self, self.name, allow_unicode=False)
         if self.image:
             from apps.core.utils.images import optimize_image
 

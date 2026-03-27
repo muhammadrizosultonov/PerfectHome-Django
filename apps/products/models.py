@@ -4,8 +4,8 @@ from django.utils.text import slugify
 from django.db.models import QuerySet
 
 
-def _unique_slug(instance, base, slug_field="slug"):
-    slug = slugify(base, allow_unicode=True) or "item"
+def _unique_slug(instance, base, slug_field="slug", allow_unicode=False):
+    slug = slugify(base, allow_unicode=allow_unicode) or "item"
     unique = slug
     suffix = 2
     Model = instance.__class__
@@ -17,7 +17,7 @@ def _unique_slug(instance, base, slug_field="slug"):
 
 class ProductTag(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=120, unique=True, allow_unicode=True)
+    slug = models.SlugField(max_length=120, unique=True, allow_unicode=False)
 
     class Meta:
         verbose_name = "Product Tag"
@@ -29,7 +29,7 @@ class ProductTag(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = _unique_slug(self, self.name)
+            self.slug = _unique_slug(self, self.name, allow_unicode=False)
         super().save(*args, **kwargs)
 
 
@@ -40,7 +40,7 @@ class ProductQuerySet(QuerySet):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
+    slug = models.SlugField(max_length=255, unique=True, allow_unicode=False)
     description = models.TextField()
     category = models.ForeignKey(
         "categories.Category",
@@ -80,7 +80,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = _unique_slug(self, self.name)
+            self.slug = _unique_slug(self, self.name, allow_unicode=False)
         super().save(*args, **kwargs)
 
     @property
