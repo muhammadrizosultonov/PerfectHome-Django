@@ -1,30 +1,52 @@
-# Perfect Home — Deploy Qo'llanma (Docker)
+# Perfect Home
 
-Quyidagi qo'llanma sizni **hozirgi holatdan boshlab** saytni **serverga chiqarish**gacha bo'lgan barcha qadamlar bilan olib boradi. Hammasi Docker orqali.
+`Perfect Home` Django loyihasi Docker orqali ishga tushadi. Hozirgi stack:
 
-**Talablar**
-1. Ubuntu server (Hetzner kabi VPS)
-2. Domen bo'lsa yaxshi (ixtiyoriy, lekin production uchun tavsiya)
-3. Git repo URL
+- `web` - Django + Gunicorn
+- `db` - PostgreSQL 16
+- `nginx` - reverse proxy va static/media uchun
 
-**1. Serverda Docker va Git o'rnatish**
+Quyidagi deploy jarayoni Docker va Docker Compose ishlaydigan istalgan Linux server, VPS yoki cloud VM uchun mos. Bu qo'llanma providerga bog'liq emas.
+
+## 1. Talablar
+
+Serverda quyidagilar bo'lishi kerak:
+
+- Docker
+- Docker Compose plugin
+- Git
+- 80-port ochiq bo'lishi kerak
+- HTTPS ishlatmoqchi bo'lsangiz 443-port ham ochiq bo'lishi kerak
+
+Ubuntu yoki Debian uchun misol:
+
 ```bash
 apt update
 apt install -y docker.io docker-compose-plugin git
 systemctl enable --now docker
 ```
 
-**2. Loyihani serverga yuklash**
+Agar boshqa distributiv ishlatsangiz, shu paketlarning ekvivalentini o'rnating.
+
+## 2. Loyihani serverga yuklash
+
 ```bash
 mkdir -p /srv/perfecthome
 cd /srv/perfecthome
 git clone <REPO_URL> .
 ```
 
-**3. `.env` ni prodga moslash**
-`.env` faylini serverda yaratamiz (localdagi `.env`ni ko'chirmang).
+## 3. Environment faylni tayyorlash
 
-Secret key generatsiya:
+Repo ichida `.env.example` bor. Serverda undan nusxa oling:
+
+```bash
+cd /srv/perfecthome
+cp .env.example .env
+```
+
+Yangi secret key generatsiya qiling:
+
 ```bash
 python3 - <<'PY'
 import secrets
@@ -32,80 +54,152 @@ print(secrets.token_urlsafe(50))
 PY
 ```
 
-`.env` ni yozing:
+Keyin `.env` faylni tahrir qiling:
+
 ```bash
-cat > /srv/perfecthome/.env <<'EOF'
-DJANGO_SECRET_KEY=t57StPM5nX0fNv8ejJX-IxF5bfsbTWcGngHj13_zaBrdreu3eQ8UKmSs-C-HzuKMxwY
-DJANGO_DEBUG=False
-DJANGO_ALLOWED_HOSTS=116.203.192.217
-
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=perfecthome
-DB_USER=perfecthome_user
-DB_PASSWORD=<STRONG_DB_PASSWORD>
-DB_HOST=db
-DB_PORT=5432
-
-CONTACT_ADDRESS=Tashkent, Uzbekistan
-CONTACT_PHONE=+998 (00) 000-00-00
-CONTACT_EMAIL=info@perfecthome.uz
-CONTACT_MAP_EMBED_URL=https://www.google.com/maps
-EOF
+nano .env
 ```
 
-**4. Docker orqali ishga tushirish**
+Muhim qiymatlar:
+
+- `DJANGO_SECRET_KEY` - yangi tasodifiy qiymat bo'lishi kerak
+- `DJANGO_DEBUG=False`
+- `DJANGO_ALLOWED_HOSTS` - domen va kerak bo'lsa server IP
+- `DJANGO_CSRF_TRUSTED_ORIGINS` - `https://domeningiz` ko'rinishida
+- `DB_HOST=db` - agar compose ichidagi PostgreSQL ishlatilsa
+- `DB_PASSWORD` - kuchli parol bo'lishi kerak
+
+## 4. Birinchi deploy
+
 ```bash
 cd /srv/perfecthome
 docker compose up -d --build
 ```
 
 Tekshirish:
+
 ```bash
 docker compose ps
 docker compose logs -f web
+docker compose logs -f nginx
 ```
 
-**5. Superuser yaratish**
+Izoh:
+
+- `docker/entrypoint.sh` konteyner ishga tushganda `migrate` va `collectstatic` bajaradi
+- PostgreSQL ma'lumotlari `postgres_data` volume ichida saqlanadi
+- static fayllar `static` volume ichida saqlanadi
+- media fayllar `media` volume ichida saqlanadi
+
+## 5. Admin foydalanuvchi yaratish
+
 ```bash
 docker compose exec web python manage.py createsuperuser
 ```
 
-**6. Portlarni ochish (UFW bo'lsa)**
-```bash
-ufw allow OpenSSH
-ufw allow 80
-ufw allow 443
-ufw enable
+## 6. Domen ulash
+
+DNS tomonida quyidagilarni ulang:
+
+- `@` -> server IP
+- `www` -> server IP
+
+Keyin `.env` ichida `DJANGO_ALLOWED_HOSTS` va `DJANGO_CSRF_TRUSTED_ORIGINS` ni domen bilan yangilang.
+
+Misol:
+
+```env
+DJANGO_ALLOWED_HOSTS=example.com,www.example.com
+DJANGO_CSRF_TRUSTED_ORIGINS=https://example.com,https://www.example.com
 ```
 
-**7. Domen sozlash (DNS)**
-DNS A record:
-- `@` → server IP
-- `www` → server IP
+## 7. HTTPS
 
-**8. HTTPS (tavsiya, ixtiyoriy)**
-Hozirgi konfiguratsiya HTTP (80-port). HTTPS uchun 2 yo'l:
+Hozirgi compose konfiguratsiya HTTP orqali ishlaydi. HTTPS uchun 3 ta odatiy yo'l bor:
 
-1. Cloudflare orqali SSL yoqish  
-2. Host-level reverse proxy (Nginx/Caddy) qo'shish
+1. Server oldiga host-level Nginx yoki Caddy qo'yish
+2. Cloudflare proxy va SSL ishlatish
+3. Alohida reverse proxy stack ishlatish
 
-Agar xohlasangiz, men HTTPS uchun tayyor konfiguratsiyani qo'shib beraman.
+Qaysi variantni tanlamang, ilovaga kelayotgan domenlar `.env` ichida yozilgan bo'lishi kerak.
 
-**9. Yangi versiyani deploy qilish (update)**
+## 8. Yangilash deployi
+
+Kod yangilanganda:
+
 ```bash
 cd /srv/perfecthome
 git pull
 docker compose up -d --build
 ```
 
-**10. Foydali buyruqlar**
+Kerak bo'lsa eski image'larni tozalash:
+
 ```bash
-docker compose logs -f web
-docker compose logs -f nginx
-docker compose exec web python manage.py shell
-docker compose exec web python manage.py migrate
+docker image prune -f
 ```
 
-**Izoh**
-- `docker/entrypoint.sh` konteyner ishga tushganda `migrate` va `collectstatic` bajaradi.
-- `staticfiles` va `media` Docker volume orqali saqlanadi.
+## 9. Foydali buyruqlar
+
+```bash
+docker compose ps
+docker compose logs -f web
+docker compose logs -f nginx
+docker compose logs -f db
+docker compose exec web python manage.py shell
+docker compose exec web python manage.py migrate
+docker compose exec web python manage.py collectstatic --noinput
+docker compose exec db sh -lc 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB"'
+```
+
+## 10. Backup tavsiyasi
+
+Database backup:
+
+```bash
+docker compose exec -T db sh -lc 'pg_dump -U "$POSTGRES_USER" "$POSTGRES_DB"' > backup.sql
+```
+
+Media backup:
+
+1. `docker volume ls` bilan media volume nomini toping
+2. Shu volume'ni alohida backup qiling yoki server snapshot ishlating
+
+## 11. Mavjud media fayllarni ko'chirish
+
+Agar sizda oldindan tayyor `media/` papka bo'lsa va uni yangi serverga ko'chirmoqchi bo'lsangiz:
+
+1. Avval `docker compose up -d --build` ni ishga tushiring
+2. Media volume nomini toping:
+
+```bash
+docker volume ls | grep media
+```
+
+3. Fayllarni volume ichiga ko'chiring:
+
+```bash
+docker run --rm \
+  -v <MEDIA_VOLUME>:/to \
+  -v "$PWD/media:/from:ro" \
+  alpine sh -c 'cp -av /from/. /to/'
+```
+
+`<MEDIA_VOLUME>` o'rniga real volume nomini yozing.
+
+## 12. Muammolarni tekshirish
+
+Agar sayt ochilmasa, odatda sabablari shular bo'ladi:
+
+- `DJANGO_ALLOWED_HOSTS` noto'g'ri
+- `DJANGO_CSRF_TRUSTED_ORIGINS` bo'sh yoki noto'g'ri
+- `DB_HOST` noto'g'ri berilgan
+- firewall 80 yoki 443 portni yopib turibdi
+- domen hali server IP'ga ulanmagan
+
+## 13. Muhim eslatma
+
+- `.env` ni git'ga qo'shmang
+- production serverda `DJANGO_DEBUG=False` bo'lsin
+- secret key va database parolini haqiqiy xavfsiz qiymatlarga almashtiring
+- agar tashqi PostgreSQL ishlatsangiz, `.env` ichida `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` ni o'sha server qiymatlariga almashtiring
