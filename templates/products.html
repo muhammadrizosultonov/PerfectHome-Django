@@ -118,7 +118,7 @@
               {% if product.primary_image and product.primary_image.image %}
               <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
               {% else %}
-              <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
+              <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
               {% endif %}
             </div>
             <div class="p-4">

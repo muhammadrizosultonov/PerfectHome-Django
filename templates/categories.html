@@ -29,7 +29,7 @@
         {% if cat.image %}
         <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
         {% else %}
-        <img src="{% static 'img/plumbing/banner.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/banner.svg" %}";' alt="{{ cat.name }}">
+        <img src="{% static 'images/premium/categories-banner.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/banner.svg" %}";' alt="{{ cat.name }}">
         {% endif %}
         <div class="category-card-overlay"></div>
         <div class="category-card-content">

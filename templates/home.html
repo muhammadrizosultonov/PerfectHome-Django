@@ -8,7 +8,7 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <img src="{% static 'images/home/home_page_v2.jpg' %}" onerror='this.onerror=null;this.src="{% static "images/home/home_page.jpeg" %}";' alt="{% trans 'Perfect Home Interior' %}" class="hero-img">
+  <img src="{% static 'images/premium/home-hero.jpg' %}" onerror='this.onerror=null;this.src="{% static "images/home/home_page.jpeg" %}";' alt="{% trans 'Perfect Home Interior' %}" class="hero-img">
   <div class="hero-overlay"></div>
   <div class="hero-content max-w-screen-xl mx-auto px-6 lg:px-10 w-full">
     <p class="hero-subtitle mb-6 fade-up fade-up-delay-1">{% trans "Premium Home Collection — 2025" %}</p>
@@ -46,7 +46,7 @@
         {% if cat.image %}
         <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
         {% else %}
-        <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ cat.name }}">
+        <img src="{% static 'images/premium/category-card.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ cat.name }}">
         {% endif %}
         <div class="category-card-overlay"></div>
         <div class="category-card-content">
@@ -81,7 +81,7 @@
           {% if product.primary_image and product.primary_image.image %}
           <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
           {% else %}
-          <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
+          <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
           {% endif %}
         </div>
         <div class="p-4">
@@ -102,7 +102,7 @@
 
 <!-- ═══════════ FULL-WIDTH BANNER ═══════════ -->
 <section class="relative h-[70vh] overflow-hidden">
-  <img src="{% static 'img/plumbing/banner.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/banner.svg" %}";' alt="{% trans 'Interior Design' %}" class="w-full h-full object-cover">
+  <img src="{% static 'images/premium/collection-banner.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/banner.svg" %}";' alt="{% trans 'Interior Design' %}" class="w-full h-full object-cover">
   <div class="absolute inset-0 bg-charcoal/50"></div>
   <div class="absolute inset-0 flex items-center justify-center text-center px-6">
     <div>
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="relative">
-        <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{% trans 'Showroom' %}" class="w-full aspect-square object-cover">
+        <img src="{% static 'images/premium/product-detail.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{% trans 'Showroom' %}" class="w-full aspect-square object-cover">
         <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-cream hidden lg:block"></div>
         <div class="absolute -top-6 -right-6 w-24 h-24 border border-accent hidden lg:block"></div>
       </div>
@@ -196,7 +196,7 @@
           {% if post.cover_image %}
           <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img">
           {% else %}
-          <img src="{% static 'img/plumbing/rect.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/rect.svg" %}";' alt="{{ post.title }}" class="blog-card-img">
+          <img src="{% static 'images/premium/blog-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/rect.svg" %}";' alt="{{ post.title }}" class="blog-card-img">
           {% endif %}
         </div>
         <p class="text-xs text-stone uppercase tracking-widest mb-2">{{ post.created_at|date:"DATE_FORMAT" }}</p>

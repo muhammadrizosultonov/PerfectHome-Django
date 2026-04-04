@@ -1,61 +1,100 @@
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
-from apps.products.models import Product,ProductImage,ProductTag,ProductQuerySet
-from apps.orders.models import OrderRequest
-from .forms import ProductForm
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views import View
-from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
-from django.urls import reverse
+from django.contrib.auth import login, logout
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.views import redirect_to_login
+from django.db import transaction
 from django.db.models import Count, Q
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required
-from apps.categories.models import Category
-from apps.brands.models import Brand
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.utils.http import url_has_allowed_host_and_scheme
+from django.views.decorators.http import require_POST
+from django.views import View
+
 from apps.blog.models import BlogPost
+from apps.brands.models import Brand
+from apps.categories.models import Category
+from apps.orders.models import OrderRequest
+from apps.products.models import Product, ProductImage, ProductTag
+
+from .forms import AdminLoginForm, AdminProductForm
+
+
+def _get_safe_next_url(request):
+    next_url = request.POST.get("next") or request.GET.get("next")
+    if next_url and url_has_allowed_host_and_scheme(
+        next_url,
+        allowed_hosts={request.get_host()},
+        require_https=request.is_secure(),
+    ):
+        return next_url
+    return ""
+
+
+def _get_post_login_redirect(request, user):
+    if not (user.is_staff or user.is_superuser):
+        return reverse("core:home")
+    next_url = _get_safe_next_url(request)
+    if next_url:
+        return next_url
+    return reverse("users:admin_dashboard")
+
+
+def _build_admin_product_context(form):
+    return {
+        "form": form,
+        "product": form.instance,
+        "categories": Category.objects.order_by("name"),
+        "brands": Brand.objects.order_by("name"),
+        "tags": ProductTag.objects.order_by("name"),
+        "selected_tags": {str(tag_id) for tag_id in (form["tags"].value() or [])},
+    }
 
 class StaffRequiredMixin(UserPassesTestMixin):
+    login_url = "users:login"
+    redirect_field_name = "next"
+
     def test_func(self):
         return self.request.user.is_authenticated and (self.request.user.is_staff or self.request.user.is_superuser)
 
     def handle_no_permission(self):
+        if not self.request.user.is_authenticated:
+            return redirect_to_login(
+                self.request.get_full_path(),
+                reverse(self.login_url),
+                self.redirect_field_name,
+            )
         messages.error(self.request, "У вас нет доступа к административной панели")
         return redirect('core:home')
 
 
 def user_login(request):
+    if request.user.is_authenticated:
+        return redirect(_get_post_login_redirect(request, request.user))
+
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-
-        user = authenticate(request, username=username, password=password)
-
-        if user:
-            if not (user.is_staff or user.is_superuser):
-                return render(
-                    request,
-                    "auth/login.html",
-                    {"error": "Доступ только для сотрудников (staff)"},
-                )
-
+        form = AdminLoginForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
             login(request, user)
-            messages.success(request, f"С возвращением, {username}!")
+            messages.success(request, f"С возвращением, {user.username}!")
+            return redirect(_get_post_login_redirect(request, user))
+    else:
+        form = AdminLoginForm(request)
 
-            if user.is_staff:
-                return redirect("users:admin_dashboard")
+    return render(
+        request,
+        "auth/login.html",
+        {
+            "form": form,
+            "next": _get_safe_next_url(request),
+        },
+    )
 
-            return redirect("core:home")
 
-        return render(request, "auth/login.html", {"error": "Неверное имя пользователя или пароль"})
-
-    return render(request, "auth/login.html")
-
-
+@require_POST
 def user_logout(request):
     logout(request)
-    return redirect("core:home")
+    return redirect("users:login")
 
 class AdminDashboardView(StaffRequiredMixin, View):
     def get(self, request):
@@ -102,109 +141,38 @@ class AdminProductListView(StaffRequiredMixin, View):
 
 class AdminProductCreateView(StaffRequiredMixin, View):
     def get(self, request):
-        context = {
-            'categories': Category.objects.all(),
-            'brands': Brand.objects.all(),
-            'tags': ProductTag.objects.all(),
-        }
-        return render(request, 'admin_panel/product_create.html', context)
+        form = AdminProductForm()
+        return render(request, 'admin_panel/product_create.html', _build_admin_product_context(form))
 
     def post(self, request):
-        # Создание товара
-        try:
-            product = Product.objects.create(
-                name=request.POST.get('name'),
-                slug=request.POST.get('slug'),
-                description=request.POST.get('description'),
-                category_id=request.POST.get('category'),
-                brand_id=request.POST.get('brand'),
-                country_of_origin=request.POST.get('country_of_origin'),
-                article_number=request.POST.get('article_number'),
-                price=request.POST.get('price'),
-            )
-
-            name_uz = request.POST.get('name_uz', '').strip()
-            description_uz = request.POST.get('description_uz', '').strip()
-            country_uz = request.POST.get('country_of_origin_uz', '').strip()
-            if name_uz:
-                product.name_uz = name_uz
-            if description_uz:
-                product.description_uz = description_uz
-            if country_uz:
-                product.country_of_origin_uz = country_uz
-            if name_uz or description_uz or country_uz:
-                product.save()
-
-            # Добавление тегов
-            tag_ids = request.POST.getlist('tags')
-            if tag_ids:
-                product.tags.set(tag_ids)
-
-            # Обработка изображений
-            images = request.FILES.getlist('images')
-            for image in images:
-                ProductImage.objects.create(
-                    product=product,
-                    image=image,
-                    alt_text=request.POST.get(f'alt_{image.name}', product.name)
-                )
-
+        form = AdminProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            with transaction.atomic():
+                product = form.save()
             messages.success(request, f'Товар "{product.name}" успешно создан')
             return redirect('users:admin_product_list')
 
-        except Exception as e:
-            messages.error(request, f'Ошибка при создании товара: {str(e)}')
-            return self.get(request)
+        messages.error(request, 'Проверьте форму и исправьте ошибки')
+        return render(request, 'admin_panel/product_create.html', _build_admin_product_context(form))
 
 
 class AdminProductUpdateView(StaffRequiredMixin, View):
     def get(self, request, pk):
         product = get_object_or_404(Product.objects.prefetch_related('images', 'tags'), pk=pk)
-        context = {
-            'product': product,
-            'categories': Category.objects.all(),
-            'brands': Brand.objects.all(),
-            'tags': ProductTag.objects.all(),
-            'selected_tags': product.tags.values_list('id', flat=True),
-        }
-        return render(request, 'admin_panel/product_update.html', context)
+        form = AdminProductForm(instance=product)
+        return render(request, 'admin_panel/product_update.html', _build_admin_product_context(form))
 
     def post(self, request, pk):
-        product = get_object_or_404(Product, pk=pk)
-        try:
-            # Обновление полей
-            product.name = request.POST.get('name')
-            product.slug = request.POST.get('slug')
-            product.description = request.POST.get('description')
-            product.category_id = request.POST.get('category')
-            product.brand_id = request.POST.get('brand')
-            product.country_of_origin = request.POST.get('country_of_origin')
-            product.article_number = request.POST.get('article_number')
-            product.price = request.POST.get('price')
-            product.name_uz = request.POST.get('name_uz', '').strip()
-            product.description_uz = request.POST.get('description_uz', '').strip()
-            product.country_of_origin_uz = request.POST.get('country_of_origin_uz', '').strip()
-            product.save()
-
-            # Обновление тегов
-            tag_ids = request.POST.getlist('tags')
-            product.tags.set(tag_ids)
-
-            # Добавление новых изображений
-            images = request.FILES.getlist('images')
-            for image in images:
-                ProductImage.objects.create(
-                    product=product,
-                    image=image,
-                    alt_text=request.POST.get(f'alt_{image.name}', product.name)
-                )
-
+        product = get_object_or_404(Product.objects.prefetch_related('images', 'tags'), pk=pk)
+        form = AdminProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            with transaction.atomic():
+                product = form.save()
             messages.success(request, f'Товар "{product.name}" успешно обновлен')
             return redirect('users:admin_product_list')
 
-        except Exception as e:
-            messages.error(request, f'Ошибка при обновлении товара: {str(e)}')
-            return self.get(request, pk)
+        messages.error(request, 'Проверьте форму и исправьте ошибки')
+        return render(request, 'admin_panel/product_update.html', _build_admin_product_context(form))
 
 
 class AdminProductDeleteView(StaffRequiredMixin, View):

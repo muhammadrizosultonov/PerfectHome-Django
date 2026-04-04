@@ -1,4 +1,5 @@
 {% extends 'admin_panel/base_admin.html' %}
+{% load l10n %}
 
 {% block title %}Редактирование товара{% endblock %}
 {% block header %}Редактирование товара "{{ product.name }}"{% endblock %}
@@ -8,24 +9,40 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>Проверьте форму.</strong>
+                    <ul class="mb-0 mt-2">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Название товара *</label>
-                            <input type="text" name="name" class="form-control" value="{{ product.name }}" required>
+                            <input type="text" name="name" class="form-control" value="{{ form.name.value|default_if_none:'' }}" required>
                         </div>
                         
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Slug *</label>
-                            <input type="text" name="slug" class="form-control" value="{{ product.slug }}" required>
+                            <input type="text" name="slug" class="form-control" value="{{ form.slug.value|default_if_none:'' }}">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Название товара (UZ)</label>
-                        <input type="text" name="name_uz" class="form-control" value="{{ product.name_uz }}">
+                        <input type="text" name="name_uz" class="form-control" value="{{ form.name_uz.value|default_if_none:'' }}">
                     </div>
                     
                     <div class="row">
@@ -34,7 +51,7 @@
                             <select name="category" class="form-select" required>
                                 <option value="">Выберите категорию</option>
                                 {% for category in categories %}
-                                    <option value="{{ category.id }}" {% if product.category.id == category.id %}selected{% endif %}>
+                                    <option value="{{ category.id }}" {% if form.category.value|stringformat:'s' == category.id|stringformat:'s' %}selected{% endif %}>
                                         {{ category.name }}
                                     </option>
                                 {% endfor %}
@@ -46,7 +63,7 @@
                             <select name="brand" class="form-select" required>
                                 <option value="">Выберите бренд</option>
                                 {% for brand in brands %}
-                                    <option value="{{ brand.id }}" {% if product.brand.id == brand.id %}selected{% endif %}>
+                                    <option value="{{ brand.id }}" {% if form.brand.value|stringformat:'s' == brand.id|stringformat:'s' %}selected{% endif %}>
                                         {{ brand.name }}
                                     </option>
                                 {% endfor %}
@@ -57,18 +74,18 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Страна происхождения</label>
-                            <input type="text" name="country_of_origin" class="form-control" value="{{ product.country_of_origin }}">
+                            <input type="text" name="country_of_origin" class="form-control" value="{{ form.country_of_origin.value|default_if_none:'' }}">
                         </div>
                         
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Артикул *</label>
-                            <input type="text" name="article_number" class="form-control" value="{{ product.article_number }}" required>
+                            <input type="text" name="article_number" class="form-control" value="{{ form.article_number.value|default_if_none:'' }}" required>
                         </div>
                         
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Цена *</label>
                             <div class="input-group">
-                                <input type="number" name="price" class="form-control" value="{{ product.price }}" step="0.01" required>
+                                <input type="number" name="price" class="form-control" value="{{ form.price.value|default_if_none:''|unlocalize }}" step="0.01" required>
                                 <span class="input-group-text">so'm</span>
                             </div>
                         </div>
@@ -76,24 +93,24 @@
 
                     <div class="mb-3">
                         <label class="form-label">Страна происхождения (UZ)</label>
-                        <input type="text" name="country_of_origin_uz" class="form-control" value="{{ product.country_of_origin_uz }}">
+                        <input type="text" name="country_of_origin_uz" class="form-control" value="{{ form.country_of_origin_uz.value|default_if_none:'' }}">
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Описание</label>
-                        <textarea name="description" class="form-control" rows="5">{{ product.description }}</textarea>
+                        <textarea name="description" class="form-control" rows="5">{{ form.description.value|default_if_none:'' }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Описание (UZ)</label>
-                        <textarea name="description_uz" class="form-control" rows="5">{{ product.description_uz }}</textarea>
+                        <textarea name="description_uz" class="form-control" rows="5">{{ form.description_uz.value|default_if_none:'' }}</textarea>
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Теги</label>
                         <select name="tags" class="form-select" multiple>
                             {% for tag in tags %}
-                                <option value="{{ tag.id }}" {% if tag.id in selected_tags %}selected{% endif %}>
+                                <option value="{{ tag.id }}" {% if tag.id|stringformat:'s' in selected_tags %}selected{% endif %}>
                                     {{ tag.name }}
                                 </option>
                             {% endfor %}

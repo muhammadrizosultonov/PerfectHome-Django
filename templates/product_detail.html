@@ -36,7 +36,7 @@
           class="w-full h-full object-cover transition-all duration-500">
         {% else %}
         <img id="main-product-img"
-          src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
+          src="{% static 'images/premium/product-detail.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
           alt="{{ product.name|default:product_label }}"
           class="w-full h-full object-cover transition-all duration-500">
         {% endif %}
@@ -55,7 +55,7 @@
             alt="{% trans 'View 1' %}">
           {% else %}
           <img class="thumb-img active"
-            src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
+            src="{% static 'images/premium/product-detail.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
             alt="{% trans 'View 1' %}">
           {% endif %}
         </div>
@@ -172,7 +172,7 @@
           {% if rel.primary_image and rel.primary_image.image %}
           <img src="{{ rel.primary_image.image.url }}" alt="{{ rel.name }}" class="product-card-img">
           {% else %}
-          <img src="{% static 'img/plumbing/square.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ rel.name }}" class="product-card-img">
+          <img src="{% static 'images/premium/related-card.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ rel.name }}" class="product-card-img">
           {% endif %}
         </div>
         <div class="p-4">
