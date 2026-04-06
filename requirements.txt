@@ -1,6 +1,6 @@
 asgiref==3.11.1
 Django==6.0.3
-django-modeltranslation
+django-modeltranslation==0.20.2
 gunicorn==23.0.0
 pillow==12.1.1
 psycopg2-binary==2.9.11
