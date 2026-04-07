@@ -142,3 +142,34 @@ class AdminProductUpdateTests(TestCase):
         self.product.refresh_from_db()
         self.assertEqual(self.product.name, "Old Product")
         self.assertEqual(self.product.slug, "old-product")
+
+
+class AdminProductUnicodeSlugTests(TestCase):
+    def setUp(self):
+        self.staff_user = User.objects.create_user(
+            username="staff-unicode",
+            password="secret123",
+            is_staff=True,
+        )
+        self.client.force_login(self.staff_user)
+        self.category = Category.objects.create(name="Bathroom", slug="bathroom")
+        self.brand = Brand.objects.create(name="Grohe")
+
+    def test_product_create_accepts_cyrillic_slug(self):
+        response = self.client.post(
+            reverse("users:admin_product_create"),
+            {
+                "name": "Смеситель для ванны",
+                "slug": "смеситель-для-ванны",
+                "description": "Описание",
+                "category": self.category.pk,
+                "brand": self.brand.pk,
+                "country_of_origin": "Россия",
+                "article_number": "RU-001",
+                "price": "120000",
+            },
+        )
+
+        self.assertRedirects(response, reverse("users:admin_product_list"))
+        product = Product.objects.get(article_number="RU-001")
+        self.assertEqual(product.slug, "смеситель-для-ванны")

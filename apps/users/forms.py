@@ -60,7 +60,7 @@ class AdminLoginForm(forms.Form):
 
 
 class AdminProductForm(forms.ModelForm):
-    slug = forms.SlugField(required=False)
+    slug = forms.SlugField(required=False, allow_unicode=True)
     name_uz = forms.CharField(required=False)
     description_uz = forms.CharField(required=False, widget=forms.Textarea)
     country_of_origin_uz = forms.CharField(required=False)

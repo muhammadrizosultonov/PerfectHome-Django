@@ -17,7 +17,7 @@ def _unique_slug(instance, base, slug_field="slug", allow_unicode=False):
 
 class ProductTag(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=120, unique=True, allow_unicode=False)
+    slug = models.SlugField(max_length=120, unique=True, allow_unicode=True)
 
     class Meta:
         verbose_name = "Product Tag"
@@ -29,7 +29,7 @@ class ProductTag(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = _unique_slug(self, self.name, allow_unicode=False)
+            self.slug = _unique_slug(self, self.name, allow_unicode=True)
         super().save(*args, **kwargs)
 
 
@@ -40,7 +40,7 @@ class ProductQuerySet(QuerySet):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, allow_unicode=False)
+    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
     description = models.TextField()
     category = models.ForeignKey(
         "categories.Category",
@@ -80,7 +80,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = _unique_slug(self, self.name, allow_unicode=False)
+            self.slug = _unique_slug(self, self.name, allow_unicode=True)
         super().save(*args, **kwargs)
 
     @property
