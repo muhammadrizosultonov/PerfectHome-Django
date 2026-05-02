@@ -33,12 +33,12 @@
         <img id="main-product-img"
           src="{{ product.primary_image.image.url }}"
           alt="{{ product.name|default:product_label }}"
-          class="w-full h-full object-cover transition-all duration-500">
+          class="w-full h-full object-contain transition-all duration-500">
         {% else %}
         <img id="main-product-img"
           src="{% static 'images/premium/product-detail.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";'
           alt="{{ product.name|default:product_label }}"
-          class="w-full h-full object-cover transition-all duration-500">
+          class="w-full h-full object-contain transition-all duration-500">
         {% endif %}
         <!-- Tags overlay -->
         <div class="absolute top-4 left-4 flex flex-col gap-2">

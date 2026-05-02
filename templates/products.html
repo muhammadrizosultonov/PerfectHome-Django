@@ -114,11 +114,11 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {% for product in products|default:'' %}
           <a href="{{ product.get_absolute_url }}" class="product-card">
-            <div class="overflow-hidden bg-cream">
+            <div class="overflow-hidden bg-cream aspect-square">
               {% if product.primary_image and product.primary_image.image %}
-              <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
+              <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="w-full h-full object-contain">
               {% else %}
-              <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
+              <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="w-full h-full object-contain">
               {% endif %}
             </div>
             <div class="p-4">
