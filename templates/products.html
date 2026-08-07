@@ -151,13 +151,19 @@
 
         <!-- Pagination -->
         {% if products.has_other_pages %}
-        <div class="flex justify-center gap-2 mt-10">
+        <div class="catalog-pagination mt-10" aria-label="{% trans 'Pagination' %}">
           {% if products.has_previous %}
           <a href="?page={{ products.previous_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">‹</a>
           {% endif %}
-          {% for num in products.paginator.page_range %}
-          <a href="?page={{ num }}" class="w-10 h-10 flex items-center justify-center border text-sm transition-colors {% if products.number == num %}bg-black text-white border-black{% else %}border-warm-gray text-stone hover:border-black hover:text-black{% endif %}">{{ num }}</a>
+          <div class="catalog-pagination-rows">
+          {% for pagination_row in pagination_rows %}
+          <div class="catalog-pagination-row">
+            {% for num in pagination_row %}
+            <a href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ num }}" class="catalog-page-link {% if products.number == num %}is-active{% endif %}">{{ num }}</a>
+            {% endfor %}
+          </div>
           {% endfor %}
+          </div>
           {% if products.has_next %}
           <a href="?page={{ products.next_page_number }}" class="w-10 h-10 flex items-center justify-center border border-warm-gray text-stone hover:border-black hover:text-black transition-colors">›</a>
           {% endif %}

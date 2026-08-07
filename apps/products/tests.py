@@ -43,3 +43,26 @@ class ProductCatalogTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["products"][0].name, "Product 00")
+
+    def test_catalog_splits_large_pagination_into_rows_of_fifteen(self):
+        Product.objects.bulk_create(
+            [
+                Product(
+                    name=f"Extra product {number:03d}",
+                    slug=f"extra-product-{number:03d}",
+                    description="Pagination test product",
+                    category=self.category,
+                    brand=self.brand,
+                    country_of_origin="Uzbekistan",
+                    article_number=f"EXTRA-{number:03d}",
+                    price=Decimal("100.00"),
+                )
+                for number in range(168)
+            ]
+        )
+
+        response = self.client.get(reverse("products:catalog"))
+
+        self.assertEqual(len(response.context["pagination_rows"]), 2)
+        self.assertEqual(response.context["pagination_rows"][0], list(range(1, 16)))
+        self.assertEqual(response.context["pagination_rows"][1], [16])

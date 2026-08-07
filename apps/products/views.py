@@ -57,6 +57,8 @@ def product_catalog(request):
     paginator = Paginator(products, PRODUCTS_PER_PAGE)
     page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
+    page_numbers = list(paginator.page_range)
+    pagination_rows = [page_numbers[index:index + 15] for index in range(0, len(page_numbers), 15)]
 
     categories = Category.objects.annotate(product_count=Count("products", distinct=True)).all()
     brands = Brand.objects.all()
@@ -80,6 +82,7 @@ def product_catalog(request):
         "selected_tag": tag_slug,
         "sort": sort,
         "pagination_query": _build_querystring(request, ["page"]),
+        "pagination_rows": pagination_rows,
     }
     return render(request, "products.html", context)
 
