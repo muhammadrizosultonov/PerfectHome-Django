@@ -79,6 +79,7 @@ def product_catalog(request):
         "selected_countries": country_values,
         "selected_tag": tag_slug,
         "sort": sort,
+        "pagination_query": _build_querystring(request, ["page"]),
     }
     return render(request, "products.html", context)
 

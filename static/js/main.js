@@ -117,9 +117,39 @@ revealEls.forEach(el => observer.observe(el));
 // ---- LOAD MORE ----
 const loadMoreBtn = document.getElementById('load-more');
 if (loadMoreBtn) {
-  loadMoreBtn.addEventListener('click', () => {
-    loadMoreBtn.textContent = 'Loading...';
-    setTimeout(() => { loadMoreBtn.textContent = 'No more products'; loadMoreBtn.disabled = true; }, 1200);
+  loadMoreBtn.addEventListener('click', async () => {
+    const nextUrl = loadMoreBtn.dataset.nextUrl;
+    const productGrid = document.getElementById('product-grid');
+    if (!nextUrl || !productGrid) return;
+
+    const originalLabel = loadMoreBtn.textContent;
+    loadMoreBtn.textContent = loadMoreBtn.dataset.loadingLabel || 'Loading...';
+    loadMoreBtn.disabled = true;
+
+    try {
+      const response = await fetch(nextUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+      if (!response.ok) throw new Error('Could not load products');
+
+      const page = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const nextGrid = page.getElementById('product-grid');
+      if (!nextGrid) throw new Error('Product grid is missing');
+
+      [...nextGrid.children].forEach((card) => productGrid.append(card));
+      window.history.replaceState({}, '', nextUrl);
+
+      const nextButton = page.getElementById('load-more');
+      if (nextButton) {
+        loadMoreBtn.dataset.nextUrl = nextButton.dataset.nextUrl;
+        loadMoreBtn.textContent = originalLabel;
+        loadMoreBtn.disabled = false;
+      } else {
+        document.getElementById('load-more-wrap')?.remove();
+      }
+    } catch (error) {
+      loadMoreBtn.textContent = originalLabel;
+      loadMoreBtn.disabled = false;
+      window.location.assign(nextUrl);
+    }
   });
 }
 

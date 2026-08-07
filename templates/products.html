@@ -24,10 +24,10 @@
 
   <!-- Content -->
   <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
-    <div class="flex flex-col lg:flex-row gap-10">
+    <div class="catalog-layout flex flex-col lg:flex-row gap-10">
 
       <!-- ─── SIDEBAR ─── -->
-      <aside class="lg:w-64 flex-shrink-0">
+      <aside class="catalog-filters lg:w-64 flex-shrink-0">
         <form method="GET">
 
           <!-- Search -->
@@ -97,28 +97,33 @@
       </aside>
 
       <!-- ─── PRODUCTS GRID ─── -->
-      <div class="flex-1">
+      <div class="catalog-results flex-1 min-w-0">
         <!-- Sort bar -->
-        <div class="flex items-center justify-between mb-8 pb-4 border-b border-warm-gray">
+        <form method="get" class="catalog-toolbar flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8 pb-4 border-b border-warm-gray">
+          {% for category in selected_categories %}<input type="hidden" name="category" value="{{ category }}">{% endfor %}
+          {% for brand in selected_brands %}<input type="hidden" name="brand" value="{{ brand }}">{% endfor %}
+          {% for country in selected_countries %}<input type="hidden" name="country" value="{{ country }}">{% endfor %}
+          {% if query %}<input type="hidden" name="q" value="{{ query }}">{% endif %}
+          {% if selected_tag %}<input type="hidden" name="tag" value="{{ selected_tag }}">{% endif %}
           <p class="text-sm text-stone">
             {% if products %}{{ products.start_index }}–{{ products.end_index }} {% trans "of" %} {{ products.paginator.count }}{% else %}{% trans "Showing all products" %}{% endif %}
           </p>
-          <select name="sort" class="form-input" style="width: auto; padding: 8px 16px; border: 1px solid var(--warm-gray);" onchange="this.form.submit()">
+          <select name="sort" aria-label="{% trans 'Sort products' %}" class="catalog-sort form-input" onchange="this.form.submit()">
             <option value="">{% trans "Sort by" %}</option>
             <option value="name" {% if sort == "name" %}selected{% endif %}>{% trans "Name A–Z" %}</option>
             <option value="-name" {% if sort == "-name" %}selected{% endif %}>{% trans "Name Z–A" %}</option>
             <option value="newest" {% if sort == "newest" %}selected{% endif %}>{% trans "Newest First" %}</option>
           </select>
-        </div>
+        </form>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" aria-live="polite">
           {% for product in products|default:'' %}
           <a href="{{ product.get_absolute_url }}" class="product-card">
-            <div class="overflow-hidden bg-cream aspect-square">
+            <div class="overflow-hidden bg-cream">
               {% if product.primary_image and product.primary_image.image %}
-              <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="w-full h-full object-contain">
+              <img src="{{ product.primary_image.image.url }}" alt="{{ product.name }}" class="product-card-img">
               {% else %}
-              <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="w-full h-full object-contain">
+              <img src="{% static 'images/premium/product-fallback.jpg' %}" onerror='this.onerror=null;this.src="{% static "img/plumbing/square.svg" %}";' alt="{{ product.name }}" class="product-card-img">
               {% endif %}
             </div>
             <div class="p-4">
@@ -138,9 +143,9 @@
         </div>
 
         <!-- Load More -->
-        {% if products.paginator.count %}
-        <div class="text-center mt-14">
-          <button id="load-more" class="btn-outline px-16">{% trans "Load More" %}</button>
+        {% if products.has_next %}
+        <div id="load-more-wrap" class="text-center mt-14">
+          <button id="load-more" type="button" class="btn-outline px-16" data-next-url="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ products.next_page_number }}" data-loading-label="{% trans 'Loading...' %}">{% trans "Load More" %}</button>
         </div>
         {% endif %}
 
