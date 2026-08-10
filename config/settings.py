@@ -30,6 +30,9 @@ CSRF_TRUSTED_ORIGINS = [
     for origin in os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS", "").split(",")
     if origin.strip()
 ]
+# Nginx HTTPS so'rovlarini Gunicorn'ga HTTP orqali uzatadi. Nginx yuborgan
+# X-Forwarded-Proto sarlavhasi orqali Django asl sxemani aniqlaydi.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 INSTALLED_APPS = [
     "modeltranslation",
